@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BookView: View {
-    var book: Book
+    var book: Book.BookItemViewModel
     
     var body: some View {
         VStack(alignment: .center, spacing: 20) {
@@ -23,6 +23,6 @@ struct BookView: View {
 
 struct BookView_Previews: PreviewProvider {
     static var previews: some View {
-        BookView(book: Book(id: 0, title: "Fake Book", author: "Fake Author"))
+        BookView(book: Book.BookItemViewModel(id: 0, title: "Fake Book", subtitle: "Fake Author"))
     }
 }

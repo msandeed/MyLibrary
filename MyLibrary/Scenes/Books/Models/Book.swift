@@ -7,22 +7,16 @@
 
 import Foundation
 
-struct Book: Identifiable, Codable {
-    var id: Int
-    var title: String
-    var author: String
-}
-
-protocol Detailable {
-    var treatedTitle: String { get }
-    var subtitle: String { get }
-}
-
-extension Book: Detailable {
-    var treatedTitle: String {
-        return title.trimmingCharacters(in: .whitespaces)
+enum Book {
+    struct RawBook: Identifiable, Codable {
+        var id: Int
+        var title: String
+        var author: String
     }
-    var subtitle: String {
-        return self.author
+    
+    struct BookItemViewModel: Identifiable, Codable {
+        var id: Int
+        var title: String
+        var subtitle: String
     }
 }

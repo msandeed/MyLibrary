@@ -12,7 +12,7 @@ class BooksListViewModel: ObservableObject {
     
     var subscriptions = Set<AnyCancellable>()
     let networkManager = NetworkManager()
-    @Published var books = [Book]()
+    @Published var books = [Book.BookItemViewModel]()
     
     init() {
         NetworkManager().fetchBooks()
@@ -37,7 +37,12 @@ class BooksListViewModel: ObservableObject {
                     }
                 }
             } receiveValue: { (books) in
-                self.books = books
+                let viewModels = books.map { Book.BookItemViewModel(id: $0.id,
+                                                   title: $0.title.trimmingCharacters(in: .whitespaces),
+                                                   subtitle: $0.author)
+                    
+                }
+                self.books = viewModels
                 print("BOOKS: \(self.books)")
             }
             .store(in: &subscriptions)

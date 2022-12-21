@@ -11,10 +11,10 @@ import Combine
 public struct NetworkManager {
     let urlSession = URLSession.shared
     
-    func fetchBooks() -> AnyPublisher<[Book], NetworkError> {
+    func fetchBooks() -> AnyPublisher<[Book.RawBook], NetworkError> {
 //        urlSession.publisher(for: resolveUrl(for: .books))
         
-        let endpoint = Endpoint<EndpointKinds.Public, [Book]>(path: Urls.books.rawValue)
+        let endpoint = Endpoint<EndpointKinds.Public, [Book.RawBook]>(path: Urls.books.rawValue)
         return urlSession.publisher(for: endpoint, using: Void())
     }
 }
