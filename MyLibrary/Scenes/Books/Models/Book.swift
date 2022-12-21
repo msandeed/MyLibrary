@@ -8,13 +8,13 @@
 import Foundation
 
 enum Book {
-    struct RawBook: Identifiable, Codable {
+    struct RawBook: Codable {
         var id: Int
         var title: String
         var author: String
     }
     
-    struct BookItemViewModel: Identifiable, Codable {
+    struct BookItemViewModel: Identifiable {
         var id: Int
         var title: String
         var subtitle: String
