@@ -15,14 +15,13 @@ struct BooksView: View {
         NavigationView {
             List(viewModel.books) { book in
                 NavigationLink(destination: BookView(book: book)) {
-                    let extractedExpr: VStack<TupleView<(Text, Text)>> = VStack {
-                        Text(book.title)
+                    VStack(alignment: .leading) {
+                        Text("\(book.title)")
                             .font(.headline)
                             .bold()
-                        Text(book.subtitle)
+                        Text("\(book.subtitle)")
                             .font(.subheadline)
                     }
-                    extractedExpr
                 }
             }
         }
