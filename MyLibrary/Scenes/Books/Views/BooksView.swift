@@ -7,13 +7,17 @@
 
 import SwiftUI
 
-struct BooksView: View {
+struct BooksView: BaseView {
     
     @ObservedObject var viewModel: BooksListViewModel
     
+    init(viewModel: BooksListViewModel) {
+        self.viewModel = viewModel
+    }
+    
     var body: some View {
         NavigationView {
-            List(viewModel.books) { book in
+            List(viewModel.output.books) { book in
                 NavigationLink(destination: BookView(book: book)) {
                     VStack(alignment: .leading) {
                         Text("\(book.title)")
@@ -23,6 +27,9 @@ struct BooksView: View {
                             .font(.subheadline)
                     }
                 }
+            }
+            .onAppear {
+                viewModel.input.fetchTrigger.send(())
             }
         }
     }

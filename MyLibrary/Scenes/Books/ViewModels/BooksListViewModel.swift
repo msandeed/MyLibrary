@@ -8,13 +8,55 @@
 import Foundation
 import Combine
 
-class BooksListViewModel: ObservableObject {
+enum ViewState {    // Currently not used but comes in handy for more complex scenarios
+    case idle
+    case loading
+    case loaded
+    case error
+}
+
+class BooksListViewModel: ViewModelType {
+// MARK: - Inputs and Outputs
+    class Input {
+        fileprivate(set) var fetchTrigger = PassthroughSubject<Void, Never>()
+    }
     
-    var subscriptions = Set<AnyCancellable>()
+    class Output: ObservableObject {
+        @Published fileprivate(set) var viewState: ViewState?   // Currently not used but comes in handy for more complex scenarios
+        @Published fileprivate(set) var books: [Book.BookItemViewModel] = []
+    }
+    
+// MARK: - Protocol Conformance
+    let input: Input
+    let output: Output
+    private(set) var subscriptions: [AnyCancellable] = []
+    
+// MARK: - Private properties
     let networkManager = NetworkManager()
-    @Published var books = [Book.BookItemViewModel]()
     
+// MARK: - Lifecycle
     init() {
+        input = .init()
+        output = .init()
+        
+        observeInputs()
+        
+        // Sometimes have to explicitly call objectWillChange on the output in order for the View to detect its changes
+        subscriptions.append(self.output.objectWillChange.receive(on: DispatchQueue.main).sink(receiveValue: { [weak self] _ in
+            self?.objectWillChange.send()
+        }))
+    }
+    
+// MARK: - Binding
+    func observeInputs() {
+        input.fetchTrigger.sink { [weak self] _ in
+            guard let self = self else { return }
+            self.fetchBooks()
+        }.store(in: &subscriptions)
+    }
+    
+// MARK: - Functions
+    private func fetchBooks() {
         NetworkManager().fetchBooks()
             .sink { (completion) in
                 switch completion {
@@ -42,8 +84,8 @@ class BooksListViewModel: ObservableObject {
                                                    subtitle: $0.author)
                     
                 }
-                self.books = viewModels
-                print("BOOKS: \(self.books)")
+                self.output.books = viewModels
+                print("BOOKS: \(self.output.books)")
             }
             .store(in: &subscriptions)
     }
