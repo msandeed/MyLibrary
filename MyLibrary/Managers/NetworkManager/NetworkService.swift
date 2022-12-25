@@ -10,13 +10,13 @@ import Combine
 
 protocol NetworkService {
     var urlSession: URLSession { get }
-    func fetchData<D: Decodable>(for resource: D.Type, with metaData: ResourceMetaData) -> AnyPublisher<D, NetworkError>
+    func fetchData<D: Decodable>(for _: D.Type, with metaData: ResourceMetaData) -> AnyPublisher<D, NetworkError>
 }
 
 public struct DefaultNetworkService: NetworkService {
     var urlSession = URLSession.shared
     
-    func fetchData<D: Decodable>(for resource: D.Type, with metaData: ResourceMetaData) -> AnyPublisher<D, NetworkError> {
+    func fetchData<D: Decodable>(for _: D.Type, with metaData: ResourceMetaData) -> AnyPublisher<D, NetworkError> {
         // Refactor this. Limitation in declaring generic type EndpointKind
         if metaData.isSecured {
             let endpoint = Endpoint<EndpointKinds.Private, D>(path: metaData.path, queryItems: metaData.parameters)
