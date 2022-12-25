@@ -32,7 +32,7 @@ class BooksListViewModel: ViewModelType {
     private(set) var subscriptions: [AnyCancellable] = []
     
 // MARK: - Private properties
-    let networkService = DefaultNetworkService() // TODO: DI
+    let booksService = DefaultBooksUseCase() // TODO: DI
     
 // MARK: - Lifecycle
     init() {
@@ -41,7 +41,7 @@ class BooksListViewModel: ViewModelType {
         
         observeInputs()
         
-        // Sometimes have to explicitly call objectWillChange on the output in order for the View to detect its changes
+        // Sometimes have to explicitly call objectWillChange on self for the View to detect output changes
         subscriptions.append(self.output.objectWillChange.receive(on: DispatchQueue.main).sink(receiveValue: { [weak self] _ in
             self?.objectWillChange.send()
         }))
@@ -57,12 +57,13 @@ class BooksListViewModel: ViewModelType {
     
 // MARK: - Functions
     private func fetchBooks() {
-        networkService.fetchData(for: Book.RawBook.self, path: Urls.books.rawValue)
+        booksService.fetchBooks()
             .sink { (completion) in
                 switch completion {
                 case .finished:
                     print("Books Retrieved Successfully")
                 case .failure(let error):
+                    // Some of those could be handled in lower layers.. UseCase or NetworkService. For now, we're bubbling them all up to ViewModel
                     switch error {
                     case .requestError:
                         print("⚠️ Request Error")
@@ -82,7 +83,6 @@ class BooksListViewModel: ViewModelType {
                 let viewModels = books.map { Book.BookItemViewModel(id: $0.id,
                                                    title: $0.title.trimmingCharacters(in: .whitespaces),
                                                    subtitle: $0.author)
-                    
                 }
                 self.output.books = viewModels
                 print("BOOKS: \(self.output.books)")

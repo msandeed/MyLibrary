@@ -20,6 +20,7 @@ public struct DefaultNetworkService: NetworkService {
                                       path: String,
                                       parameters: [URLQueryItem] = [],
                                       isSecured: Bool = false) -> AnyPublisher<[D], NetworkError> {
+        // Refactor this. Limitation in declaring generic type EndpointKind
         if isSecured {
             let endpoint = Endpoint<EndpointKinds.Private, [D]>(path: path, queryItems: parameters)
             return urlSession.publisher(for: endpoint, using: .staging) // Access Key should be altered by Env
