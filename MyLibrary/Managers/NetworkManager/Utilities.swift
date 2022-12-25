@@ -1,11 +1,15 @@
 //
 //  Models.swift
-//  Books-SwiftUIwMVVM
+//  MyLibrary
 //
 //  Created by Mostafa Sandeed on 27/07/2022.
 //
 
 import Foundation
+
+struct Results<Element: Decodable>: Decodable {
+    let items: [Element]
+}
 
 enum AccessToken: String {
     // Should get securely

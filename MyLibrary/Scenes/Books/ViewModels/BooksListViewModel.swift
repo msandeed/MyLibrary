@@ -1,6 +1,6 @@
 //
 //  BooksListViewModel.swift
-//  Books-SwiftUIwMVVM
+//  MyLibrary
 //
 //  Created by Mostafa Sandeed on 28/10/2021.
 //
@@ -32,7 +32,7 @@ class BooksListViewModel: ViewModelType {
     private(set) var subscriptions: [AnyCancellable] = []
     
 // MARK: - Private properties
-    let networkManager = NetworkManager()
+    let networkService = DefaultNetworkService() // TODO: DI
     
 // MARK: - Lifecycle
     init() {
@@ -57,7 +57,7 @@ class BooksListViewModel: ViewModelType {
     
 // MARK: - Functions
     private func fetchBooks() {
-        NetworkManager().fetchBooks()
+        networkService.fetchData(for: Book.RawBook.self, path: Urls.books.rawValue)
             .sink { (completion) in
                 switch completion {
                 case .finished:
