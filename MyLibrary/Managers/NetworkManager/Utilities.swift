@@ -11,6 +11,18 @@ struct Results<Element: Decodable>: Decodable {
     let items: [Element]
 }
 
+struct ResourceMetaData {
+    let path: String
+    let parameters: [URLQueryItem]
+    let isSecured: Bool
+    
+    internal init(path: String, parameters: [URLQueryItem] = [], isSecured: Bool = false) {
+        self.path = path
+        self.parameters = parameters
+        self.isSecured = isSecured
+    }
+}
+
 enum AccessToken: String {
     // Should get securely
     case production = "SomeToken"

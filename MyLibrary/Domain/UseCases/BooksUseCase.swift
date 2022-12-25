@@ -16,6 +16,7 @@ class DefaultBooksUseCase: BooksUseCase {
     let networkService: NetworkService = DefaultNetworkService() // TODO: DI
     
     func fetchBooks() -> AnyPublisher<[Book.RawBook], NetworkError> {
-        return DefaultNetworkService().fetchData(for: Book.RawBook.self, path: Urls.books.rawValue)
+        let metaData = ResourceMetaData(path: Urls.books.rawValue)
+        return DefaultNetworkService().fetchData(for: Book.RawBook.self, with: metaData)
     }
 }

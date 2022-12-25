@@ -10,22 +10,19 @@ import Combine
 
 protocol NetworkService {
     var urlSession: URLSession { get }
-    func fetchData<D: Decodable>(for resource: D.Type, path: String, parameters: [URLQueryItem], isSecured: Bool) -> AnyPublisher<[D], NetworkError>
+    func fetchData<D: Decodable>(for resource: D.Type, with metaData: ResourceMetaData) -> AnyPublisher<[D], NetworkError>
 }
 
 public struct DefaultNetworkService: NetworkService {
     var urlSession = URLSession.shared
     
-    func fetchData<D: Decodable>(for resource: D.Type,
-                                      path: String,
-                                      parameters: [URLQueryItem] = [],
-                                      isSecured: Bool = false) -> AnyPublisher<[D], NetworkError> {
+    func fetchData<D: Decodable>(for resource: D.Type, with metaData: ResourceMetaData) -> AnyPublisher<[D], NetworkError> {
         // Refactor this. Limitation in declaring generic type EndpointKind
-        if isSecured {
-            let endpoint = Endpoint<EndpointKinds.Private, [D]>(path: path, queryItems: parameters)
+        if metaData.isSecured {
+            let endpoint = Endpoint<EndpointKinds.Private, [D]>(path: metaData.path, queryItems: metaData.parameters)
             return urlSession.publisher(for: endpoint, using: .staging) // Access Key should be altered by Env
         } else {
-            let endpoint = Endpoint<EndpointKinds.Public, [D]>(path: path, queryItems: parameters)
+            let endpoint = Endpoint<EndpointKinds.Public, [D]>(path: metaData.path, queryItems: metaData.parameters)
             return urlSession.publisher(for: endpoint, using: Void())
         }
     }
