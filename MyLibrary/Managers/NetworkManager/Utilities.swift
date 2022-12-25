@@ -7,10 +7,6 @@
 
 import Foundation
 
-struct Results<Element: Decodable>: Decodable {
-    let items: [Element]
-}
-
 struct ResourceMetaData {
     let path: String
     let parameters: [URLQueryItem]
