@@ -32,7 +32,7 @@ class BooksListViewModel: ViewModelType {
     private(set) var subscriptions: [AnyCancellable] = []
     
 // MARK: - Private properties
-    let booksService = DefaultBooksUseCase() // TODO: DI
+    @Injected(UsecasesContainer.booksUsecase) private var booksService
     
 // MARK: - Lifecycle
     init() {

@@ -13,7 +13,7 @@ protocol BooksUseCase: BaseUseCase {
 }
 
 class DefaultBooksUseCase: BooksUseCase {
-    let networkService: NetworkService = DefaultNetworkService() // TODO: DI
+    @Injected(ServicesContainer.networkService) internal var networkService
     
     func fetchBooks() -> AnyPublisher<[Book.RawBook], NetworkError> {
         let metaData = ResourceMetaData(path: Urls.books.rawValue)
