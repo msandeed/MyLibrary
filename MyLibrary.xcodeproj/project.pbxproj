@@ -13,6 +13,9 @@
 		7FBFE233295909160028FFA1 /* BaseUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBFE232295909160028FFA1 /* BaseUseCase.swift */; };
 		7FBFE235295CDE530028FFA1 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBFE234295CDE530028FFA1 /* Factory.swift */; };
 		7FBFE238295CDE790028FFA1 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBFE237295CDE790028FFA1 /* Container.swift */; };
+		7FBFE23A295E51360028FFA1 /* FakeBooks.json in Resources */ = {isa = PBXBuildFile; fileRef = 7FBFE239295E51360028FFA1 /* FakeBooks.json */; };
+		7FBFE23C295E525A0028FFA1 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBFE23B295E525A0028FFA1 /* Mocks.swift */; };
+		7FBFE23E295E52FA0028FFA1 /* PreviewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBFE23D295E52FA0028FFA1 /* PreviewHandler.swift */; };
 		D1B38EA52891EA2A001FA9F7 /* MyLibraryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B38EA42891EA2A001FA9F7 /* MyLibraryApp.swift */; };
 		D1B38EA92891EA2E001FA9F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1B38EA82891EA2E001FA9F7 /* Assets.xcassets */; };
 		D1B38EAC2891EA2E001FA9F7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1B38EAB2891EA2E001FA9F7 /* Preview Assets.xcassets */; };
@@ -33,6 +36,9 @@
 		7FBFE232295909160028FFA1 /* BaseUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUseCase.swift; sourceTree = "<group>"; };
 		7FBFE234295CDE530028FFA1 /* Factory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
 		7FBFE237295CDE790028FFA1 /* Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		7FBFE239295E51360028FFA1 /* FakeBooks.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FakeBooks.json; sourceTree = "<group>"; };
+		7FBFE23B295E525A0028FFA1 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
+		7FBFE23D295E52FA0028FFA1 /* PreviewHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewHandler.swift; sourceTree = "<group>"; };
 		D1B38EA12891EA2A001FA9F7 /* MyLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1B38EA42891EA2A001FA9F7 /* MyLibraryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLibraryApp.swift; sourceTree = "<group>"; };
 		D1B38EA82891EA2E001FA9F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -70,6 +76,7 @@
 		7FBFE22E295907EE0028FFA1 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				D1B38EB52891EAC4001FA9F7 /* Models */,
 				7FBFE22F295907F60028FFA1 /* UseCases */,
 			);
 			path = Domain;
@@ -126,6 +133,9 @@
 			isa = PBXGroup;
 			children = (
 				D1B38EAB2891EA2E001FA9F7 /* Preview Assets.xcassets */,
+				7FBFE239295E51360028FFA1 /* FakeBooks.json */,
+				7FBFE23B295E525A0028FFA1 /* Mocks.swift */,
+				7FBFE23D295E52FA0028FFA1 /* PreviewHandler.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -156,7 +166,6 @@
 			children = (
 				D1B38EB72891EADB001FA9F7 /* ViewModels */,
 				D1B38EB62891EAD3001FA9F7 /* Views */,
-				D1B38EB52891EAC4001FA9F7 /* Models */,
 			);
 			path = Books;
 			sourceTree = "<group>";
@@ -269,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1B38EAC2891EA2E001FA9F7 /* Preview Assets.xcassets in Resources */,
+				7FBFE23A295E51360028FFA1 /* FakeBooks.json in Resources */,
 				D1B38EA92891EA2E001FA9F7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,9 +290,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FBFE23E295E52FA0028FFA1 /* PreviewHandler.swift in Sources */,
 				D1B38EC82891EC17001FA9F7 /* BookView.swift in Sources */,
 				D1B38EC02891EB62001FA9F7 /* NetworkService.swift in Sources */,
 				D1B38EC62891EBA0001FA9F7 /* BooksView.swift in Sources */,
+				7FBFE23C295E525A0028FFA1 /* Mocks.swift in Sources */,
 				D1B38EC42891EB7E001FA9F7 /* BooksListViewModel.swift in Sources */,
 				7FBFE2312959084C0028FFA1 /* BooksUseCase.swift in Sources */,
 				D1B38EBF2891EB62001FA9F7 /* Extensions.swift in Sources */,

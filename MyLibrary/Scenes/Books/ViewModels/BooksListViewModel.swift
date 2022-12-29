@@ -32,7 +32,7 @@ class BooksListViewModel: ViewModelType {
     private(set) var subscriptions: [AnyCancellable] = []
     
 // MARK: - Private properties
-    @Injected(UsecasesContainer.booksUsecase) private var booksService
+    @Injected(UsecasesContainer.booksUsecase) private var booksUseCase
     
 // MARK: - Lifecycle
     init() {
@@ -57,7 +57,7 @@ class BooksListViewModel: ViewModelType {
     
 // MARK: - Functions
     private func fetchBooks() {
-        booksService.fetchBooks()
+        booksUseCase.fetchBooks()
             .sink { (completion) in
                 switch completion {
                 case .finished:

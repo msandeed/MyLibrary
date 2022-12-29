@@ -37,6 +37,8 @@ struct BooksView: BaseView {
 
 struct BooksView_Previews: PreviewProvider {
     static var previews: some View {
-        BooksView(viewModel: BooksListViewModel())
+        UsecasesContainer.booksUsecase.register { MockedBooksUseCase() }
+        
+        return BooksView(viewModel: BooksListViewModel())
     }
 }

@@ -1,0 +1,43 @@
+[
+    {
+        "id":     1,
+        "title":  "Inferno",
+        "author": "Dan Brown"
+    }, {
+        "id":     2,
+        "title":  "Origin",
+        "author": "Dan Brown"
+    }, {
+        "id":     3,
+        "title":  "Brave New World",
+        "author": "Aldous Huxley"
+    }, {
+        "id":     4,
+        "title":  "Fahrenheit 451",
+        "author": "Ray Bradbury"
+    }, {
+        "id":     5,
+        "title":  "Blindness",
+        "author": "José Saramago"
+    }, {
+        "id":     6,
+        "title":  "Ready Player One",
+        "author": "Ernest Cline"
+    }, {
+        "id":     7,
+        "title":  "The Diamond Age",
+        "author": "Neal Stephenson"
+    }, {
+        "id":     8,
+        "title":  "The Time Machine",
+        "author": "H.G. Wells"
+    }, {
+        "id":     9,
+        "title":  "Altered Carbon",
+        "author": "Richard K. Morgan"
+    }, {
+        "id":     10,
+        "title":  "Neuromancer",
+        "author": "William Gibson"
+    }
+]
