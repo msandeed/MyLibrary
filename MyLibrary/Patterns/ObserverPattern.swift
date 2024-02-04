@@ -10,7 +10,7 @@ import Combine
 
 // Create a subject that will emit updates
 class Subject {
-    var value: Int = 0 {
+    private var value: Int = 0 {
         didSet {
             publisher.send(value)
         }
@@ -43,3 +43,4 @@ class Observer {
             .store(in: &cancellables)
     }
 }
+

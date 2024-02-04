@@ -19,6 +19,7 @@
 		7F01E41F2B70458300E192FD /* ContactCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E4172B70458200E192FD /* ContactCard.swift */; };
 		7F01E4202B70458300E192FD /* FlexibleGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E4182B70458200E192FD /* FlexibleGrid.swift */; };
 		7F01E4212B70458300E192FD /* HeadshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E4192B70458200E192FD /* HeadshotView.swift */; };
+		7F01E4232B7055A600E192FD /* AsyncPublisherExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E4222B7055A600E192FD /* AsyncPublisherExample.swift */; };
 		7FBFE22B29546F710028FFA1 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBFE22A29546F710028FFA1 /* ViewModelType.swift */; };
 		7FBFE22D29546F970028FFA1 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBFE22C29546F970028FFA1 /* BaseView.swift */; };
 		7FBFE2312959084C0028FFA1 /* Usecases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBFE2302959084C0028FFA1 /* Usecases.swift */; };
@@ -53,6 +54,7 @@
 		7F01E4172B70458200E192FD /* ContactCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCard.swift; sourceTree = "<group>"; };
 		7F01E4182B70458200E192FD /* FlexibleGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexibleGrid.swift; sourceTree = "<group>"; };
 		7F01E4192B70458200E192FD /* HeadshotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeadshotView.swift; sourceTree = "<group>"; };
+		7F01E4222B7055A600E192FD /* AsyncPublisherExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncPublisherExample.swift; sourceTree = "<group>"; };
 		7FBFE22A29546F710028FFA1 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		7FBFE22C29546F970028FFA1 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		7FBFE2302959084C0028FFA1 /* Usecases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usecases.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				7F01E4122B70458200E192FD /* AsyncStreamExample.swift */,
 				7F01E4132B70458200E192FD /* Theory.swift */,
 				7F01E4142B70458200E192FD /* TaskGroupExample.swift */,
+				7F01E4222B7055A600E192FD /* AsyncPublisherExample.swift */,
 			);
 			path = Concurrency;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				7FBFE23E295E52FA0028FFA1 /* PreviewHandler.swift in Sources */,
 				7F01E40F2B70457400E192FD /* FactoryPattern.swift in Sources */,
 				D1B38EC82891EC17001FA9F7 /* BookView.swift in Sources */,
+				7F01E4232B7055A600E192FD /* AsyncPublisherExample.swift in Sources */,
 				D1B38EC02891EB62001FA9F7 /* NetworkService.swift in Sources */,
 				7F01E40C2B70457400E192FD /* DependencyInjection.swift in Sources */,
 				7F01E41D2B70458300E192FD /* TaskGroupExample.swift in Sources */,
