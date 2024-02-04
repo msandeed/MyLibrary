@@ -11,7 +11,8 @@ import SwiftUI
 struct MyLibraryApp: App {
     var body: some Scene {
         WindowGroup {
-            BooksView(viewModel: BooksListViewModel())
+            AsyncStreamExample()
+//            BooksView(viewModel: BooksListViewModel())
         }
     }
 }

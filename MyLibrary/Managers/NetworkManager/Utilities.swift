@@ -10,11 +10,13 @@ import Foundation
 struct ResourceMetaData {
     let path: String
     let parameters: [URLQueryItem]
+    let body: Encodable?
     let isSecured: Bool
     
-    internal init(path: String, parameters: [URLQueryItem] = [], isSecured: Bool = false) {
+    internal init(path: String, parameters: [String: String?] = [:], body: Encodable? = nil, isSecured: Bool = false) {
         self.path = path
-        self.parameters = parameters
+        self.parameters = parameters.map { URLQueryItem(name: $0.key, value: $0.value) }
+        self.body = body
         self.isSecured = isSecured
     }
 }
@@ -42,13 +44,15 @@ struct NetworkResponse<Wrapped: Decodable>: Decodable {
     var result: Wrapped
 }
 
-struct Endpoint<Kind: EndpointKind, Response: Decodable> {
+struct Endpoint<Response: Decodable> {
     var path: String
     var queryItems = [URLQueryItem]()
+    var body: Encodable?
+    var isSecure: Bool = false
 }
 
 extension Endpoint {
-    func makeRequest(with data: Kind.RequestData) -> URLRequest? {
+    func makeRequest() -> URLRequest? {
         var components = URLComponents()
         components.scheme = "https"
         components.host = baseUrl
@@ -62,39 +66,57 @@ extension Endpoint {
         }
 
         var request = URLRequest(url: url)
-        Kind.prepare(&request, with: data)
+        // Add token if secured
+        if isSecure {
+            request.addValue("Bearer \(AccessToken.staging.rawValue)",
+                forHTTPHeaderField: "Authorization"
+            )   // Should secure token
+        }
+        // Post request
+        if let requestBody = body {
+            request.httpMethod = "POST"
+            request.httpBody = try? JSONEncoder().encode(requestBody)
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        }
+        
+//        Kind.prepare(&request, with: data)
         return request
     }
 }
-
-protocol EndpointKind {
-    associatedtype RequestData
-    
-    static func prepare(_ request: inout URLRequest,
-                        with data: RequestData)
-}
-
-enum EndpointKinds {
-    enum Public: EndpointKind {
-        static func prepare(_ request: inout URLRequest,
-                            with _: Void) {
-            // Here we can do things like assign a custom cache
-            // policy for loading our publicly available data.
-            // In this example we're telling URLSession not to
-            // use any locally cached data for these requests:
-            request.cachePolicy = .reloadIgnoringLocalCacheData
-        }
-    }
-
-    enum Private: EndpointKind {
-        static func prepare(_ request: inout URLRequest,
-                            with token: AccessToken) {
-            // For our private endpoints, we'll require an
-            // access token to be passed, which we then use to
-            // assign an Authorization header to each request:
-            request.addValue("Bearer \(token.rawValue)",
-                forHTTPHeaderField: "Authorization"
-            )
-        }
-    }
-}
+//
+//protocol EndpointKind {
+//    associatedtype RequestData
+//    
+//    static func prepare(_ request: inout URLRequest,
+//                        with data: RequestData)
+//}
+//
+//enum EndpointKinds {
+//    enum Public: EndpointKind {
+//        static func prepare(_ request: inout URLRequest,
+//                            with _: Void) {
+//            // Here we can do things like assign a custom cache
+//            // policy for loading our publicly available data.
+//            // In this example we're telling URLSession not to
+//            // use any locally cached data for these requests:
+////            request.cachePolicy = .reloadIgnoringLocalCacheData
+//            
+//            addHeader(&request)
+//        }
+//    }
+//
+//    enum Private: EndpointKind {
+//        static func prepare(_ request: inout URLRequest,
+//                            with token: AccessToken) {
+//            // Add token
+//            request.addValue("Bearer \(token.rawValue)",
+//                forHTTPHeaderField: "Authorization"
+//            )
+//            addHeader(&request)
+//        }
+//    }
+//    
+//    static func addHeader(_ request: inout URLRequest) {
+//        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+//    }
+//}

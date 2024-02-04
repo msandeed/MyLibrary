@@ -11,7 +11,7 @@ import Combine
 class MockedBooksUseCase: BooksUseCase {
     @Injected(ServicesContainer.networkService) internal var networkService
     
-    func fetchBooks() -> AnyPublisher<[Book.RawBook], NetworkError> {
-        return CurrentValueSubject(previewBooks).eraseToAnyPublisher()  // TODO: Is CurrentValueSubject the best option here?
+    func fetchBooks() -> AnyPublisher<[Book.BookDomain], NetworkError> {
+        return CurrentValueSubject(previewBooks).map { $0.toDomain }.eraseToAnyPublisher()  // TODO: Is CurrentValueSubject the best option here?
     }
 }

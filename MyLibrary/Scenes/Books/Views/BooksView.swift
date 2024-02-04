@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct BooksView: BaseView {
-    
+struct BooksView: BaseViewProtocol {
+    @ObservedObject var navigator = Navigator()
     @ObservedObject var viewModel: BooksListViewModel
     
     init(viewModel: BooksListViewModel) {
@@ -25,6 +25,8 @@ struct BooksView: BaseView {
                             .bold()
                         Text("\(book.subtitle)")
                             .font(.subheadline)
+                    }.sheet(isPresented: $navigator.isActive) {
+                        Text("")
                     }
                 }
             }

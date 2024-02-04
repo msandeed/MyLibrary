@@ -7,10 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F01E40C2B70457400E192FD /* DependencyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E4082B70457400E192FD /* DependencyInjection.swift */; };
+		7F01E40D2B70457400E192FD /* DecoratorPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E4092B70457400E192FD /* DecoratorPattern.swift */; };
+		7F01E40E2B70457400E192FD /* ObserverPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E40A2B70457400E192FD /* ObserverPattern.swift */; };
+		7F01E40F2B70457400E192FD /* FactoryPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E40B2B70457400E192FD /* FactoryPattern.swift */; };
+		7F01E41A2B70458200E192FD /* WithContinuationExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E4112B70458200E192FD /* WithContinuationExample.swift */; };
+		7F01E41B2B70458200E192FD /* AsyncStreamExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E4122B70458200E192FD /* AsyncStreamExample.swift */; };
+		7F01E41C2B70458300E192FD /* Theory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E4132B70458200E192FD /* Theory.swift */; };
+		7F01E41D2B70458300E192FD /* TaskGroupExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E4142B70458200E192FD /* TaskGroupExample.swift */; };
+		7F01E41E2B70458300E192FD /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E4162B70458200E192FD /* UIConstants.swift */; };
+		7F01E41F2B70458300E192FD /* ContactCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E4172B70458200E192FD /* ContactCard.swift */; };
+		7F01E4202B70458300E192FD /* FlexibleGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E4182B70458200E192FD /* FlexibleGrid.swift */; };
+		7F01E4212B70458300E192FD /* HeadshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E4192B70458200E192FD /* HeadshotView.swift */; };
 		7FBFE22B29546F710028FFA1 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBFE22A29546F710028FFA1 /* ViewModelType.swift */; };
 		7FBFE22D29546F970028FFA1 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBFE22C29546F970028FFA1 /* BaseView.swift */; };
-		7FBFE2312959084C0028FFA1 /* BooksUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBFE2302959084C0028FFA1 /* BooksUseCase.swift */; };
-		7FBFE233295909160028FFA1 /* BaseUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBFE232295909160028FFA1 /* BaseUseCase.swift */; };
+		7FBFE2312959084C0028FFA1 /* Usecases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBFE2302959084C0028FFA1 /* Usecases.swift */; };
 		7FBFE235295CDE530028FFA1 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBFE234295CDE530028FFA1 /* Factory.swift */; };
 		7FBFE238295CDE790028FFA1 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBFE237295CDE790028FFA1 /* Container.swift */; };
 		7FBFE23A295E51360028FFA1 /* FakeBooks.json in Resources */ = {isa = PBXBuildFile; fileRef = 7FBFE239295E51360028FFA1 /* FakeBooks.json */; };
@@ -30,10 +41,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7F01E4082B70457400E192FD /* DependencyInjection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependencyInjection.swift; sourceTree = "<group>"; };
+		7F01E4092B70457400E192FD /* DecoratorPattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecoratorPattern.swift; sourceTree = "<group>"; };
+		7F01E40A2B70457400E192FD /* ObserverPattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObserverPattern.swift; sourceTree = "<group>"; };
+		7F01E40B2B70457400E192FD /* FactoryPattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FactoryPattern.swift; sourceTree = "<group>"; };
+		7F01E4112B70458200E192FD /* WithContinuationExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithContinuationExample.swift; sourceTree = "<group>"; };
+		7F01E4122B70458200E192FD /* AsyncStreamExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncStreamExample.swift; sourceTree = "<group>"; };
+		7F01E4132B70458200E192FD /* Theory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theory.swift; sourceTree = "<group>"; };
+		7F01E4142B70458200E192FD /* TaskGroupExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskGroupExample.swift; sourceTree = "<group>"; };
+		7F01E4162B70458200E192FD /* UIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
+		7F01E4172B70458200E192FD /* ContactCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCard.swift; sourceTree = "<group>"; };
+		7F01E4182B70458200E192FD /* FlexibleGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexibleGrid.swift; sourceTree = "<group>"; };
+		7F01E4192B70458200E192FD /* HeadshotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeadshotView.swift; sourceTree = "<group>"; };
 		7FBFE22A29546F710028FFA1 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		7FBFE22C29546F970028FFA1 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
-		7FBFE2302959084C0028FFA1 /* BooksUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksUseCase.swift; sourceTree = "<group>"; };
-		7FBFE232295909160028FFA1 /* BaseUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUseCase.swift; sourceTree = "<group>"; };
+		7FBFE2302959084C0028FFA1 /* Usecases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usecases.swift; sourceTree = "<group>"; };
 		7FBFE234295CDE530028FFA1 /* Factory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
 		7FBFE237295CDE790028FFA1 /* Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		7FBFE239295E51360028FFA1 /* FakeBooks.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FakeBooks.json; sourceTree = "<group>"; };
@@ -64,6 +86,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F01E4072B70457400E192FD /* Patterns */ = {
+			isa = PBXGroup;
+			children = (
+				7F01E4082B70457400E192FD /* DependencyInjection.swift */,
+				7F01E4092B70457400E192FD /* DecoratorPattern.swift */,
+				7F01E40A2B70457400E192FD /* ObserverPattern.swift */,
+				7F01E40B2B70457400E192FD /* FactoryPattern.swift */,
+			);
+			path = Patterns;
+			sourceTree = "<group>";
+		};
+		7F01E4102B70458200E192FD /* Concurrency */ = {
+			isa = PBXGroup;
+			children = (
+				7F01E4112B70458200E192FD /* WithContinuationExample.swift */,
+				7F01E4122B70458200E192FD /* AsyncStreamExample.swift */,
+				7F01E4132B70458200E192FD /* Theory.swift */,
+				7F01E4142B70458200E192FD /* TaskGroupExample.swift */,
+			);
+			path = Concurrency;
+			sourceTree = "<group>";
+		};
+		7F01E4152B70458200E192FD /* UI Elements */ = {
+			isa = PBXGroup;
+			children = (
+				7F01E4162B70458200E192FD /* UIConstants.swift */,
+				7F01E4172B70458200E192FD /* ContactCard.swift */,
+				7F01E4182B70458200E192FD /* FlexibleGrid.swift */,
+				7F01E4192B70458200E192FD /* HeadshotView.swift */,
+			);
+			path = "UI Elements";
+			sourceTree = "<group>";
+		};
 		7FBFE22929546F600028FFA1 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -85,8 +140,7 @@
 		7FBFE22F295907F60028FFA1 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				7FBFE232295909160028FFA1 /* BaseUseCase.swift */,
-				7FBFE2302959084C0028FFA1 /* BooksUseCase.swift */,
+				7FBFE2302959084C0028FFA1 /* Usecases.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -119,7 +173,9 @@
 		D1B38EA32891EA2A001FA9F7 /* MyLibrary */ = {
 			isa = PBXGroup;
 			children = (
-				7FBFE22E295907EE0028FFA1 /* Domain */,
+				7F01E4102B70458200E192FD /* Concurrency */,
+				7F01E4152B70458200E192FD /* UI Elements */,
+				7F01E4072B70457400E192FD /* Patterns */,
 				D1B38EB82891EB46001FA9F7 /* Managers */,
 				D1B38EB32891EA89001FA9F7 /* Scenes */,
 				D1B38EA42891EA2A001FA9F7 /* MyLibraryApp.swift */,
@@ -155,7 +211,6 @@
 			isa = PBXGroup;
 			children = (
 				7FBFE22929546F600028FFA1 /* Base */,
-				D1B38EC92891EC21001FA9F7 /* Book */,
 				D1B38EB42891EAB8001FA9F7 /* Books */,
 			);
 			path = Scenes;
@@ -164,6 +219,7 @@
 		D1B38EB42891EAB8001FA9F7 /* Books */ = {
 			isa = PBXGroup;
 			children = (
+				7FBFE22E295907EE0028FFA1 /* Domain */,
 				D1B38EB72891EADB001FA9F7 /* ViewModels */,
 				D1B38EB62891EAD3001FA9F7 /* Views */,
 			);
@@ -181,6 +237,7 @@
 		D1B38EB62891EAD3001FA9F7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D1B38EC72891EC17001FA9F7 /* BookView.swift */,
 				D1B38EC52891EBA0001FA9F7 /* BooksView.swift */,
 			);
 			path = Views;
@@ -201,22 +258,6 @@
 				D1B38EB22891EA7B001FA9F7 /* NetworkManager */,
 			);
 			path = Managers;
-			sourceTree = "<group>";
-		};
-		D1B38EC92891EC21001FA9F7 /* Book */ = {
-			isa = PBXGroup;
-			children = (
-				D1B38ECA2891EC2F001FA9F7 /* Views */,
-			);
-			path = Book;
-			sourceTree = "<group>";
-		};
-		D1B38ECA2891EC2F001FA9F7 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				D1B38EC72891EC17001FA9F7 /* BookView.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,22 +331,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F01E41E2B70458300E192FD /* UIConstants.swift in Sources */,
 				7FBFE23E295E52FA0028FFA1 /* PreviewHandler.swift in Sources */,
+				7F01E40F2B70457400E192FD /* FactoryPattern.swift in Sources */,
 				D1B38EC82891EC17001FA9F7 /* BookView.swift in Sources */,
 				D1B38EC02891EB62001FA9F7 /* NetworkService.swift in Sources */,
+				7F01E40C2B70457400E192FD /* DependencyInjection.swift in Sources */,
+				7F01E41D2B70458300E192FD /* TaskGroupExample.swift in Sources */,
+				7F01E40D2B70457400E192FD /* DecoratorPattern.swift in Sources */,
 				D1B38EC62891EBA0001FA9F7 /* BooksView.swift in Sources */,
+				7F01E41A2B70458200E192FD /* WithContinuationExample.swift in Sources */,
 				7FBFE23C295E525A0028FFA1 /* Mocks.swift in Sources */,
 				D1B38EC42891EB7E001FA9F7 /* BooksListViewModel.swift in Sources */,
-				7FBFE2312959084C0028FFA1 /* BooksUseCase.swift in Sources */,
+				7F01E4212B70458300E192FD /* HeadshotView.swift in Sources */,
+				7FBFE2312959084C0028FFA1 /* Usecases.swift in Sources */,
 				D1B38EBF2891EB62001FA9F7 /* Extensions.swift in Sources */,
 				7FBFE235295CDE530028FFA1 /* Factory.swift in Sources */,
+				7F01E41B2B70458200E192FD /* AsyncStreamExample.swift in Sources */,
+				7F01E4202B70458300E192FD /* FlexibleGrid.swift in Sources */,
+				7F01E41F2B70458300E192FD /* ContactCard.swift in Sources */,
 				7FBFE238295CDE790028FFA1 /* Container.swift in Sources */,
 				D1B38EC22891EB74001FA9F7 /* Book.swift in Sources */,
 				D1B38EBD2891EB62001FA9F7 /* Utilities.swift in Sources */,
 				D1B38EA52891EA2A001FA9F7 /* MyLibraryApp.swift in Sources */,
 				7FBFE22B29546F710028FFA1 /* ViewModelType.swift in Sources */,
+				7F01E41C2B70458300E192FD /* Theory.swift in Sources */,
+				7F01E40E2B70457400E192FD /* ObserverPattern.swift in Sources */,
 				7FBFE22D29546F970028FFA1 /* BaseView.swift in Sources */,
-				7FBFE233295909160028FFA1 /* BaseUseCase.swift in Sources */,
 				D1B38EBE2891EB62001FA9F7 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

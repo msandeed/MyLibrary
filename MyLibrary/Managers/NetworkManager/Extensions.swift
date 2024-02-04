@@ -33,12 +33,11 @@ extension URLSession {
 // Generic Response
 // Receives Endpoint object from which it determines EndpointType, extracts the request data (access token for instance) and creates the request
 extension URLSession {
-    func publisher<K, R>(
-        for endpoint: Endpoint<K, R>,
-        using requestData: K.RequestData,
+    func publisher<R>(
+        for endpoint: Endpoint<R>,
         decoder: JSONDecoder = .init()
     ) -> AnyPublisher<R, NetworkError> {
-        guard let request = endpoint.makeRequest(with: requestData) else {
+        guard let request = endpoint.makeRequest() else {
             return Fail(
                 error: NetworkError.requestError
             ).eraseToAnyPublisher()

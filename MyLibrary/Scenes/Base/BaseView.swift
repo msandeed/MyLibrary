@@ -7,9 +7,14 @@
 
 import SwiftUI
 
-protocol BaseView: View {
+final class Navigator: ObservableObject {
+    @Published var isActive = false
+    var destnationView: AnyView?
+}
+protocol BaseViewProtocol: View {
     associatedtype ViewModel: ViewModelType
     
-    var viewModel: ViewModel { get set }
-    init(viewModel: ViewModel)
+    var navigator: Navigator { get }
+    var viewModel: ViewModel { get }
 }
+
