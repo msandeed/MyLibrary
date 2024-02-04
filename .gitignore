@@ -1,0 +1,6 @@
+# Pods
+/Pods
+
+#OSX Noise
+*.xcuserstate
+*.xcbkptlist
