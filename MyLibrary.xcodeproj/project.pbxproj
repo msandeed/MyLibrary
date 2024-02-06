@@ -20,6 +20,11 @@
 		7F01E4202B70458300E192FD /* FlexibleGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E4182B70458200E192FD /* FlexibleGrid.swift */; };
 		7F01E4212B70458300E192FD /* HeadshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E4192B70458200E192FD /* HeadshotView.swift */; };
 		7F01E4232B7055A600E192FD /* AsyncPublisherExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E4222B7055A600E192FD /* AsyncPublisherExample.swift */; };
+		7F01E4262B71924D00E192FD /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E4252B71924D00E192FD /* Coordinator.swift */; };
+		7F01E4282B7197E800E192FD /* DummyViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E4272B7197E800E192FD /* DummyViews.swift */; };
+		7FB7AC812B71A4E500AC8857 /* CoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB7AC802B71A4E500AC8857 /* CoordinatorView.swift */; };
+		7FB7AC832B729E5400AC8857 /* BooksFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB7AC822B729E5400AC8857 /* BooksFlowCoordinator.swift */; };
+		7FB7AC852B72ABB000AC8857 /* PagesAndSheets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB7AC842B72ABB000AC8857 /* PagesAndSheets.swift */; };
 		7FBFE22B29546F710028FFA1 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBFE22A29546F710028FFA1 /* ViewModelType.swift */; };
 		7FBFE22D29546F970028FFA1 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBFE22C29546F970028FFA1 /* BaseView.swift */; };
 		7FBFE2312959084C0028FFA1 /* Usecases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBFE2302959084C0028FFA1 /* Usecases.swift */; };
@@ -55,6 +60,11 @@
 		7F01E4182B70458200E192FD /* FlexibleGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexibleGrid.swift; sourceTree = "<group>"; };
 		7F01E4192B70458200E192FD /* HeadshotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeadshotView.swift; sourceTree = "<group>"; };
 		7F01E4222B7055A600E192FD /* AsyncPublisherExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncPublisherExample.swift; sourceTree = "<group>"; };
+		7F01E4252B71924D00E192FD /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		7F01E4272B7197E800E192FD /* DummyViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViews.swift; sourceTree = "<group>"; };
+		7FB7AC802B71A4E500AC8857 /* CoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorView.swift; sourceTree = "<group>"; };
+		7FB7AC822B729E5400AC8857 /* BooksFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksFlowCoordinator.swift; sourceTree = "<group>"; };
+		7FB7AC842B72ABB000AC8857 /* PagesAndSheets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesAndSheets.swift; sourceTree = "<group>"; };
 		7FBFE22A29546F710028FFA1 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		7FBFE22C29546F970028FFA1 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		7FBFE2302959084C0028FFA1 /* Usecases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usecases.swift; sourceTree = "<group>"; };
@@ -120,6 +130,17 @@
 				7F01E4192B70458200E192FD /* HeadshotView.swift */,
 			);
 			path = "UI Elements";
+			sourceTree = "<group>";
+		};
+		7F01E4242B71922E00E192FD /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				7F01E4252B71924D00E192FD /* Coordinator.swift */,
+				7F01E4272B7197E800E192FD /* DummyViews.swift */,
+				7FB7AC802B71A4E500AC8857 /* CoordinatorView.swift */,
+				7FB7AC842B72ABB000AC8857 /* PagesAndSheets.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		7FBFE22929546F600028FFA1 /* Base */ = {
@@ -225,6 +246,7 @@
 				7FBFE22E295907EE0028FFA1 /* Domain */,
 				D1B38EB72891EADB001FA9F7 /* ViewModels */,
 				D1B38EB62891EAD3001FA9F7 /* Views */,
+				7FB7AC822B729E5400AC8857 /* BooksFlowCoordinator.swift */,
 			);
 			path = Books;
 			sourceTree = "<group>";
@@ -257,6 +279,7 @@
 		D1B38EB82891EB46001FA9F7 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				7F01E4242B71922E00E192FD /* Coordinator */,
 				7FBFE236295CDE580028FFA1 /* DI */,
 				D1B38EB22891EA7B001FA9F7 /* NetworkManager */,
 			);
@@ -336,6 +359,7 @@
 			files = (
 				7F01E41E2B70458300E192FD /* UIConstants.swift in Sources */,
 				7FBFE23E295E52FA0028FFA1 /* PreviewHandler.swift in Sources */,
+				7F01E4262B71924D00E192FD /* Coordinator.swift in Sources */,
 				7F01E40F2B70457400E192FD /* FactoryPattern.swift in Sources */,
 				D1B38EC82891EC17001FA9F7 /* BookView.swift in Sources */,
 				7F01E4232B7055A600E192FD /* AsyncPublisherExample.swift in Sources */,
@@ -348,6 +372,7 @@
 				7FBFE23C295E525A0028FFA1 /* Mocks.swift in Sources */,
 				D1B38EC42891EB7E001FA9F7 /* BooksListViewModel.swift in Sources */,
 				7F01E4212B70458300E192FD /* HeadshotView.swift in Sources */,
+				7FB7AC812B71A4E500AC8857 /* CoordinatorView.swift in Sources */,
 				7FBFE2312959084C0028FFA1 /* Usecases.swift in Sources */,
 				D1B38EBF2891EB62001FA9F7 /* Extensions.swift in Sources */,
 				7FBFE235295CDE530028FFA1 /* Factory.swift in Sources */,
@@ -356,12 +381,15 @@
 				7F01E41F2B70458300E192FD /* ContactCard.swift in Sources */,
 				7FBFE238295CDE790028FFA1 /* Container.swift in Sources */,
 				D1B38EC22891EB74001FA9F7 /* Book.swift in Sources */,
+				7FB7AC852B72ABB000AC8857 /* PagesAndSheets.swift in Sources */,
 				D1B38EBD2891EB62001FA9F7 /* Utilities.swift in Sources */,
 				D1B38EA52891EA2A001FA9F7 /* MyLibraryApp.swift in Sources */,
 				7FBFE22B29546F710028FFA1 /* ViewModelType.swift in Sources */,
+				7FB7AC832B729E5400AC8857 /* BooksFlowCoordinator.swift in Sources */,
 				7F01E41C2B70458300E192FD /* Theory.swift in Sources */,
 				7F01E40E2B70457400E192FD /* ObserverPattern.swift in Sources */,
 				7FBFE22D29546F970028FFA1 /* BaseView.swift in Sources */,
+				7F01E4282B7197E800E192FD /* DummyViews.swift in Sources */,
 				D1B38EBE2891EB62001FA9F7 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -500,6 +528,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -528,6 +557,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

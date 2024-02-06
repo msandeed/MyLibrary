@@ -24,7 +24,7 @@ enum Book {
         var author: String
     }
     
-    struct BookItemViewModel: Identifiable {
+    struct BookItemViewModel: Identifiable, Hashable {
         var id: Int
         var title: String
         var subtitle: String

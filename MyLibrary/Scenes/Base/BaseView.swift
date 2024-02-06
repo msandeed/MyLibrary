@@ -7,14 +7,11 @@
 
 import SwiftUI
 
-final class Navigator: ObservableObject {
-    @Published var isActive = false
-    var destnationView: AnyView?
-}
 protocol BaseViewProtocol: View {
-    associatedtype ViewModel: ViewModelType
+    associatedtype VM: ViewModelType
+    associatedtype C: Coordinator
     
-    var navigator: Navigator { get }
-    var viewModel: ViewModel { get }
+    var viewModel: VM { get }
+    var coordinator: C { get }
 }
 

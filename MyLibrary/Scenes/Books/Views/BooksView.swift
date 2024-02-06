@@ -7,32 +7,30 @@
 
 import SwiftUI
 
-struct BooksView: BaseViewProtocol {
-    @ObservedObject var navigator = Navigator()
+struct BooksView<CoordinatorType: Coordinator>: BaseViewProtocol {
     @ObservedObject var viewModel: BooksListViewModel
+    var coordinator: CoordinatorType
     
-    init(viewModel: BooksListViewModel) {
+    init(viewModel: BooksListViewModel, coordinator: CoordinatorType) {
         self.viewModel = viewModel
+        self.coordinator = coordinator
     }
     
     var body: some View {
-        NavigationView {
-            List(viewModel.output.books) { book in
-                NavigationLink(destination: BookView(book: book)) {
-                    VStack(alignment: .leading) {
-                        Text("\(book.title)")
-                            .font(.headline)
-                            .bold()
-                        Text("\(book.subtitle)")
-                            .font(.subheadline)
-                    }.sheet(isPresented: $navigator.isActive) {
-                        Text("")
-                    }
-                }
+        List(viewModel.output.books) { book in
+            VStack(alignment: .leading) {
+                Text("\(book.title)")
+                    .font(.headline)
+                    .bold()
+                Text("\(book.subtitle)")
+                    .font(.subheadline)
             }
-            .onAppear {
-                viewModel.input.fetchTrigger.send(())
+            .onTapGesture {
+                coordinator.push(.singleBook(book: book))
             }
+        }
+        .onAppear {
+            viewModel.input.fetchTrigger.send(())
         }
     }
 }
@@ -41,6 +39,6 @@ struct BooksView_Previews: PreviewProvider {
     static var previews: some View {
         UsecasesContainer.booksUsecase.register { MockedBooksUseCase() }
         
-        return BooksView(viewModel: BooksListViewModel())
+        return BooksView(viewModel: BooksListViewModel(), coordinator: ConcreteCoordinator())
     }
 }

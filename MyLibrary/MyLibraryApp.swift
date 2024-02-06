@@ -11,7 +11,7 @@ import SwiftUI
 struct MyLibraryApp: App {
     var body: some Scene {
         WindowGroup {
-            AsyncStreamExample()
+            CoordinatorView(coordinator: ConcreteCoordinator(), homePage: .blue)
 //            BooksView(viewModel: BooksListViewModel())
         }
     }
