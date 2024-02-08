@@ -41,7 +41,7 @@ struct CoordinatorView<CoordinatorType: Coordinator>: View where CoordinatorType
 #if DEBUG
 struct CoordinatorView_Previews: PreviewProvider {
     static var previews: some View {
-        CoordinatorView(coordinator: ConcreteCoordinator(), homePage: .alien)
+        CoordinatorView(coordinator: ExampleCoordinator(), homePage: .alien)
     }
 }
 #endif

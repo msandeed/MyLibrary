@@ -41,6 +41,6 @@ struct BooksView_Previews: PreviewProvider {
     static var previews: some View {
         UsecasesContainer.booksUsecase.register { MockedBooksUseCase() }
         
-        return BooksView(viewModel: BooksListViewModel(), coordinator: ConcreteCoordinator())
+        return BooksView(viewModel: BooksListViewModel(), coordinator: BooksFlowCoordinator())
     }
 }
