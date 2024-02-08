@@ -12,6 +12,7 @@ struct MyLibraryApp: App {
     var body: some Scene {
         WindowGroup {
             CoordinatorView(coordinator: ConcreteCoordinator(), homePage: .blue)
+//            CoordinatorView(coordinator: BooksFlowCoordinator(), homePage: .books)
 //            BooksView(viewModel: BooksListViewModel())
         }
     }

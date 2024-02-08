@@ -85,7 +85,6 @@ class BooksListViewModel: ViewModelType {
                                                    subtitle: $0.author)
                 }
                 self.output.books = viewModels
-                print("BOOKS: \(self.output.books)")
             }
             .store(in: &subscriptions)
     }

@@ -18,20 +18,26 @@ struct BlueView<CoordinatorType: Coordinator>: BaseViewProtocol {
             Text("BLUE")
                 .foregroundStyle(.blue)
             List {
-                Button("Red") {
-                    coordinator.push(.red)
+                Section("Internal Views") {
+                    
+                    Button("Red") {
+                        coordinator.push(.red)
+                    }
+                    Button("Green") {
+                        coordinator.push(.green)
+                    }
+                    Button("Violet Sheet") {
+                        coordinator.present(.violet)
+                    }
+                    Button("Gray Full Screen Cover") {
+                        coordinator.present(.gray)
+                    }
                 }
-                Button("Green") {
-                    coordinator.push(.green)
-                }
-                Button("Violet Sheet") {
-                    coordinator.present(.violet)
-                }
-                Button("Gray Full Screen Cover") {
-                    coordinator.present(.gray)
-                }
-                Button("Push Books Flow") {
-                    coordinator.present(.books)
+                
+                Section("To Another Flow") {
+                    Button("Push Books Flow") {
+                        coordinator.present(Flow.books)
+                    }
                 }
             }
         }
@@ -137,7 +143,7 @@ class DummyViewModel: ViewModelType {
     let input: Input
     let output: Output
     private(set) var subscriptions: [AnyCancellable] = []
-
+    
     init() {
         input = .init()
         output = .init()
@@ -151,44 +157,4 @@ class DummyViewModel: ViewModelType {
     }
     
     func observeInputs() {}
-}
-
-// MARK: - Example Coordinator
-class ConcreteCoordinator: Coordinator, ObservableObject {
-    // MARK: -  Coordinator Variables
-    @Published var path = NavigationPath()  // Disclaimer: - iOS16 and up
-    @Published var sheet: Sheet?
-    @Published var fullScreenCover: FullScreenCover?
-    
-    // MARK: -  View Building
-    func build(page: Page) -> AnyView {
-        switch page {
-        case .blue:
-            return BlueView(viewModel: .init(), coordinator: self).asAnyView
-        case .green:
-            return GreenView(viewModel: .init(), coordinator: self).asAnyView
-        case .red:
-            return RedView(viewModel: .init(), coordinator: self).asAnyView
-        default:
-            fatalError("Page not included in this flow")
-        }
-    }
-    
-    func build(sheet: Sheet) -> AnyView {
-        switch sheet {
-        case .violet:
-            return VioletView(viewModel: .init(), coordinator: self).asAnyView
-        case .yellow:
-            return YellowView(viewModel: .init(), coordinator: self).asAnyView
-        case .books:
-            return CoordinatorView(coordinator: BooksFlowCoordinator(), homePage: .books).asAnyView
-        }
-    }
-    
-    func build(fullScreenCover: FullScreenCover) -> AnyView {
-        switch fullScreenCover {
-        case .gray:
-            return GrayView(viewModel: .init(), coordinator: self).asAnyView
-        }
-    }
 }

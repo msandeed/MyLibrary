@@ -17,16 +17,18 @@ struct BooksView<CoordinatorType: Coordinator>: BaseViewProtocol {
     }
     
     var body: some View {
-        List(viewModel.output.books) { book in
-            VStack(alignment: .leading) {
-                Text("\(book.title)")
-                    .font(.headline)
-                    .bold()
-                Text("\(book.subtitle)")
-                    .font(.subheadline)
-            }
-            .onTapGesture {
-                coordinator.push(.singleBook(book: book))
+        VStack {
+            List(viewModel.output.books) { book in
+                VStack(alignment: .leading) {
+                    Text("\(book.title)")
+                        .font(.headline)
+                        .bold()
+                    Text("\(book.subtitle)")
+                        .font(.subheadline)
+                }
+                .onTapGesture {
+                    coordinator.push(.singleBook(book: book))
+                }
             }
         }
         .onAppear {

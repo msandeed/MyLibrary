@@ -27,6 +27,14 @@ enum Page: Hashable {
     }
 }
 
+enum Flow: String, Identifiable {
+    case dummy, books
+    
+    var id: String {
+        self.rawValue
+    }
+}
+
 enum Sheet: String, Identifiable {
     case violet, yellow, books
     
