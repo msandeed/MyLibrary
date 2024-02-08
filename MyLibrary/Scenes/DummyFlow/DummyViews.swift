@@ -9,28 +9,26 @@ import SwiftUI
 import Combine
 
 // MARK: - Dummy Views
-struct BlueView<CoordinatorType: Coordinator>: BaseViewProtocol {
+struct AlienView<CoordinatorType: Coordinator>: BaseViewProtocol {
     var viewModel: DummyViewModel
     var coordinator: CoordinatorType
     
     var body: some View {
         VStack {
-            Text("BLUE")
-                .foregroundStyle(.blue)
+            Text("👽")
             List {
                 Section("Internal Views") {
-                    
-                    Button("Red") {
-                        coordinator.push(.red)
+                    Button("🐄 Page") {
+                        coordinator.push(.cow)
                     }
-                    Button("Green") {
-                        coordinator.push(.green)
+                    Button("🚙 Page") {
+                        coordinator.push(.car)
                     }
-                    Button("Violet Sheet") {
-                        coordinator.present(.violet)
+                    Button("❤️ Sheet") {
+                        coordinator.present(.heart)
                     }
-                    Button("Gray Full Screen Cover") {
-                        coordinator.present(.gray)
+                    Button("🚀 Full Screen Cover") {
+                        coordinator.present(.rocket)
                     }
                 }
                 
@@ -44,17 +42,16 @@ struct BlueView<CoordinatorType: Coordinator>: BaseViewProtocol {
     }
 }
 
-struct RedView<CoordinatorType: Coordinator>: BaseViewProtocol {
+struct CowView<CoordinatorType: Coordinator>: BaseViewProtocol {
     var viewModel: DummyViewModel
     var coordinator: CoordinatorType
     
     var body: some View {
         VStack {
-            Text("Red")
-                .foregroundStyle(.red)
+            Text("🐄")
             List {
-                Button("Green") {
-                    coordinator.push(.green)
+                Button("🚙 Page") {
+                    coordinator.push(.car)
                 }
                 Button("Pop") {
                     coordinator.pop()
@@ -64,14 +61,13 @@ struct RedView<CoordinatorType: Coordinator>: BaseViewProtocol {
     }
 }
 
-struct GreenView<CoordinatorType: Coordinator>: BaseViewProtocol {
+struct CarView<CoordinatorType: Coordinator>: BaseViewProtocol {
     var viewModel: DummyViewModel
     var coordinator: CoordinatorType
     
     var body: some View {
         VStack {
-            Text("Green")
-                .foregroundStyle(.green)
+            Text("🚙")
             List {
                 Button("Pop") {
                     coordinator.pop()
@@ -84,14 +80,14 @@ struct GreenView<CoordinatorType: Coordinator>: BaseViewProtocol {
     }
 }
 
-struct VioletView<CoordinatorType: Coordinator>: BaseViewProtocol {
+struct HeartView<CoordinatorType: Coordinator>: BaseViewProtocol {
     var viewModel: DummyViewModel
     var coordinator: CoordinatorType
     
     var body: some View {
         VStack {
-            Text("Violet")
-                .foregroundStyle(.purple)
+            Spacer()
+            Text("❤️")
             List {
                 Button("Dismiss") {
                     coordinator.dismissSheet()
@@ -101,14 +97,13 @@ struct VioletView<CoordinatorType: Coordinator>: BaseViewProtocol {
     }
 }
 
-struct YellowView<CoordinatorType: Coordinator>: BaseViewProtocol {
+struct MonkeyView<CoordinatorType: Coordinator>: BaseViewProtocol {
     var viewModel: DummyViewModel
     var coordinator: CoordinatorType
     
     var body: some View {
         VStack {
-            Text("Yellow")
-                .foregroundStyle(.yellow)
+            Text("🙈")
             List {
                 Button("Dismiss") {
                     coordinator.dismissSheet()
@@ -118,14 +113,13 @@ struct YellowView<CoordinatorType: Coordinator>: BaseViewProtocol {
     }
 }
 
-struct GrayView<CoordinatorType: Coordinator>: BaseViewProtocol {
+struct RocketView<CoordinatorType: Coordinator>: BaseViewProtocol {
     var viewModel: DummyViewModel
     var coordinator: CoordinatorType
     
     var body: some View {
         VStack {
-            Text("Gray")
-                .foregroundStyle(.gray)
+            Text("🚀")
             List {
                 Button("Dismiss") {
                     coordinator.dismissFullScreenCover()

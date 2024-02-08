@@ -8,15 +8,15 @@
 import Foundation
 
 enum Page: Hashable {
-    case blue, red, green, books, singleBook(book: Book.BookItemViewModel)
+    case alien, cow, car, books, singleBook(book: Book.BookItemViewModel)
     
     func hash(into hasher: inout Hasher) {
         switch self {
-        case .blue:
+        case .alien:
             hasher.combine(0)
-        case .red:
+        case .cow:
             hasher.combine(1)
-        case .green:
+        case .car:
             hasher.combine(2)
         case .books:
             hasher.combine(3)
@@ -36,7 +36,7 @@ enum Flow: String, Identifiable {
 }
 
 enum Sheet: String, Identifiable {
-    case violet, yellow, books
+    case monkey, heart, books
     
     var id: String {
         self.rawValue
@@ -44,7 +44,7 @@ enum Sheet: String, Identifiable {
 }
 
 enum FullScreenCover: String, Identifiable {
-    case gray
+    case rocket
     
     var id: String {
         self.rawValue
