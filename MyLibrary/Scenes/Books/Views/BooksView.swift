@@ -31,7 +31,7 @@ struct BooksView<CoordinatorType: Coordinator>: BaseViewProtocol {
                 }
             }
         }
-        .onAppear {
+        .refreshable {
             viewModel.input.fetchTrigger.send(())
         }
     }

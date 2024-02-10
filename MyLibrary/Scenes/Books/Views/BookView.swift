@@ -21,15 +21,17 @@ struct BookView<CoordinatorType: Coordinator>: BaseViewProtocol {
     var body: some View {
         VStack(alignment: .center, spacing: 20) {
             Text(book.title)
-                .font(.headline)
+                .multilineTextAlignment(.center)
+                .font(.title)
                 .bold()
             Text(book.subtitle)
-                .font(.subheadline)
-            Spacer()
+                .multilineTextAlignment(.center)
+                .font(.header)
             Button("Return") {
                 coordinator.pop()
             }
         }
+        .padding()
     }
 }
 

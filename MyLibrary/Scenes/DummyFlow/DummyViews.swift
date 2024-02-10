@@ -16,6 +16,8 @@ struct AlienView<CoordinatorType: Coordinator>: BaseViewProtocol {
     var body: some View {
         VStack {
             Text("👽")
+                .font(.system(size: 100))
+                .frame(maxHeight: Constants.height / 8)
             List {
                 Section("Internal Views") {
                     Button("🐄 Page") {
@@ -33,7 +35,7 @@ struct AlienView<CoordinatorType: Coordinator>: BaseViewProtocol {
                 }
                 
                 Section("To Another Flow") {
-                    Button("Push Books Flow") {
+                    Button("Present Books Flow") {
                         coordinator.present(Flow.books)
                     }
                 }
@@ -49,6 +51,8 @@ struct CowView<CoordinatorType: Coordinator>: BaseViewProtocol {
     var body: some View {
         VStack {
             Text("🐄")
+                .font(.system(size: 100))
+                .frame(maxHeight: Constants.height / 8)
             List {
                 Button("🚙 Page") {
                     coordinator.push(.car)
@@ -68,6 +72,8 @@ struct CarView<CoordinatorType: Coordinator>: BaseViewProtocol {
     var body: some View {
         VStack {
             Text("🚙")
+                .font(.system(size: 100))
+                .frame(maxHeight: Constants.height / 8)
             List {
                 Button("Pop") {
                     coordinator.pop()
@@ -88,6 +94,8 @@ struct HeartView<CoordinatorType: Coordinator>: BaseViewProtocol {
         VStack {
             Spacer()
             Text("❤️")
+                .font(.system(size: 100))
+                .frame(maxHeight: Constants.height / 8)
             List {
                 Button("Dismiss") {
                     coordinator.dismissSheet()
@@ -104,6 +112,8 @@ struct MonkeyView<CoordinatorType: Coordinator>: BaseViewProtocol {
     var body: some View {
         VStack {
             Text("🙈")
+                .font(.system(size: 100))
+                .frame(maxHeight: Constants.height / 8)
             List {
                 Button("Dismiss") {
                     coordinator.dismissSheet()
@@ -120,6 +130,8 @@ struct RocketView<CoordinatorType: Coordinator>: BaseViewProtocol {
     var body: some View {
         VStack {
             Text("🚀")
+                .font(.system(size: 100))
+                .frame(maxHeight: Constants.height / 8)
             List {
                 Button("Dismiss") {
                     coordinator.dismissFullScreenCover()

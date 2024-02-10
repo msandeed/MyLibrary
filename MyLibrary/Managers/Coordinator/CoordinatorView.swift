@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct CoordinatorView<CoordinatorType: Coordinator>: View where CoordinatorType: ObservableObject {
-    @StateObject private var coordinator: CoordinatorType
+    @ObservedObject private var coordinator: CoordinatorType
     private var homePage: Page
     
     init(coordinator: CoordinatorType, homePage: Page) {
-        print("CoordinatorView initialized with homePage: \(homePage) and coordinator: \(coordinator)")
-        self._coordinator = StateObject(wrappedValue: coordinator)
+        print("🧭 CoordinatorView initialized with homePage: \(homePage) and coordinator: \(coordinator)")
+        self._coordinator = ObservedObject(wrappedValue: coordinator)
         self.homePage = homePage
     }
     

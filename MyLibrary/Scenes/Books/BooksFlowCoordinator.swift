@@ -20,7 +20,7 @@ class BooksFlowCoordinator: Coordinator, ObservableObject {
     
     init() {
         $path.sink { path in
-            print("BooksFlowCoordinator path count is: \(path.count)")
+            print("🧭 BooksFlowCoordinator path count is: \(path.count)")
         }.store(in: &subscriptions)
     }
     
@@ -28,13 +28,13 @@ class BooksFlowCoordinator: Coordinator, ObservableObject {
     func build(page: Page) -> AnyView {
         switch page {
         case .books:
-            print("BooksFlowCoordinator: BooksView")
-            return BooksView(viewModel: .init(), coordinator: self).asAnyView
+            print("🧭 BooksFlowCoordinator: BooksView")
+            return booksView
         case .singleBook(let book):
-            print("BooksFlowCoordinator: BookView")
+            print("🧭 BooksFlowCoordinator: BookView")
             return BookView(book: book, viewModel: .init(), coordinator: self).asAnyView
         default:
-            fatalError("Page not included in this flow")
+            fatalError("🧭 Page not included in this flow")
         }
     }
     
@@ -49,4 +49,7 @@ class BooksFlowCoordinator: Coordinator, ObservableObject {
     func build(fullScreenCover: FullScreenCover) -> AnyView {
         EmptyView().asAnyView
     }
+    
+    // MARK: - Lazy Views
+    private lazy var booksView = BooksView(viewModel: .init(), coordinator: self).asAnyView
 }

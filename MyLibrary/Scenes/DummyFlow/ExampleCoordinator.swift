@@ -20,7 +20,7 @@ class ExampleCoordinator: Coordinator, ObservableObject {
     
     init() {
         $path.sink { path in
-            print("ConcreteCoordinator path count is: \(path.count)")
+            print("🧭 ConcreteCoordinator path count is: \(path.count)")
         }.store(in: &subscriptions)
     }
     
@@ -28,16 +28,16 @@ class ExampleCoordinator: Coordinator, ObservableObject {
     func build(page: Page) -> AnyView {
         switch page {
         case .alien:
-            print("ConcreteCoordinator: AlienView")
-            return AlienView(viewModel: .init(), coordinator: self).asAnyView
+            print("🧭 ConcreteCoordinator: AlienView")
+            return alienView
         case .car:
-            print("ConcreteCoordinator: CarView")
-            return CarView(viewModel: .init(), coordinator: self).asAnyView
+            print("🧭 ConcreteCoordinator: CarView")
+            return carView
         case .cow:
-            print("ConcreteCoordinator: CowView")
-            return CowView(viewModel: .init(), coordinator: self).asAnyView
+            print("🧭 ConcreteCoordinator: CowView")
+            return cowView
         default:
-            fatalError("Page not included in this flow")
+            fatalError("🧭 Page not included in this flow")
         }
     }
     
@@ -46,25 +46,27 @@ class ExampleCoordinator: Coordinator, ObservableObject {
         case .books:
             CoordinatorView(coordinator: BooksFlowCoordinator(), homePage: .books)
         default:
-            fatalError("Cannot push this Flow from ConcreteCoordinator")
+            fatalError("🧭 Cannot push this Flow from ConcreteCoordinator")
         }
         
         return VStack {
             coordinatedFlow
-            Button("Back To Home") {
+            Button("🧭 Back To Home") {
                 self.dismissFlow()
             }
-        }.asAnyView
+        }
+        .background(.orange)
+        .asAnyView
     }
     
     func build(sheet: Sheet) -> AnyView {
         switch sheet {
         case .heart:
-            return HeartView(viewModel: .init(), coordinator: self).asAnyView
+            return heartView
         case .monkey:
-            return MonkeyView(viewModel: .init(), coordinator: self).asAnyView
+            return monkeyView
         case .books:
-            print("Concrete Coordinator: Books as Sheet")
+            print("🧭 Concrete Coordinator: Books as Sheet")
             return CoordinatorView(coordinator: BooksFlowCoordinator(), homePage: .books).asAnyView
         }
     }
@@ -75,4 +77,12 @@ class ExampleCoordinator: Coordinator, ObservableObject {
             return RocketView(viewModel: .init(), coordinator: self).asAnyView
         }
     }
+    
+    // MARK: - Lazy Views
+    lazy var alienView = AlienView(viewModel: .init(), coordinator: self).asAnyView
+    lazy var carView = CarView(viewModel: .init(), coordinator: self).asAnyView
+    lazy var cowView = CowView(viewModel: .init(), coordinator: self).asAnyView
+    lazy var heartView = HeartView(viewModel: .init(), coordinator: self).asAnyView
+    lazy var monkeyView = MonkeyView(viewModel: .init(), coordinator: self).asAnyView
+    lazy var rocketView = RocketView(viewModel: .init(), coordinator: self).asAnyView
 }

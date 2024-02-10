@@ -45,6 +45,8 @@ class BooksListViewModel: ViewModelType {
         subscriptions.append(self.output.objectWillChange.receive(on: DispatchQueue.main).sink(receiveValue: { [weak self] _ in
             self?.objectWillChange.send()
         }))
+        
+        fetchBooks()
     }
     
 // MARK: - Binding
@@ -61,7 +63,7 @@ class BooksListViewModel: ViewModelType {
             .sink { (completion) in
                 switch completion {
                 case .finished:
-                    print("Books Retrieved Successfully")
+                    print("✅ Books Retrieved Successfully")
                 case .failure(let error):
                     // Some of those could be handled in lower layers.. UseCase or NetworkService. For now, we're bubbling them all up to ViewModel
                     switch error {
