@@ -10,7 +10,7 @@ import Combine
 
 // MARK: - Dummy Views
 struct AlienView<CoordinatorType: Coordinator>: BaseViewProtocol {
-    var viewModel: DummyViewModel
+    var viewModel: DummyViewModel = .init()
     var coordinator: CoordinatorType
     
     var body: some View {
@@ -45,7 +45,7 @@ struct AlienView<CoordinatorType: Coordinator>: BaseViewProtocol {
 }
 
 struct CowView<CoordinatorType: Coordinator>: BaseViewProtocol {
-    var viewModel: DummyViewModel
+    var viewModel: DummyViewModel = .init()
     var coordinator: CoordinatorType
     
     var body: some View {
@@ -66,7 +66,7 @@ struct CowView<CoordinatorType: Coordinator>: BaseViewProtocol {
 }
 
 struct CarView<CoordinatorType: Coordinator>: BaseViewProtocol {
-    var viewModel: DummyViewModel
+    var viewModel: DummyViewModel = .init()
     var coordinator: CoordinatorType
     
     var body: some View {
@@ -87,7 +87,7 @@ struct CarView<CoordinatorType: Coordinator>: BaseViewProtocol {
 }
 
 struct HeartView<CoordinatorType: Coordinator>: BaseViewProtocol {
-    var viewModel: DummyViewModel
+    var viewModel: DummyViewModel = .init()
     var coordinator: CoordinatorType
     
     var body: some View {
@@ -106,7 +106,7 @@ struct HeartView<CoordinatorType: Coordinator>: BaseViewProtocol {
 }
 
 struct MonkeyView<CoordinatorType: Coordinator>: BaseViewProtocol {
-    var viewModel: DummyViewModel
+    var viewModel: DummyViewModel = .init()
     var coordinator: CoordinatorType
     
     var body: some View {
@@ -124,7 +124,7 @@ struct MonkeyView<CoordinatorType: Coordinator>: BaseViewProtocol {
 }
 
 struct RocketView<CoordinatorType: Coordinator>: BaseViewProtocol {
-    var viewModel: DummyViewModel
+    var viewModel: DummyViewModel = .init()
     var coordinator: CoordinatorType
     
     var body: some View {

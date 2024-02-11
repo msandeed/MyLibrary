@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct BooksView<CoordinatorType: Coordinator>: BaseViewProtocol {
-    @ObservedObject var viewModel: BooksListViewModel
+    @StateObject var viewModel: BooksListViewModel = .init()
     var coordinator: CoordinatorType
     
-    init(viewModel: BooksListViewModel, coordinator: CoordinatorType) {
-        self.viewModel = viewModel
+    init(coordinator: CoordinatorType) {
         self.coordinator = coordinator
     }
     
@@ -41,6 +40,6 @@ struct BooksView_Previews: PreviewProvider {
     static var previews: some View {
         UsecasesContainer.booksUsecase.register { MockedBooksUseCase() }
         
-        return BooksView(viewModel: BooksListViewModel(), coordinator: BooksFlowCoordinator())
+        return BooksView(coordinator: BooksFlowCoordinator())
     }
 }

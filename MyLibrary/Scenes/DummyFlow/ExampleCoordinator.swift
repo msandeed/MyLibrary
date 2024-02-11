@@ -79,10 +79,10 @@ class ExampleCoordinator: Coordinator, ObservableObject {
     }
     
     // MARK: - Lazy Views
-    lazy var alienView = AlienView(viewModel: .init(), coordinator: self).asAnyView
-    lazy var carView = CarView(viewModel: .init(), coordinator: self).asAnyView
-    lazy var cowView = CowView(viewModel: .init(), coordinator: self).asAnyView
-    lazy var heartView = HeartView(viewModel: .init(), coordinator: self).asAnyView
-    lazy var monkeyView = MonkeyView(viewModel: .init(), coordinator: self).asAnyView
-    lazy var rocketView = RocketView(viewModel: .init(), coordinator: self).asAnyView
+    lazy var alienView = AlienView(coordinator: self).asAnyView
+    lazy var carView = CarView(coordinator: self).asAnyView
+    lazy var cowView = CowView(coordinator: self).asAnyView
+    lazy var heartView = HeartView(coordinator: self).asAnyView
+    lazy var monkeyView = MonkeyView(coordinator: self).asAnyView
+    lazy var rocketView = RocketView(coordinator: self).asAnyView
 }

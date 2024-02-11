@@ -32,7 +32,7 @@ class BooksFlowCoordinator: Coordinator, ObservableObject {
             return booksView
         case .singleBook(let book):
             print("🧭 BooksFlowCoordinator: BookView")
-            return BookView(book: book, viewModel: .init(), coordinator: self).asAnyView
+            return BookView(book: book, coordinator: self).asAnyView
         default:
             fatalError("🧭 Page not included in this flow")
         }
@@ -51,5 +51,5 @@ class BooksFlowCoordinator: Coordinator, ObservableObject {
     }
     
     // MARK: - Lazy Views
-    private lazy var booksView = BooksView(viewModel: .init(), coordinator: self).asAnyView
+    private lazy var booksView = BooksView(coordinator: self).asAnyView
 }

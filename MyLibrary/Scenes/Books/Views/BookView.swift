@@ -9,12 +9,11 @@ import SwiftUI
 
 struct BookView<CoordinatorType: Coordinator>: BaseViewProtocol {
     var book: Book.BookItemViewModel
-    @ObservedObject var viewModel: DummyViewModel
+    @ObservedObject var viewModel: DummyViewModel = .init()
     var coordinator: CoordinatorType
     
-    init(book: Book.BookItemViewModel, viewModel: DummyViewModel, coordinator: CoordinatorType) {
+    init(book: Book.BookItemViewModel, coordinator: CoordinatorType) {
         self.book = book
-        self.viewModel = viewModel
         self.coordinator = coordinator
     }
     
@@ -38,7 +37,6 @@ struct BookView<CoordinatorType: Coordinator>: BaseViewProtocol {
 struct BookView_Previews: PreviewProvider {
     static var previews: some View {
         BookView(book: Book.BookItemViewModel(id: 0, title: "Fake Book", subtitle: "Fake Author"),
-                 viewModel: .init(),
                  coordinator: BooksFlowCoordinator())
     }
 }
