@@ -26,6 +26,7 @@
 		7FB7AC832B729E5400AC8857 /* BooksFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB7AC822B729E5400AC8857 /* BooksFlowCoordinator.swift */; };
 		7FB7AC852B72ABB000AC8857 /* PagesAndSheets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB7AC842B72ABB000AC8857 /* PagesAndSheets.swift */; };
 		7FB7AC882B72F19C00AC8857 /* ExampleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB7AC872B72F19C00AC8857 /* ExampleCoordinator.swift */; };
+		7FB7AC8D2B79807C00AC8857 /* FacadePattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB7AC8C2B79807C00AC8857 /* FacadePattern.swift */; };
 		7FBFE22B29546F710028FFA1 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBFE22A29546F710028FFA1 /* ViewModelType.swift */; };
 		7FBFE22D29546F970028FFA1 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBFE22C29546F970028FFA1 /* BaseView.swift */; };
 		7FBFE2312959084C0028FFA1 /* Usecases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBFE2302959084C0028FFA1 /* Usecases.swift */; };
@@ -67,6 +68,7 @@
 		7FB7AC822B729E5400AC8857 /* BooksFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksFlowCoordinator.swift; sourceTree = "<group>"; };
 		7FB7AC842B72ABB000AC8857 /* PagesAndSheets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesAndSheets.swift; sourceTree = "<group>"; };
 		7FB7AC872B72F19C00AC8857 /* ExampleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleCoordinator.swift; sourceTree = "<group>"; };
+		7FB7AC8C2B79807C00AC8857 /* FacadePattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacadePattern.swift; sourceTree = "<group>"; };
 		7FBFE22A29546F710028FFA1 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		7FBFE22C29546F970028FFA1 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		7FBFE2302959084C0028FFA1 /* Usecases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usecases.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				7F01E4092B70457400E192FD /* DecoratorPattern.swift */,
 				7F01E40A2B70457400E192FD /* ObserverPattern.swift */,
 				7F01E40B2B70457400E192FD /* FactoryPattern.swift */,
+				7FB7AC8C2B79807C00AC8857 /* FacadePattern.swift */,
 			);
 			path = Patterns;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				7F01E4202B70458300E192FD /* FlexibleGrid.swift in Sources */,
 				7F01E41F2B70458300E192FD /* ContactCard.swift in Sources */,
 				7FBFE238295CDE790028FFA1 /* Container.swift in Sources */,
+				7FB7AC8D2B79807C00AC8857 /* FacadePattern.swift in Sources */,
 				D1B38EC22891EB74001FA9F7 /* Book.swift in Sources */,
 				7FB7AC852B72ABB000AC8857 /* PagesAndSheets.swift in Sources */,
 				D1B38EBD2891EB62001FA9F7 /* Utilities.swift in Sources */,
