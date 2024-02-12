@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import Combine
 
-class BooksFlowCoordinator: Coordinator, ObservableObject {
+class BooksFlowCoordinator: Navigator, ObservableObject {
     // MARK: -  Coordinator Variables
     @Published var path = NavigationPath()  // Disclaimer: - iOS16 and up
     @Published var sheet: Sheet?

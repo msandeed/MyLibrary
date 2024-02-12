@@ -42,11 +42,3 @@ class ConcreteDispatcherB: AbstractDispatcher {
         return ConcreteProductB.init()
     }
 }
-
-//* Other ones to come
-
-// Singleton Pattern
-
-// Coordinator for Navigation
-
-//*

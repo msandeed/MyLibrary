@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CoordinatorView<CoordinatorType: Coordinator>: View where CoordinatorType: ObservableObject {
+struct CoordinatorView<CoordinatorType: Navigator>: View where CoordinatorType: ObservableObject {
     @ObservedObject private var coordinator: CoordinatorType
     private var homePage: Page
     

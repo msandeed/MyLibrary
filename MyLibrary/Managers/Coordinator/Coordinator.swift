@@ -25,14 +25,16 @@ protocol Coordinator: AnyObject {
     func dismissSheet()
     func dismissFullScreenCover()
     func dismissFlow()
-    
+}
+
+protocol Navigator: Coordinator {
     func build(page: Page) -> AnyView
     func build(flow: Flow) -> AnyView
     func build(sheet: Sheet) -> AnyView
     func build(fullScreenCover: FullScreenCover) -> AnyView
 }
 
-extension Coordinator {
+extension Navigator {
     func push(_ page: Page) {
         print("🧭 Appending page: \(page) to stack")
         path.append(page)
