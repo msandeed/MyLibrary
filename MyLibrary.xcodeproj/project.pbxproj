@@ -27,6 +27,9 @@
 		7FB7AC852B72ABB000AC8857 /* PagesAndSheets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB7AC842B72ABB000AC8857 /* PagesAndSheets.swift */; };
 		7FB7AC882B72F19C00AC8857 /* ExampleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB7AC872B72F19C00AC8857 /* ExampleCoordinator.swift */; };
 		7FB7AC8D2B79807C00AC8857 /* FacadePattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB7AC8C2B79807C00AC8857 /* FacadePattern.swift */; };
+		7FB7AC8F2B7A846100AC8857 /* AdapterPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB7AC8E2B7A846100AC8857 /* AdapterPattern.swift */; };
+		7FB7AC912B7A854B00AC8857 /* MementoPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB7AC902B7A854B00AC8857 /* MementoPattern.swift */; };
+		7FB7AC932B7A85DA00AC8857 /* Theory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB7AC922B7A85DA00AC8857 /* Theory.swift */; };
 		7FBFE22B29546F710028FFA1 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBFE22A29546F710028FFA1 /* ViewModelType.swift */; };
 		7FBFE22D29546F970028FFA1 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBFE22C29546F970028FFA1 /* BaseView.swift */; };
 		7FBFE2312959084C0028FFA1 /* Usecases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBFE2302959084C0028FFA1 /* Usecases.swift */; };
@@ -69,6 +72,9 @@
 		7FB7AC842B72ABB000AC8857 /* PagesAndSheets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesAndSheets.swift; sourceTree = "<group>"; };
 		7FB7AC872B72F19C00AC8857 /* ExampleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleCoordinator.swift; sourceTree = "<group>"; };
 		7FB7AC8C2B79807C00AC8857 /* FacadePattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacadePattern.swift; sourceTree = "<group>"; };
+		7FB7AC8E2B7A846100AC8857 /* AdapterPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdapterPattern.swift; sourceTree = "<group>"; };
+		7FB7AC902B7A854B00AC8857 /* MementoPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MementoPattern.swift; sourceTree = "<group>"; };
+		7FB7AC922B7A85DA00AC8857 /* Theory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theory.swift; sourceTree = "<group>"; };
 		7FBFE22A29546F710028FFA1 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		7FBFE22C29546F970028FFA1 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		7FBFE2302959084C0028FFA1 /* Usecases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usecases.swift; sourceTree = "<group>"; };
@@ -110,6 +116,9 @@
 				7F01E40A2B70457400E192FD /* ObserverPattern.swift */,
 				7F01E40B2B70457400E192FD /* FactoryPattern.swift */,
 				7FB7AC8C2B79807C00AC8857 /* FacadePattern.swift */,
+				7FB7AC8E2B7A846100AC8857 /* AdapterPattern.swift */,
+				7FB7AC902B7A854B00AC8857 /* MementoPattern.swift */,
+				7FB7AC922B7A85DA00AC8857 /* Theory.swift */,
 			);
 			path = Patterns;
 			sourceTree = "<group>";
@@ -247,8 +256,8 @@
 		D1B38EB32891EA89001FA9F7 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				7FB7AC862B72F15500AC8857 /* DummyFlow */,
 				7FBFE22929546F600028FFA1 /* Base */,
+				7FB7AC862B72F15500AC8857 /* DummyFlow */,
 				D1B38EB42891EAB8001FA9F7 /* Books */,
 			);
 			path = Scenes;
@@ -377,6 +386,7 @@
 				7F01E40F2B70457400E192FD /* FactoryPattern.swift in Sources */,
 				D1B38EC82891EC17001FA9F7 /* BookView.swift in Sources */,
 				7F01E4232B7055A600E192FD /* AsyncPublisherExample.swift in Sources */,
+				7FB7AC8F2B7A846100AC8857 /* AdapterPattern.swift in Sources */,
 				D1B38EC02891EB62001FA9F7 /* NetworkService.swift in Sources */,
 				7F01E40C2B70457400E192FD /* DependencyInjection.swift in Sources */,
 				7F01E41D2B70458300E192FD /* TaskGroupExample.swift in Sources */,
@@ -398,12 +408,14 @@
 				7FB7AC8D2B79807C00AC8857 /* FacadePattern.swift in Sources */,
 				D1B38EC22891EB74001FA9F7 /* Book.swift in Sources */,
 				7FB7AC852B72ABB000AC8857 /* PagesAndSheets.swift in Sources */,
+				7FB7AC912B7A854B00AC8857 /* MementoPattern.swift in Sources */,
 				D1B38EBD2891EB62001FA9F7 /* Utilities.swift in Sources */,
 				D1B38EA52891EA2A001FA9F7 /* MyLibraryApp.swift in Sources */,
 				7FBFE22B29546F710028FFA1 /* ViewModelType.swift in Sources */,
 				7FB7AC832B729E5400AC8857 /* BooksFlowCoordinator.swift in Sources */,
 				7F01E41C2B70458300E192FD /* Theory.swift in Sources */,
 				7F01E40E2B70457400E192FD /* ObserverPattern.swift in Sources */,
+				7FB7AC932B7A85DA00AC8857 /* Theory.swift in Sources */,
 				7FBFE22D29546F970028FFA1 /* BaseView.swift in Sources */,
 				7F01E4282B7197E800E192FD /* DummyViews.swift in Sources */,
 				D1B38EBE2891EB62001FA9F7 /* Constants.swift in Sources */,
