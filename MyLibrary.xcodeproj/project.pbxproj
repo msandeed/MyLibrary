@@ -128,9 +128,9 @@
 			children = (
 				7F01E4112B70458200E192FD /* WithContinuationExample.swift */,
 				7F01E4122B70458200E192FD /* AsyncStreamExample.swift */,
-				7F01E4132B70458200E192FD /* Theory.swift */,
 				7F01E4142B70458200E192FD /* TaskGroupExample.swift */,
 				7F01E4222B7055A600E192FD /* AsyncPublisherExample.swift */,
+				7F01E4132B70458200E192FD /* Theory.swift */,
 			);
 			path = Concurrency;
 			sourceTree = "<group>";
