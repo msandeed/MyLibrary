@@ -13,7 +13,7 @@
 		7F01E40F2B70457400E192FD /* FactoryPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E40B2B70457400E192FD /* FactoryPattern.swift */; };
 		7F01E41A2B70458200E192FD /* WithContinuationExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E4112B70458200E192FD /* WithContinuationExample.swift */; };
 		7F01E41B2B70458200E192FD /* AsyncStreamExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E4122B70458200E192FD /* AsyncStreamExample.swift */; };
-		7F01E41C2B70458300E192FD /* Theory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E4132B70458200E192FD /* Theory.swift */; };
+		7F01E41C2B70458300E192FD /* ConcurrencyTheory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E4132B70458200E192FD /* ConcurrencyTheory.swift */; };
 		7F01E41D2B70458300E192FD /* TaskGroupExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E4142B70458200E192FD /* TaskGroupExample.swift */; };
 		7F01E41E2B70458300E192FD /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E4162B70458200E192FD /* UIConstants.swift */; };
 		7F01E41F2B70458300E192FD /* ContactCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E4172B70458200E192FD /* ContactCard.swift */; };
@@ -58,7 +58,7 @@
 		7F01E40B2B70457400E192FD /* FactoryPattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FactoryPattern.swift; sourceTree = "<group>"; };
 		7F01E4112B70458200E192FD /* WithContinuationExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithContinuationExample.swift; sourceTree = "<group>"; };
 		7F01E4122B70458200E192FD /* AsyncStreamExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncStreamExample.swift; sourceTree = "<group>"; };
-		7F01E4132B70458200E192FD /* Theory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theory.swift; sourceTree = "<group>"; };
+		7F01E4132B70458200E192FD /* ConcurrencyTheory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConcurrencyTheory.swift; sourceTree = "<group>"; };
 		7F01E4142B70458200E192FD /* TaskGroupExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskGroupExample.swift; sourceTree = "<group>"; };
 		7F01E4162B70458200E192FD /* UIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
 		7F01E4172B70458200E192FD /* ContactCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCard.swift; sourceTree = "<group>"; };
@@ -130,7 +130,7 @@
 				7F01E4122B70458200E192FD /* AsyncStreamExample.swift */,
 				7F01E4142B70458200E192FD /* TaskGroupExample.swift */,
 				7F01E4222B7055A600E192FD /* AsyncPublisherExample.swift */,
-				7F01E4132B70458200E192FD /* Theory.swift */,
+				7F01E4132B70458200E192FD /* ConcurrencyTheory.swift */,
 			);
 			path = Concurrency;
 			sourceTree = "<group>";
@@ -413,7 +413,7 @@
 				D1B38EA52891EA2A001FA9F7 /* MyLibraryApp.swift in Sources */,
 				7FBFE22B29546F710028FFA1 /* ViewModelType.swift in Sources */,
 				7FB7AC832B729E5400AC8857 /* BooksFlowCoordinator.swift in Sources */,
-				7F01E41C2B70458300E192FD /* Theory.swift in Sources */,
+				7F01E41C2B70458300E192FD /* ConcurrencyTheory.swift in Sources */,
 				7F01E40E2B70457400E192FD /* ObserverPattern.swift in Sources */,
 				7FB7AC932B7A85DA00AC8857 /* Theory.swift in Sources */,
 				7FBFE22D29546F970028FFA1 /* BaseView.swift in Sources */,

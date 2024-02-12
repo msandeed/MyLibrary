@@ -23,7 +23,6 @@ class TaskGroupExampleDataProvider {
         }
     }
     
-    // Not as scalable as TaskGroup
     func downloadImagesWithTaskGroup() async throws -> [UIImage] {
         var images: [UIImage] = []
         return try await withThrowingTaskGroup(of: UIImage?.self) { group in
