@@ -39,14 +39,17 @@ class BooksFlowCoordinator: Navigator, ObservableObject {
     }
     
     func build(flow: Flow) -> AnyView {
+        // TODO: Handle elegantly
         EmptyView().asAnyView
     }
     
     func build(sheet: Sheet) -> AnyView {
+        // TODO: Handle elegantly
         EmptyView().asAnyView
     }
     
     func build(fullScreenCover: FullScreenCover) -> AnyView {
+        // TODO: Handle elegantly
         EmptyView().asAnyView
     }
     

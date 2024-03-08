@@ -82,9 +82,10 @@ class BooksListViewModel: ViewModelType {
                     }
                 }
             } receiveValue: { (books) in
-                let viewModels = books.map { Book.BookItemViewModel(id: $0.id,
-                                                   title: $0.title.trimmingCharacters(in: .whitespaces),
-                                                   subtitle: $0.author)
+                let viewModels = books.map {
+                    Book.BookItemViewModel(id: $0.id,
+                                           title: $0.title.trimmingCharacters(in: .whitespaces),
+                                           subtitle: $0.author)
                 }
                 self.output.books = viewModels
             }
