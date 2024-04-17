@@ -28,7 +28,7 @@ struct ContactCard: View {
                 HeadshotView(imageName: "person",
                              diameter: style == .selectable ? 48 : 64)
                 Text(title)
-                    .font(Font.header2)
+                    .font(.headline)
                     .foregroundColor(.black)
             }
             

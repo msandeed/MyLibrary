@@ -78,53 +78,11 @@ extension Color {
     }
 }
 
-extension Font {
-    static let largeTitle = Font.custom("ProximaNova-Regular", size: Font.TextStyle.largeTitle.size, relativeTo: .caption)
-    static let splashText = Font.custom("ProximaNova-Bold", size: Font.TextStyle.largeTitle.size, relativeTo: .caption)
-    static let title = Font.custom("ProximaNova-Bold", size: Font.TextStyle.title.size, relativeTo: .caption)
-    static let title2 = Font.custom("ProximaNova-Regular", size: Font.TextStyle.title2.size, relativeTo: .caption)
-    static let title3 = Font.custom("ProximaNova-Regular", size: Font.TextStyle.title3.size, relativeTo: .caption)
-    static let codeInput = Font.custom("ProximaNova-Bold", size: Font.TextStyle.title2.size, relativeTo: .caption)
-    static let header = Font.custom("ProximaNova-Regular", size: Font.TextStyle.headline.size, relativeTo: .caption)
-    static let header2 = Font.custom("ProximaNova-Bold", size: Font.TextStyle.headline.size, relativeTo: .caption)
-    static let body = Font.custom("ProximaNova-Regular", size: Font.TextStyle.body.size, relativeTo: .caption)
-    static let boldBody = Font.custom("ProximaNova-Bold", size: Font.TextStyle.body.size, relativeTo: .caption)
-    static let mediumFont = Font.custom("ProximaNova-Regular", size: Font.TextStyle.subheadline.size, relativeTo: .caption)
-    static let boldMediumFont = Font.custom("ProximaNova-Bold", size: Font.TextStyle.subheadline.size, relativeTo: .caption)
-    static let mediumSmallFont = Font.custom("ProximaNova-Regular", size: Font.TextStyle.footnote.size, relativeTo: .caption)
-    static let boldMediumSmallFont = Font.custom("ProximaNova-Bold", size: Font.TextStyle.footnote.size, relativeTo: .caption)
-    static let smallFont = Font.custom("ProximaNova-Regular", size: Font.TextStyle.caption.size, relativeTo: .caption)
-    static let boldSmallFont = Font.custom("ProximaNova-Bold", size: Font.TextStyle.caption.size, relativeTo: .caption)
-    static let verySmallFont = Font.custom("ProximaNova-Regular", size: Font.TextStyle.caption2.size, relativeTo: .caption)
-
-    enum Banner {
-        static let bannerTitle = Font.custom("ProximaNova-Bold", size: 18, relativeTo: .caption)
-        static let bannerText = Font.custom("ProximaNova-Regular", size: 14, relativeTo: .caption)
-    }
-    
-    enum Button {
-        static func variable(height: CGFloat) -> Font {
-            return Font.custom("ProximaNova-Bold", size: height)
-        }
-    }
+extension Color {
+    static let netflixBlack = Color("NetflixBlack")
+    static let netflixWhite = Color("NetflixWhite")
+    static let netflixRed = Color("NetflixRed")
+    static let netflixDarkRed = Color("NetflixDarkRed")
+    static let netflixLightGray = Color("NetflixLightGray")
+    static let netflixDarkGray = Color("NetflixDarkGray")
 }
-
-extension Font.TextStyle {
-    var size: CGFloat {
-        switch self {
-        case .largeTitle: return 65
-        case .title: return 40
-        case .title2: return 30
-        case .title3: return 24
-        case .headline: return 20
-        case .body: return 18
-        case .subheadline, .callout: return 16
-        case .footnote: return 14
-        case .caption: return 12
-        case .caption2: return 10
-        @unknown default:
-            return 8
-        }
-    }
-}
-

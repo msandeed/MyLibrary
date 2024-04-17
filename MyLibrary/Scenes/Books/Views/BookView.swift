@@ -25,7 +25,7 @@ struct BookView<CoordinatorType: Navigator>: BaseViewProtocol {
                 .bold()
             Text(book.subtitle)
                 .multilineTextAlignment(.center)
-                .font(.header)
+                .font(.headline)
             Button("Return") {
                 coordinator.pop()
             }
