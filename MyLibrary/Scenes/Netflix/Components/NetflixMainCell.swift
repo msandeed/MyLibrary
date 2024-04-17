@@ -61,8 +61,10 @@ struct NetflixMainCell: View {
             Text(content.title)
                 .font(.largeTitle)
                 .bold()
+                .multilineTextAlignment(.center)
             Text(content.subtitle)
-                .font(.headline)
+                .font(.body)
+                .multilineTextAlignment(.center)
             HStack {
                 ForEach(content.genres, id: \.self) { genre in
                     Text(genre)
@@ -114,7 +116,7 @@ struct NetflixMainCell: View {
 }
 
 #Preview {
-    NetflixMainCell(content: .init(image: "testbg",
+    NetflixMainCell(content: .init(image: "https://m.media-amazon.com/images/M/MV5BNDgwY2YyNjctZTMxZC00ZTRlLThhN2QtMTAwYjUyODcyZDYxXkEyXkFqcGdeQXVyMTA0MTM5NjI2._V1_FMjpg_UX1000_.jpg",
                                    title: "Game Of Thrones",
                                    subtitle: "A Song of Ice and Fire",
                                   genres: ["Histrory", "Epic", "Thriller"],

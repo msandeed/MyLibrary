@@ -82,11 +82,19 @@ class NetflixHomeViewModel: ViewModelType {
                         genres: $0.genres,
                         isNetflixFilm: $0.isNetflixFilm,
                         isRecentlyAdded: $0.isRecentlyAdded,
-                        isTopTen: $0.isTopTen
+                        ranking: $0.ranking
                     )
                 }
                 self.output.products = viewModels
             }
             .store(in: &subscriptions)
+    }
+    
+    var topList: [NetflixProduct.NetflixProductViewModel] {
+        output.products.onlyTop
+    }
+    
+    var otherList: [NetflixProduct.NetflixProductViewModel] {
+        output.products.filter { !topList.contains($0) }
     }
 }

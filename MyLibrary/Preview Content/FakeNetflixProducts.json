@@ -6,7 +6,7 @@
         "genres": ["Drama"],
         "isNetflixFilm": true,
         "isRecentlyAdded": true,
-        "isTopTen": true
+        "ranking": 1
     },
     {
         "image": "https://media.posterlounge.com/img/products/710000/707663/707663_poster.jpg",
@@ -15,7 +15,7 @@
         "genres": ["Crime", "Drama"],
         "isNetflixFilm": false,
         "isRecentlyAdded": true,
-        "isTopTen": true
+        "ranking": null
     },
     {
         "image": "https://play-lh.googleusercontent.com/do8bjCPs1j4alOyy6ssFdK_BhpGE8Oo9Ki1jMKfqEOYIR21KiuS5tALk6pPavcPjMxARWftik22TRnF1mg=w240-h480-rw",
@@ -24,7 +24,7 @@
         "genres": ["Action", "Crime", "Drama"],
         "isNetflixFilm": true,
         "isRecentlyAdded": false,
-        "isTopTen": true
+        "ranking": 2
     },
     {
         "image": "https://m.media-amazon.com/images/I/51DZpY7tfoL._AC_UF894,1000_QL80_.jpg",
@@ -33,7 +33,7 @@
         "genres": ["Crime", "Drama"],
         "isNetflixFilm": false,
         "isRecentlyAdded": true,
-        "isTopTen": true
+        "ranking": null
     },
     {
         "image": "https://m.media-amazon.com/images/M/MV5BNDE4OTMxMTctNmRhYy00NWE2LTg3YzItYTk3M2UwOTU5Njg4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg",
@@ -42,7 +42,7 @@
         "genres": ["Biography", "Drama", "History"],
         "isNetflixFilm": true,
         "isRecentlyAdded": false,
-        "isTopTen": true
+        "ranking": 3
     },
     {
         "image": "https://m.media-amazon.com/images/S/pv-target-images/2d0c9e38968936e6711c7fb2bc7895b82d8bb9178b5a854e14dffa4b17b88487.jpg",
@@ -51,7 +51,7 @@
         "genres": ["Drama", "Romance"],
         "isNetflixFilm": true,
         "isRecentlyAdded": true,
-        "isTopTen": true
+        "ranking": 4
     },
     {
         "image": "https://m.media-amazon.com/images/M/MV5BNDgwY2YyNjctZTMxZC00ZTRlLThhN2QtMTAwYjUyODcyZDYxXkEyXkFqcGdeQXVyMTA0MTM5NjI2._V1_FMjpg_UX1000_.jpg",
@@ -60,7 +60,7 @@
         "genres": ["Action", "Adventure", "Drama"],
         "isNetflixFilm": false,
         "isRecentlyAdded": false,
-        "isTopTen": true
+        "ranking": 5
     },
     {
         "image": "https://akns-images.eonline.com/eol_images/Entire_Site/2019914/rs_685x1024-191014113838-634-fight-club-poster.cl.101419.jpg?fit=around%7C685:1024&output-quality=90&crop=685:1024;center,top",
@@ -69,7 +69,7 @@
         "genres": ["Drama"],
         "isNetflixFilm": false,
         "isRecentlyAdded": true,
-        "isTopTen": true
+        "ranking": null
     },
     {
         "image": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p7825626_p_v8_ae.jpg",
@@ -78,7 +78,7 @@
         "genres": ["Action", "Adventure", "Sci-Fi"],
         "isNetflixFilm": true,
         "isRecentlyAdded": false,
-        "isTopTen": true
+        "ranking": null
     },
     {
         "image": "https://cdn.europosters.eu/image/750/wall-murals/matrix-neo-trinity-and-morpheus-i106922.jpg",
@@ -87,7 +87,7 @@
         "genres": ["Action", "Sci-Fi"],
         "isNetflixFilm": true,
         "isRecentlyAdded": true,
-        "isTopTen": true
+        "ranking": 6
     },
     {
         "image": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p12720_p_v8_af.jpg",
@@ -96,7 +96,7 @@
         "genres": ["Biography", "Crime", "Drama"],
         "isNetflixFilm": false,
         "isRecentlyAdded": false,
-        "isTopTen": true
+        "ranking": 7
     },
     {
         "image": "https://play-lh.googleusercontent.com/NN4OtSReaguunuEfZftynIypKWaDBwA-AqmWdl8JKO0UrE3izMM9qoKH3q2ToIsn7Zw",
@@ -105,7 +105,7 @@
         "genres": ["Crime", "Drama", "Thriller"],
         "isNetflixFilm": true,
         "isRecentlyAdded": false,
-        "isTopTen": true
+        "ranking": 8
     },
     {
         "image": "https://musicart.xboxlive.com/7/5b041100-0000-0000-0000-000000000002/504/image.jpg?w=1920&h=1080",
@@ -114,7 +114,7 @@
         "genres": ["Crime", "Mystery", "Thriller"],
         "isNetflixFilm": false,
         "isRecentlyAdded": true,
-        "isTopTen": true
+        "ranking": 9
     },
     {
         "image": "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/130/2020/11/11134138/zgB9CCTDlXRv50Z70ZI4elJtNEk.jpg",
@@ -123,7 +123,7 @@
         "genres": ["Crime", "Drama", "Mystery"],
         "isNetflixFilm": true,
         "isRecentlyAdded": true,
-        "isTopTen": true
+        "ranking": null
     },
     {
         "image": "https://imaging.broadway.com/images/poster-178275/w480/127529-11.jpg",
@@ -132,7 +132,7 @@
         "genres": ["Animation", "Adventure", "Drama"],
         "isNetflixFilm": false,
         "isRecentlyAdded": false,
-        "isTopTen": true
+        "ranking": 10
     },
     {
         "image": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p24429_p_v12_bf.jpg",
@@ -141,7 +141,7 @@
         "genres": ["Crime", "Drama", "Fantasy"],
         "isNetflixFilm": true,
         "isRecentlyAdded": false,
-        "isTopTen": true
+        "ranking": null
     },
     {
         "image": "https://upload.wikimedia.org/wikipedia/en/1/18/Titanic_%281997_film%29_poster.png",
@@ -150,7 +150,7 @@
         "genres": ["Drama", "Romance"],
         "isNetflixFilm": false,
         "isRecentlyAdded": true,
-        "isTopTen": true
+        "ranking": null
     }
 ]
  

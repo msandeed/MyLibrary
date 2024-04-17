@@ -20,15 +20,31 @@ struct NetflixHomeView<CoordinatorType: Navigator>: BaseViewProtocol {
     var body: some View {
         ZStack {
             Color.netflixBlack.ignoresSafeArea()
-            VStack {
+            VStack(spacing: 20) {
                 header
                 ScrollView(.vertical) {
                     NetflixFilterBar(filterItems: FilterItem.mockedItems,
                                      selectedItem: $selectedItem)
-                    NetflixMainCell(content: viewModel.output.products.randomElement()!,
-                                    onBackgroundTap: {},
-                                    onPlayTap: {},
-                                    onMyListTap: {})
+                    mainSection
+                    
+                    Section(header:
+                        Text("Top List")
+                            .font(.headline)
+                            .textCase(.none)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                    ) {
+                        topListSection
+                    }
+
+                    Section(header:
+                        Text("Recommendations")
+                            .font(.headline)
+                            .textCase(.none)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                    ) {
+                        otherListSection
+                    }
+                    
                     Spacer()
                 }
                 .scrollIndicators(.hidden)
@@ -56,6 +72,37 @@ struct NetflixHomeView<CoordinatorType: Navigator>: BaseViewProtocol {
         }
         .font(.headline)
         .padding()
+    }
+    
+    private var mainSection: some View {
+        let product: NetflixProduct.NetflixProductViewModel = viewModel.output.products.first ?? .init(image: "", title: "", subtitle: "")
+        
+        return NetflixMainCell(content: product,
+                            onBackgroundTap: {},
+                            onPlayTap: {},
+                            onMyListTap: {})
+    }
+    
+    private var topListSection: some View {
+        ScrollView(.horizontal) {
+            LazyHStack(spacing: 20) {
+                ForEach(viewModel.topList, id: \.self) { product in
+                    NetflixCell(content: product, onTap: {})
+                }
+            }
+        }
+        .scrollIndicators(.hidden)
+    }
+    
+    private var otherListSection: some View {
+        ScrollView(.horizontal) {
+            LazyHStack(spacing: 20) {
+                ForEach(viewModel.otherList, id: \.self) { product in
+                    NetflixCell(content: product, onTap: {})
+                }
+            }
+        }
+        .scrollIndicators(.hidden)
     }
 }
 

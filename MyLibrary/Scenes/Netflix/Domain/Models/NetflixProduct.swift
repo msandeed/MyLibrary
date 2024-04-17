@@ -15,7 +15,7 @@ enum NetflixProduct {
         var genres: [String] = []
         var isNetflixFilm: Bool = false
         var isRecentlyAdded: Bool = false
-        var isTopTen: Bool = false
+        var ranking: Int? = nil
         
         var toDomain: NetflixProductDomain {
             .init(
@@ -25,7 +25,7 @@ enum NetflixProduct {
                 genres: self.genres,
                 isNetflixFilm: self.isNetflixFilm,
                 isRecentlyAdded: self.isRecentlyAdded,
-                isTopTen: self.isTopTen
+                ranking: self.ranking
             )
         }
     }
@@ -37,7 +37,7 @@ enum NetflixProduct {
         var genres: [String] = []
         var isNetflixFilm: Bool = false
         var isRecentlyAdded: Bool = false
-        var isTopTen: Bool = false
+        var ranking: Int? = nil
     }
     
     struct NetflixProductViewModel: Identifiable, Hashable {
@@ -48,6 +48,16 @@ enum NetflixProduct {
         var genres: [String] = []
         var isNetflixFilm: Bool = false
         var isRecentlyAdded: Bool = false
-        var isTopTen: Bool = false
+        var ranking: Int? = nil
+    }
+}
+
+extension Array where Element == NetflixProduct.NetflixProductViewModel {
+    var onlyTop: [NetflixProduct.NetflixProductViewModel] {
+        self.filter { $0.ranking != nil }
+    }
+    
+    var onlyrecents: [NetflixProduct.NetflixProductViewModel] {
+        self.filter { $0.isRecentlyAdded }
     }
 }
