@@ -63,7 +63,7 @@ struct NetflixMainCell: View {
                 .bold()
                 .multilineTextAlignment(.center)
             Text(content.subtitle)
-                .font(.body)
+                .font(.caption)
                 .multilineTextAlignment(.center)
             HStack {
                 ForEach(content.genres, id: \.self) { genre in

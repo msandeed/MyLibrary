@@ -91,7 +91,7 @@ class NetflixHomeViewModel: ViewModelType {
     }
     
     var topList: [NetflixProduct.NetflixProductViewModel] {
-        output.products.onlyTop
+        output.products.onlyTop.sorted { $0.ranking ?? 0 < $1.ranking ?? 0 }
     }
     
     var otherList: [NetflixProduct.NetflixProductViewModel] {

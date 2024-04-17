@@ -20,6 +20,6 @@ class MockedNetflixProductsUseCase: NetflixProductsUseCase {
     @Injected(ServicesContainer.networkService) internal var networkService
     
     func fetchProducts() -> AnyPublisher<[NetflixProduct.NetflixProductDomain], NetworkError> {
-        return CurrentValueSubject(previewProducts).map { $0.toDomain }.eraseToAnyPublisher()  // TODO: Is CurrentValueSubject the best option here?
+        return CurrentValueSubject(previewProducts.shuffled()).map { $0.toDomain }.eraseToAnyPublisher()  // TODO: Is CurrentValueSubject the best option here?
     }
 }

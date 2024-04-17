@@ -11,7 +11,7 @@ import Kingfisher
 struct NetflixCell: View {
     var content: NetflixProduct.NetflixProductViewModel
     var onTap: () -> Void
-    private let height: CGFloat = 140
+    private let height: CGFloat = 160
     
     var body: some View {
         HStack(alignment: .bottom) {
@@ -31,7 +31,7 @@ struct NetflixCell: View {
                 if content.isRecentlyAdded {
                     Text("Recently Added")
                         .padding(.horizontal, 4)
-                        .padding(.vertical, 2)
+                        .padding(.vertical, 4)
                         .frame(maxWidth: .infinity)
                         .foregroundStyle(Color.netflixWhite)
                         .background(Color.netflixRed)
@@ -41,6 +41,7 @@ struct NetflixCell: View {
                         .fontWeight(.bold)
                         .minimumScaleFactor(0.1)
                         .padding(.horizontal, 20)
+                        .offset(y: -8)
                 }
             }
             .cornerRadius(20)

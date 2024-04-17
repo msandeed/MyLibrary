@@ -18,6 +18,6 @@ class DefaultNetflixProductsUseCase: NetflixProductsUseCase {
     
     func fetchProducts() -> AnyPublisher<[NetflixProduct.NetflixProductDomain], NetworkError> {
         // Replace with remote fetching logic
-        return CurrentValueSubject(previewProducts).map { $0.toDomain }.eraseToAnyPublisher()
+        return CurrentValueSubject(previewProducts.shuffled()).map { $0.toDomain }.eraseToAnyPublisher()
     }
 }

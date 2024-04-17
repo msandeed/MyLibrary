@@ -26,24 +26,9 @@ struct NetflixHomeView<CoordinatorType: Navigator>: BaseViewProtocol {
                     NetflixFilterBar(filterItems: FilterItem.mockedItems,
                                      selectedItem: $selectedItem)
                     mainSection
-                    
-                    Section(header:
-                        Text("Top List")
-                            .font(.headline)
-                            .textCase(.none)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                    ) {
-                        topListSection
-                    }
-
-                    Section(header:
-                        Text("Recommendations")
-                            .font(.headline)
-                            .textCase(.none)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                    ) {
-                        otherListSection
-                    }
+                        .padding(.horizontal, 12)
+                    topListSection
+                    otherListSection
                     
                     Spacer()
                 }
@@ -57,6 +42,7 @@ struct NetflixHomeView<CoordinatorType: Navigator>: BaseViewProtocol {
         HStack {
             Text("For You")
                 .font(.title)
+                .bold()
                 .frame(maxWidth: .infinity, alignment: .leading)
             
             HStack(spacing: 16) {
@@ -78,31 +64,46 @@ struct NetflixHomeView<CoordinatorType: Navigator>: BaseViewProtocol {
         let product: NetflixProduct.NetflixProductViewModel = viewModel.output.products.first ?? .init(image: "", title: "", subtitle: "")
         
         return NetflixMainCell(content: product,
-                            onBackgroundTap: {},
-                            onPlayTap: {},
-                            onMyListTap: {})
+                               onBackgroundTap: {},
+                               onPlayTap: {},
+                               onMyListTap: {})
     }
     
     private var topListSection: some View {
-        ScrollView(.horizontal) {
-            LazyHStack(spacing: 20) {
-                ForEach(viewModel.topList, id: \.self) { product in
-                    NetflixCell(content: product, onTap: {})
+        VStack(spacing: 4) {
+            Text("Top List")
+                .font(.title2)
+                .bold()
+                .frame(maxWidth: .infinity, alignment: .leading)
+            ScrollView(.horizontal) {
+                LazyHStack(spacing: 20) {
+                    ForEach(viewModel.topList, id: \.self) { product in
+                        NetflixCell(content: product, onTap: {})
+                    }
                 }
             }
+            .scrollIndicators(.hidden)
         }
-        .scrollIndicators(.hidden)
+        .padding(.horizontal, 8)
     }
     
     private var otherListSection: some View {
-        ScrollView(.horizontal) {
-            LazyHStack(spacing: 20) {
-                ForEach(viewModel.otherList, id: \.self) { product in
-                    NetflixCell(content: product, onTap: {})
+        VStack(spacing: 4) {
+            Text("Recommendations")
+                .font(.title2)
+                .bold()
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.top, 24)
+            ScrollView(.horizontal) {
+                LazyHStack(spacing: 20) {
+                    ForEach(viewModel.otherList, id: \.self) { product in
+                        NetflixCell(content: product, onTap: {})
+                    }
                 }
             }
+            .scrollIndicators(.hidden)
         }
-        .scrollIndicators(.hidden)
+        .padding(.horizontal, 8)
     }
 }
 
