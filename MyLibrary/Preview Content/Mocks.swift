@@ -15,3 +15,11 @@ class MockedBooksUseCase: BooksUseCase {
         return CurrentValueSubject(previewBooks).map { $0.toDomain }.eraseToAnyPublisher()  // TODO: Is CurrentValueSubject the best option here?
     }
 }
+
+class MockedNetflixProductsUseCase: NetflixProductsUseCase {
+    @Injected(ServicesContainer.networkService) internal var networkService
+    
+    func fetchProducts() -> AnyPublisher<[NetflixProduct.NetflixProductDomain], NetworkError> {
+        return CurrentValueSubject(previewProducts).map { $0.toDomain }.eraseToAnyPublisher()  // TODO: Is CurrentValueSubject the best option here?
+    }
+}

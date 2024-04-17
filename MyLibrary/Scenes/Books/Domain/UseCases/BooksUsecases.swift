@@ -8,10 +8,6 @@
 import Foundation
 import Combine
 
-protocol BaseUseCase {
-    var networkService: NetworkService { get }
-}
-
 // MARK: - Books
 protocol BooksUseCase: BaseUseCase {
     func fetchBooks() -> AnyPublisher<[Book.BookDomain], NetworkError>

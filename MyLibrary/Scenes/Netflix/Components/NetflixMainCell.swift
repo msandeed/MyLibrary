@@ -6,26 +6,17 @@
 //
 
 import SwiftUI
-
-struct MainCellItem {
-    let image: String   // Should be a url
-    let title: String
-    let subtitle: String
-    var genres: [String] = []
-    var isNetflixFilm: Bool = false
-    var isRecentlyAdded: Bool = false
-    var isTopTen: Bool = false
-}
+import Kingfisher
 
 struct NetflixMainCell: View {
-    var content: MainCellItem
+    var content: NetflixProduct.NetflixProductViewModel
     var onBackgroundTap: () -> Void
     var onPlayTap: () -> Void
     var onMyListTap: () -> Void
     
     var body: some View {
         ZStack(alignment: .bottom) {
-            Image(content.image)
+            KFImage(URL(string: content.image))
                 .resizable()
                 .aspectRatio(0.8, contentMode: .fill)
                 .onTapGesture {

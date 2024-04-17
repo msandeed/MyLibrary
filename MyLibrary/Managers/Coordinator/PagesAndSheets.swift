@@ -8,7 +8,7 @@
 import Foundation
 
 enum Page: Hashable {
-    case alien, cow, car, books, singleBook(book: Book.BookItemViewModel)
+    case alien, cow, car, books, singleBook(book: Book.BookItemViewModel), netflixHome
     
     func hash(into hasher: inout Hasher) {
         switch self {
@@ -23,6 +23,8 @@ enum Page: Hashable {
         case .singleBook(let book):
             hasher.combine(4)
             hasher.combine(book) // Make sure the BookItemViewModel is also hashable
+        case .netflixHome:
+            hasher.combine(5)
         }
     }
 }

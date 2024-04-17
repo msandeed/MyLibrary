@@ -7,7 +7,14 @@
 
 import SwiftUI
 
-struct NetflixHome: View {
+struct NetflixHomeView<CoordinatorType: Navigator>: BaseViewProtocol {
+    @StateObject var viewModel: NetflixHomeViewModel = .init()
+    var coordinator: CoordinatorType
+    
+    init(coordinator: CoordinatorType) {
+        self.coordinator = coordinator
+    }
+    
     @State private var selectedItem: FilterItem? = nil
     
     var body: some View {
@@ -18,11 +25,7 @@ struct NetflixHome: View {
                 ScrollView(.vertical) {
                     NetflixFilterBar(filterItems: FilterItem.mockedItems,
                                      selectedItem: $selectedItem)
-                    NetflixMainCell(content: .init(image: "testbg",
-                                                   title: "Game Of Thrones",
-                                                   subtitle: "A Song of Ice and Fire",
-                                                  genres: ["Histrory", "Epic", "Thriller"],
-                                                  isNetflixFilm: true),
+                    NetflixMainCell(content: viewModel.output.products.randomElement()!,
                                     onBackgroundTap: {},
                                     onPlayTap: {},
                                     onMyListTap: {})
@@ -57,5 +60,5 @@ struct NetflixHome: View {
 }
 
 #Preview {
-    NetflixHome()
+    NetflixHomeView(coordinator: NetflixFlowCoordinator())
 }

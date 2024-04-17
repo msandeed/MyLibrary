@@ -1,0 +1,156 @@
+[
+    {
+        "image": "https://m.media-amazon.com/images/S/pv-target-images/d26b48f88d5398cad86d2fd26d32b258d43e51d4e2f949c3848be69a1e147446.jpg",
+        "title": "The Shawshank Redemption",
+        "subtitle": "Fear can hold you prisoner. Hope can set you free.",
+        "genres": ["Drama"],
+        "isNetflixFilm": true,
+        "isRecentlyAdded": true,
+        "isTopTen": true
+    },
+    {
+        "image": "https://media.posterlounge.com/img/products/710000/707663/707663_poster.jpg",
+        "title": "The Godfather",
+        "subtitle": "An offer you can't refuse.",
+        "genres": ["Crime", "Drama"],
+        "isNetflixFilm": false,
+        "isRecentlyAdded": true,
+        "isTopTen": true
+    },
+    {
+        "image": "https://play-lh.googleusercontent.com/do8bjCPs1j4alOyy6ssFdK_BhpGE8Oo9Ki1jMKfqEOYIR21KiuS5tALk6pPavcPjMxARWftik22TRnF1mg=w240-h480-rw",
+        "title": "The Dark Knight",
+        "subtitle": "Why so serious?",
+        "genres": ["Action", "Crime", "Drama"],
+        "isNetflixFilm": true,
+        "isRecentlyAdded": false,
+        "isTopTen": true
+    },
+    {
+        "image": "https://m.media-amazon.com/images/I/51DZpY7tfoL._AC_UF894,1000_QL80_.jpg",
+        "title": "Pulp Fiction",
+        "subtitle": "Just because you are a character doesn't mean you have character.",
+        "genres": ["Crime", "Drama"],
+        "isNetflixFilm": false,
+        "isRecentlyAdded": true,
+        "isTopTen": true
+    },
+    {
+        "image": "https://m.media-amazon.com/images/M/MV5BNDE4OTMxMTctNmRhYy00NWE2LTg3YzItYTk3M2UwOTU5Njg4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg",
+        "title": "Schindler's List",
+        "subtitle": "Whoever saves one life, saves the world entire.",
+        "genres": ["Biography", "Drama", "History"],
+        "isNetflixFilm": true,
+        "isRecentlyAdded": false,
+        "isTopTen": true
+    },
+    {
+        "image": "https://m.media-amazon.com/images/S/pv-target-images/2d0c9e38968936e6711c7fb2bc7895b82d8bb9178b5a854e14dffa4b17b88487.jpg",
+        "title": "Forrest Gump",
+        "subtitle": "Life is like a box of chocolates...you never know what you're gonna get.",
+        "genres": ["Drama", "Romance"],
+        "isNetflixFilm": true,
+        "isRecentlyAdded": true,
+        "isTopTen": true
+    },
+    {
+        "image": "https://m.media-amazon.com/images/M/MV5BNDgwY2YyNjctZTMxZC00ZTRlLThhN2QtMTAwYjUyODcyZDYxXkEyXkFqcGdeQXVyMTA0MTM5NjI2._V1_FMjpg_UX1000_.jpg",
+        "title": "The Lord of the Rings: The Return of the King",
+        "subtitle": "The eye of the enemy is moving.",
+        "genres": ["Action", "Adventure", "Drama"],
+        "isNetflixFilm": false,
+        "isRecentlyAdded": false,
+        "isTopTen": true
+    },
+    {
+        "image": "https://akns-images.eonline.com/eol_images/Entire_Site/2019914/rs_685x1024-191014113838-634-fight-club-poster.cl.101419.jpg?fit=around%7C685:1024&output-quality=90&crop=685:1024;center,top",
+        "title": "Fight Club",
+        "subtitle": "The first rule of Fight Club is: You do not talk about Fight Club.",
+        "genres": ["Drama"],
+        "isNetflixFilm": false,
+        "isRecentlyAdded": true,
+        "isTopTen": true
+    },
+    {
+        "image": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p7825626_p_v8_ae.jpg",
+        "title": "Inception",
+        "subtitle": "Your mind is the scene of the crime.",
+        "genres": ["Action", "Adventure", "Sci-Fi"],
+        "isNetflixFilm": true,
+        "isRecentlyAdded": false,
+        "isTopTen": true
+    },
+    {
+        "image": "https://cdn.europosters.eu/image/750/wall-murals/matrix-neo-trinity-and-morpheus-i106922.jpg",
+        "title": "The Matrix",
+        "subtitle": "Welcome to the Real World.",
+        "genres": ["Action", "Sci-Fi"],
+        "isNetflixFilm": true,
+        "isRecentlyAdded": true,
+        "isTopTen": true
+    },
+    {
+        "image": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p12720_p_v8_af.jpg",
+        "title": "Goodfellas",
+        "subtitle": "As far back as I can remember, I always wanted to be a gangster.",
+        "genres": ["Biography", "Crime", "Drama"],
+        "isNetflixFilm": false,
+        "isRecentlyAdded": false,
+        "isTopTen": true
+    },
+    {
+        "image": "https://play-lh.googleusercontent.com/NN4OtSReaguunuEfZftynIypKWaDBwA-AqmWdl8JKO0UrE3izMM9qoKH3q2ToIsn7Zw",
+        "title": "The Silence of the Lambs",
+        "subtitle": "To enter the mind of a killer, she must challenge the mind of a madman.",
+        "genres": ["Crime", "Drama", "Thriller"],
+        "isNetflixFilm": true,
+        "isRecentlyAdded": false,
+        "isTopTen": true
+    },
+    {
+        "image": "https://musicart.xboxlive.com/7/5b041100-0000-0000-0000-000000000002/504/image.jpg?w=1920&h=1080",
+        "title": "The Usual Suspects",
+        "subtitle": "The greatest trick the devil ever pulled was convincing the world he didn't exist.",
+        "genres": ["Crime", "Mystery", "Thriller"],
+        "isNetflixFilm": false,
+        "isRecentlyAdded": true,
+        "isTopTen": true
+    },
+    {
+        "image": "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/130/2020/11/11134138/zgB9CCTDlXRv50Z70ZI4elJtNEk.jpg",
+        "title": "Se7en",
+        "subtitle": "Seven deadly sins. Seven ways to die.",
+        "genres": ["Crime", "Drama", "Mystery"],
+        "isNetflixFilm": true,
+        "isRecentlyAdded": true,
+        "isTopTen": true
+    },
+    {
+        "image": "https://imaging.broadway.com/images/poster-178275/w480/127529-11.jpg",
+        "title": "The Lion King",
+        "subtitle": "Life's greatest adventure is finding your place in the Circle of Life.",
+        "genres": ["Animation", "Adventure", "Drama"],
+        "isNetflixFilm": false,
+        "isRecentlyAdded": false,
+        "isTopTen": true
+    },
+    {
+        "image": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p24429_p_v12_bf.jpg",
+        "title": "The Green Mile",
+        "subtitle": "Miracles do happen.",
+        "genres": ["Crime", "Drama", "Fantasy"],
+        "isNetflixFilm": true,
+        "isRecentlyAdded": false,
+        "isTopTen": true
+    },
+    {
+        "image": "https://upload.wikimedia.org/wikipedia/en/1/18/Titanic_%281997_film%29_poster.png",
+        "title": "Titanic",
+        "subtitle": "Nothing on Earth could come between them.",
+        "genres": ["Drama", "Romance"],
+        "isNetflixFilm": false,
+        "isRecentlyAdded": true,
+        "isTopTen": true
+    }
+]
+ 
