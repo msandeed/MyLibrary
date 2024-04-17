@@ -23,8 +23,6 @@ struct NetflixHomeView<CoordinatorType: Navigator>: BaseViewProtocol {
             VStack(spacing: 20) {
                 header
                 ScrollView(.vertical) {
-                    NetflixFilterBar(filterItems: FilterItem.mockedItems,
-                                     selectedItem: $selectedItem)
                     mainSection
                         .padding(.horizontal, 12)
                     topListSection
@@ -39,25 +37,30 @@ struct NetflixHomeView<CoordinatorType: Navigator>: BaseViewProtocol {
     }
     
     private var header: some View {
-        HStack {
-            Text("For You")
-                .font(.title)
-                .bold()
-                .frame(maxWidth: .infinity, alignment: .leading)
-            
-            HStack(spacing: 16) {
-                Image(systemName: "tv.badge.wifi")
-                    .onTapGesture {
-                        
-                    }
-                Image(systemName: "magnifyingglass")
-                    .onTapGesture {
-                        
-                    }
+        VStack {
+            HStack {
+                Text("For You")
+                    .font(.title)
+                    .bold()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                
+                HStack(spacing: 16) {
+                    Image(systemName: "tv.badge.wifi")
+                        .onTapGesture {
+                            
+                        }
+                    Image(systemName: "magnifyingglass")
+                        .onTapGesture {
+                            
+                        }
+                }
             }
+            .font(.headline)
+            .padding(.horizontal)
+            
+            NetflixFilterBar(filterItems: FilterItem.mockedItems,
+                             selectedItem: $selectedItem)
         }
-        .font(.headline)
-        .padding()
     }
     
     private var mainSection: some View {
