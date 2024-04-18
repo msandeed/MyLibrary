@@ -37,11 +37,20 @@ enum Flow: String, Identifiable {
     }
 }
 
-enum Sheet: String, Identifiable {
-    case monkey, heart, books
+enum Sheet: Identifiable {
+    case monkey, heart, books, netflixSingleProduct(product: NetflixProduct.NetflixProductViewModel)
     
     var id: String {
-        self.rawValue
+        switch self {
+        case .monkey:
+            return "monkey"
+        case .heart:
+            return "heart"
+        case .books:
+            return "books"
+        case .netflixSingleProduct:
+            return "netflixSingleProduct"
+        }
     }
 }
 

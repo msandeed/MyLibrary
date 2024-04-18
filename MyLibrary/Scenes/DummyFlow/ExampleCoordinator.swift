@@ -68,6 +68,8 @@ class ExampleCoordinator: Navigator, ObservableObject {
         case .books:
             print("🧭 Concrete Coordinator: Books as Sheet")
             return CoordinatorView(coordinator: BooksFlowCoordinator(), homePage: .books).asAnyView
+        default:
+            fatalError("🧭 Should not show this sheet from Example Coordinator")
         }
     }
     

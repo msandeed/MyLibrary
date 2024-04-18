@@ -11,6 +11,9 @@ struct NetflixHomeView<CoordinatorType: Navigator>: BaseViewProtocol {
     @StateObject var viewModel: NetflixHomeViewModel = .init()
     var coordinator: CoordinatorType
     
+    @State var showAlert: Bool = false
+    @State var alertTitle: String = ""
+    
     init(coordinator: CoordinatorType) {
         self.coordinator = coordinator
     }
@@ -32,6 +35,9 @@ struct NetflixHomeView<CoordinatorType: Navigator>: BaseViewProtocol {
                 }
                 .scrollIndicators(.hidden)
             }
+            .alert(isPresented: $showAlert) {
+                Alert(title: Text(alertTitle), dismissButton: .default(Text("OK")))
+            }
         }
         .foregroundStyle(Color.netflixWhite)
     }
@@ -47,11 +53,13 @@ struct NetflixHomeView<CoordinatorType: Navigator>: BaseViewProtocol {
                 HStack(spacing: 16) {
                     Image(systemName: "tv.badge.wifi")
                         .onTapGesture {
-                            
+                            alertTitle = "Screen Mirroring to be added"
+                            showAlert = true
                         }
                     Image(systemName: "magnifyingglass")
                         .onTapGesture {
-                            
+                            alertTitle = "Search to be added"
+                            showAlert = true
                         }
                 }
             }
@@ -67,9 +75,17 @@ struct NetflixHomeView<CoordinatorType: Navigator>: BaseViewProtocol {
         let product: NetflixProduct.NetflixProductViewModel = viewModel.output.products.first ?? .init(image: "", title: "", subtitle: "")
         
         return NetflixMainCell(content: product,
-                               onBackgroundTap: {},
-                               onPlayTap: {},
-                               onMyListTap: {})
+                               onBackgroundTap: {
+            coordinator.present(.netflixSingleProduct(product: product))
+        },
+                               onPlayTap: {
+            alertTitle = "Play to be added"
+            showAlert = true
+        },
+                               onMyListTap: {
+            alertTitle = "Add to My List to be added"
+            showAlert = true
+        })
     }
     
     private var topListSection: some View {
@@ -81,7 +97,9 @@ struct NetflixHomeView<CoordinatorType: Navigator>: BaseViewProtocol {
             ScrollView(.horizontal) {
                 LazyHStack(spacing: 20) {
                     ForEach(viewModel.topList, id: \.self) { product in
-                        NetflixCell(content: product, onTap: {})
+                        NetflixCell(content: product, onTap: {
+                            coordinator.present(.netflixSingleProduct(product: product))
+                        })
                     }
                 }
             }
@@ -100,7 +118,9 @@ struct NetflixHomeView<CoordinatorType: Navigator>: BaseViewProtocol {
             ScrollView(.horizontal) {
                 LazyHStack(spacing: 20) {
                     ForEach(viewModel.otherList, id: \.self) { product in
-                        NetflixCell(content: product, onTap: {})
+                        NetflixCell(content: product, onTap: {
+                            coordinator.present(.netflixSingleProduct(product: product))
+                        })
                     }
                 }
             }
