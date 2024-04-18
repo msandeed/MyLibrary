@@ -42,7 +42,7 @@ struct NetflixFilterCell: View {
             NetflixFilterCell(title: "Movies", 
                               hasDropdown: false,
                               isSelected: true)
-            NetflixFilterCell(title: "Documenteries",
+            NetflixFilterCell(title: "documentaries",
                               hasDropdown: true,
                               isSelected: false)
             NetflixFilterCell(title: "Series",

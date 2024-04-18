@@ -42,7 +42,7 @@ class NetflixFlowCoordinator: Navigator, ObservableObject {
     func build(sheet: Sheet) -> AnyView {
         // TODO: Handle elegantly
         switch sheet {
-        case .netflixSingleProduct(let product):
+        case .netflixProduct(let product):
             return NetflixProductView(product: product).asAnyView
         default:
             fatalError("🧭 Should not show this sheet from Netflix Coordinator")

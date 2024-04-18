@@ -14,7 +14,7 @@ struct FilterItem: Hashable, Equatable {
     static var mockedItems: [FilterItem] {
         [
             .init(title: "Movies", hasDropdown: false),
-            .init(title: "Documenteries", hasDropdown: true),
+            .init(title: "Documentaries", hasDropdown: true),
             .init(title: "Series", hasDropdown: false)
         ]
     }
@@ -71,7 +71,7 @@ struct NetflixFilterBar: View {
         Color.netflixBlack.ignoresSafeArea()
         NetflixFilterBar(filterItems: [
             .init(title: "Movies", hasDropdown: false),
-            .init(title: "Documenteries", hasDropdown: true),
+            .init(title: "Documentaries", hasDropdown: true),
             .init(title: "Series", hasDropdown: false)],
                          selectedItem: .constant(nil))
     }

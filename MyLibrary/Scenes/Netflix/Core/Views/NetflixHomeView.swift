@@ -76,7 +76,7 @@ struct NetflixHomeView<CoordinatorType: Navigator>: BaseViewProtocol {
         
         return NetflixMainCell(content: product,
                                onBackgroundTap: {
-            coordinator.present(.netflixSingleProduct(product: product))
+            coordinator.present(.netflixProduct(product: product))
         },
                                onPlayTap: {
             alertTitle = "Play to be added"
@@ -98,7 +98,7 @@ struct NetflixHomeView<CoordinatorType: Navigator>: BaseViewProtocol {
                 LazyHStack(spacing: 20) {
                     ForEach(viewModel.topList, id: \.self) { product in
                         NetflixCell(content: product, onTap: {
-                            coordinator.present(.netflixSingleProduct(product: product))
+                            coordinator.present(.netflixProduct(product: product))
                         })
                     }
                 }
@@ -119,7 +119,7 @@ struct NetflixHomeView<CoordinatorType: Navigator>: BaseViewProtocol {
                 LazyHStack(spacing: 20) {
                     ForEach(viewModel.otherList, id: \.self) { product in
                         NetflixCell(content: product, onTap: {
-                            coordinator.present(.netflixSingleProduct(product: product))
+                            coordinator.present(.netflixProduct(product: product))
                         })
                     }
                 }
