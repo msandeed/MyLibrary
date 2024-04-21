@@ -13,6 +13,7 @@ struct NetflixHomeView<CoordinatorType: Navigator>: BaseViewProtocol {
     
     @State var showAlert: Bool = false
     @State var alertTitle: String = ""
+    @State var scrollOffset: CGFloat?
     
     init(coordinator: CoordinatorType) {
         self.coordinator = coordinator
@@ -25,15 +26,14 @@ struct NetflixHomeView<CoordinatorType: Navigator>: BaseViewProtocol {
             Color.netflixBlack.ignoresSafeArea()
             VStack(spacing: 20) {
                 header
-                ScrollView(.vertical) {
+                ScrollViewWithOffsetTracking(content: {
                     mainSection
                         .padding(.horizontal, 12)
                     topListSection
                     otherListSection
-                    
-                    Spacer()
+                }) { offset in
+                    scrollOffset = offset
                 }
-                .scrollIndicators(.hidden)
             }
             .alert(isPresented: $showAlert) {
                 Alert(title: Text(alertTitle), dismissButton: .default(Text("OK")))
@@ -66,8 +66,10 @@ struct NetflixHomeView<CoordinatorType: Navigator>: BaseViewProtocol {
             .font(.headline)
             .padding(.horizontal)
             
-            NetflixFilterBar(filterItems: FilterItem.mockedItems,
-                             selectedItem: $selectedItem)
+            if let offset = scrollOffset, offset < 200 {
+                NetflixFilterBar(filterItems: FilterItem.mockedItems,
+                                 selectedItem: $selectedItem)
+            }
         }
     }
     

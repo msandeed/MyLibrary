@@ -51,6 +51,7 @@
 		7FBFE23A295E51360028FFA1 /* FakeBooks.json in Resources */ = {isa = PBXBuildFile; fileRef = 7FBFE239295E51360028FFA1 /* FakeBooks.json */; };
 		7FBFE23C295E525A0028FFA1 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBFE23B295E525A0028FFA1 /* Mocks.swift */; };
 		7FBFE23E295E52FA0028FFA1 /* PreviewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBFE23D295E52FA0028FFA1 /* PreviewHandler.swift */; };
+		7FC49B332BD54B380021A956 /* ScrollViewWithOffsetTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC49B322BD54B380021A956 /* ScrollViewWithOffsetTracking.swift */; };
 		D1B38EA52891EA2A001FA9F7 /* MyLibraryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B38EA42891EA2A001FA9F7 /* MyLibraryApp.swift */; };
 		D1B38EA92891EA2E001FA9F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1B38EA82891EA2E001FA9F7 /* Assets.xcassets */; };
 		D1B38EAC2891EA2E001FA9F7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1B38EAB2891EA2E001FA9F7 /* Preview Assets.xcassets */; };
@@ -108,6 +109,7 @@
 		7FBFE239295E51360028FFA1 /* FakeBooks.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FakeBooks.json; sourceTree = "<group>"; };
 		7FBFE23B295E525A0028FFA1 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		7FBFE23D295E52FA0028FFA1 /* PreviewHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewHandler.swift; sourceTree = "<group>"; };
+		7FC49B322BD54B380021A956 /* ScrollViewWithOffsetTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewWithOffsetTracking.swift; sourceTree = "<group>"; };
 		D1B38EA12891EA2A001FA9F7 /* MyLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1B38EA42891EA2A001FA9F7 /* MyLibraryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLibraryApp.swift; sourceTree = "<group>"; };
 		D1B38EA82891EA2E001FA9F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				7F01E4172B70458200E192FD /* ContactCard.swift */,
 				7F01E4182B70458200E192FD /* FlexibleGrid.swift */,
 				7F01E4192B70458200E192FD /* HeadshotView.swift */,
+				7FC49B322BD54B380021A956 /* ScrollViewWithOffsetTracking.swift */,
 			);
 			path = "UI Elements";
 			sourceTree = "<group>";
@@ -553,6 +556,7 @@
 				7F01E40E2B70457400E192FD /* ObserverPattern.swift in Sources */,
 				7FB7AC932B7A85DA00AC8857 /* Theory.swift in Sources */,
 				7FBFE22D29546F970028FFA1 /* BaseView.swift in Sources */,
+				7FC49B332BD54B380021A956 /* ScrollViewWithOffsetTracking.swift in Sources */,
 				7F01E4282B7197E800E192FD /* DummyViews.swift in Sources */,
 				D1B38EBE2891EB62001FA9F7 /* Constants.swift in Sources */,
 			);
