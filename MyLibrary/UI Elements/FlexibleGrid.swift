@@ -11,12 +11,14 @@ import SwiftUI
 struct FlexibleGrid: View {
     var items: [String]
     var availableWidth: CGFloat
+    var backgroundColor: Color
     
     var columns: Array<GridItem>
     
-    init(items: [String], availableWidth: CGFloat) {
+    init(items: [String], availableWidth: CGFloat, backgroundColor: Color = Color.green) {
         self.items = items
         self.availableWidth = availableWidth
+        self.backgroundColor = backgroundColor
         
         var numberOfColumns: Int
         if items.count < 4 {
@@ -33,25 +35,16 @@ struct FlexibleGrid: View {
     var body: some View {
         LazyVGrid(columns: columns) {
             ForEach(Array(items.enumerated()), id: \.element) { (index, item) in
-                if item.isEmpty {
-                    Image(item)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(maxWidth: availableWidth / 2)
-                        .clipShape(Circle())
-                        .offset(x: shouldOffsetItemAtIndex(index) ? availableWidth / 6 : 0)
-                } else {
-                    Image(item)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(maxWidth: availableWidth / 2)
-                        .clipShape(Circle())
-                        .offset(x: shouldOffsetItemAtIndex(index) ? availableWidth / 6 : 0)
-                }
+                Image(item)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: availableWidth / 2)
+                    .clipShape(Circle())
+                    .offset(x: shouldOffsetItemAtIndex(index) ? availableWidth / 6 : 0)
             }
         }
         .padding(5)
-        .background(.green)
+        .background(backgroundColor)
         .cornerRadius(10.0)
         .padding(10)
     }

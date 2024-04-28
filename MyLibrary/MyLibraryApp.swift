@@ -14,7 +14,8 @@ struct MyLibraryApp: App {
 //            CoordinatorView(coordinator: ExampleCoordinator(), homePage: .alien)
 //            CoordinatorView(coordinator: BooksFlowCoordinator(), homePage: .books)
 //            BooksView(viewModel: BooksListViewModel())
-            CoordinatorView(coordinator: NetflixFlowCoordinator(), homePage: .netflixHome)
+//            CoordinatorView(coordinator: NetflixFlowCoordinator(), homePage: .netflixHome)
+            Demo()
         }
     }
 }

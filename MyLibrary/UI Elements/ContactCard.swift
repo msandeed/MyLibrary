@@ -14,7 +14,7 @@ enum ContactCardStyle {
 struct ContactCard: View {
     var style: ContactCardStyle
     var title: String
-    var subtitle: String
+    var subtitle: String?
     @Binding var isSelected: Bool
     @State var selected: Bool = false {
         didSet {
@@ -27,9 +27,16 @@ struct ContactCard: View {
             HStack {
                 HeadshotView(imageName: "person",
                              diameter: style == .selectable ? 48 : 64)
-                Text(title)
-                    .font(.headline)
-                    .foregroundColor(.black)
+                VStack(alignment: .leading) {
+                    Text(title)
+                        .font(.headline)
+                        .foregroundColor(.black)
+                    if let subtitleText = subtitle {
+                        Text(subtitleText)
+                            .font(.footnote)
+                            .foregroundColor(Color.netflixDarkGray)
+                    }
+                }
             }
             
             Spacer()
@@ -51,7 +58,7 @@ struct ContactCard: View {
                 Button {
                     selected.toggle()
                 } label: {
-                    Image("checkmark")
+                    Image(systemName: "checkmark")
                         .renderingMode(.template)
                         .resizable()
                         .frame(width: 20, height: 16)
@@ -60,7 +67,7 @@ struct ContactCard: View {
                 }
             }
             .frame(width: 36, height: 36, alignment: .center)
-            .background(selected ? Color("purple") : .white)
+            .background(selected ? Color.blue : .white)
             .cornerRadius(18)
             .overlay(
                 Circle()
@@ -73,7 +80,7 @@ struct ContactCard: View {
 
 struct ContactCard_Previews: PreviewProvider {
     static var previews: some View {
-        ContactCard(style: .compressed, title: "John Applessed", subtitle: "+1123123123", isSelected: .constant(true))
+        ContactCard(style: .selectable, title: "John Applessed", subtitle: "+1123123123", isSelected: .constant(false))
     }
 }
 
