@@ -22,8 +22,9 @@ struct NetflixHomeView<CoordinatorType: Navigator>: BaseViewProtocol {
     @State private var selectedItem: FilterItem? = nil
     
     var body: some View {
-        ZStack {
+        ZStack(alignment: .top) {
             Color.netflixBlack.ignoresSafeArea()
+            backgroundLayer
             VStack(spacing: 20) {
                 header
                 ScrollViewWithOffsetTracking(content: {
@@ -40,6 +41,21 @@ struct NetflixHomeView<CoordinatorType: Navigator>: BaseViewProtocol {
             }
         }
         .foregroundStyle(Color.netflixWhite)
+    }
+    
+    private var backgroundLayer: some View {
+        ZStack(alignment: .top) {
+            LinearGradient(colors: [Color.netflixDarkGray.opacity(1),
+                                    Color.netflixDarkGray.opacity(0)],
+                           startPoint: .top,
+                           endPoint: .bottom)
+            LinearGradient(colors: [Color.netflixDarkRed.opacity(0.5),
+                                    Color.netflixDarkRed.opacity(0)],
+                           startPoint: .top,
+                           endPoint: .bottom)
+        }
+        .ignoresSafeArea()
+        .frame(maxHeight: 400)
     }
     
     private var header: some View {
@@ -66,11 +82,14 @@ struct NetflixHomeView<CoordinatorType: Navigator>: BaseViewProtocol {
             .font(.headline)
             .padding(.horizontal)
             
-            if let offset = scrollOffset, offset < 200 {
+            if let offset = scrollOffset, offset < 100 {
                 NetflixFilterBar(filterItems: FilterItem.mockedItems,
                                  selectedItem: $selectedItem)
+                .transition(.move(edge: .top).combined(with: .opacity))
             }
         }
+        .padding(.bottom, 8)
+        .animation(.smooth, value: scrollOffset)
     }
     
     private var mainSection: some View {
