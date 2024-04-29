@@ -47,7 +47,7 @@ struct ContactCard: View {
         }
         .padding(.horizontal, 16)
         .frame(height: 80)
-        .frame(width: style == .selectable ? .infinity : Constants.width * 0.65)
+        .frame(maxWidth: style == .selectable ? .infinity : Constants.width * 0.65)
         .background(RoundedShadowView(cornerRadius: style == .selectable ? 16 : 24))
         .padding(16)
     }
