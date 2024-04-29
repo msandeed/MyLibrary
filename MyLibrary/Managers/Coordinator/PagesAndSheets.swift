@@ -30,7 +30,7 @@ enum Page: Hashable {
 }
 
 enum Flow: String, Identifiable {
-    case dummy, books
+    case dummy, books, netflix
     
     var id: String {
         self.rawValue

@@ -23,36 +23,4 @@ class BooksFlowCoordinator: Navigator, ObservableObject {
             print("🧭 BooksFlowCoordinator path count is: \(path.count)")
         }.store(in: &subscriptions)
     }
-    
-    // MARK: -  View Building
-    func build(page: Page) -> AnyView {
-        switch page {
-        case .books:
-            print("🧭 BooksFlowCoordinator: BooksView")
-            return booksView
-        case .singleBook(let book):
-            print("🧭 BooksFlowCoordinator: BookView")
-            return BookView(book: book, coordinator: self).asAnyView
-        default:
-            fatalError("🧭 Page not included in this flow")
-        }
-    }
-    
-    func build(flow: Flow) -> AnyView {
-        // TODO: Handle elegantly
-        EmptyView().asAnyView
-    }
-    
-    func build(sheet: Sheet) -> AnyView {
-        // TODO: Handle elegantly
-        EmptyView().asAnyView
-    }
-    
-    func build(fullScreenCover: FullScreenCover) -> AnyView {
-        // TODO: Handle elegantly
-        EmptyView().asAnyView
-    }
-    
-    // MARK: - Lazy Views
-    private lazy var booksView = BooksView(coordinator: self).asAnyView
 }

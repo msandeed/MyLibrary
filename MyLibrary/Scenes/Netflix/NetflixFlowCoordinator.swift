@@ -23,38 +23,5 @@ class NetflixFlowCoordinator: Navigator, ObservableObject {
             print("🧭 NetflixFlowCoordinator path count is: \(path.count)")
         }.store(in: &subscriptions)
     }
-    
-    // MARK: -  View Building
-    func build(page: Page) -> AnyView {
-        switch page {
-        case .netflixHome:
-            return netflixHomeView
-        default:
-            fatalError("🧭 Page not included in this flow")
-        }
-    }
-    
-    func build(flow: Flow) -> AnyView {
-        // TODO: Handle elegantly
-        EmptyView().asAnyView
-    }
-    
-    func build(sheet: Sheet) -> AnyView {
-        // TODO: Handle elegantly
-        switch sheet {
-        case .netflixProduct(let product):
-            return NetflixProductView(product: product).asAnyView
-        default:
-            fatalError("🧭 Should not show this sheet from Netflix Coordinator")
-        }
-    }
-    
-    func build(fullScreenCover: FullScreenCover) -> AnyView {
-        // TODO: Handle elegantly
-        EmptyView().asAnyView
-    }
-    
-    // MARK: - Lazy Views
-    private lazy var netflixHomeView = NetflixHomeView(coordinator: self).asAnyView
 }
 
