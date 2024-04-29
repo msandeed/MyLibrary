@@ -35,8 +35,16 @@ struct AlienView<CoordinatorType: Navigator>: BaseViewProtocol {
                 }
                 
                 Section("To Another Flow") {
-                    Button("Present Books Flow") {
+                    Button("📚 Present Books Flow") {
                         coordinator.present(Flow.books)
+                    }
+                    
+                    Button("🎬 Present Netflix Flow") {
+                        coordinator.present(Flow.netflix)
+                    }
+                    
+                    Button("🎨 Present UI Gallery") {
+                        coordinator.present(Flow.gallery)
                     }
                 }
             }

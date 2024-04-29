@@ -11,11 +11,11 @@ import SwiftUI
 struct MyLibraryApp: App {
     var body: some Scene {
         WindowGroup {
-//            CoordinatorView(coordinator: ExampleCoordinator(), homePage: .alien)
+            CoordinatorView(coordinator: ExampleCoordinator(), homePage: .alien)
 //            CoordinatorView(coordinator: BooksFlowCoordinator(), homePage: .books)
 //            BooksView(viewModel: BooksListViewModel())
 //            CoordinatorView(coordinator: NetflixFlowCoordinator(), homePage: .netflixHome)
-            Demo()
+//            Demo()
         }
     }
 }

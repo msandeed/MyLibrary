@@ -8,7 +8,7 @@
 import Foundation
 
 enum Page: Hashable {
-    case alien, cow, car, books, singleBook(book: Book.BookItemViewModel), netflixHome
+    case alien, cow, car, books, singleBook(book: Book.BookItemViewModel), netflixHome, gallery
     
     func hash(into hasher: inout Hasher) {
         switch self {
@@ -25,12 +25,14 @@ enum Page: Hashable {
             hasher.combine(book) // Make sure the BookItemViewModel is also hashable
         case .netflixHome:
             hasher.combine(5)
+        case .gallery:
+            hasher.combine(6)
         }
     }
 }
 
 enum Flow: String, Identifiable {
-    case dummy, books, netflix
+    case dummy, books, netflix, gallery
     
     var id: String {
         self.rawValue

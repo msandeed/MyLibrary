@@ -107,6 +107,8 @@ extension Navigator {
             return BookView(book: book, coordinator: self).asAnyView
         case .netflixHome:
             return NetflixHomeView(coordinator: self).asAnyView
+        case .gallery:
+            return Demo().asAnyView
         }
     }
     
@@ -118,15 +120,23 @@ extension Navigator {
             CoordinatorView(coordinator: ExampleCoordinator(), homePage: .alien).asAnyView
         case .netflix:
             CoordinatorView(coordinator: NetflixFlowCoordinator(), homePage: .netflixHome).asAnyView
+        case .gallery:
+            CoordinatorView(coordinator: ExampleCoordinator(), homePage: .gallery).asAnyView
         }
         
-        return VStack {
+        return ZStack(alignment: .bottom) {
             coordinatedFlow
-            Button("🧭 Back To Home") {
-                self.dismissFlow()
+            HStack {
+                Spacer()
+                Image(systemName: "arrow.down.circle.fill")
+                    .resizable()
+                    .frame(width: 40, height: 40)
+                    .onTapGesture {
+                        self.dismissFlow()
+                    }
             }
+            .padding()
         }
-        .background(.orange)
         .asAnyView
     }
     
