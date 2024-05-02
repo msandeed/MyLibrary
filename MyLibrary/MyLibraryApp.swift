@@ -16,6 +16,7 @@ struct MyLibraryApp: App {
 //            BooksView(viewModel: BooksListViewModel())
 //            CoordinatorView(coordinator: NetflixFlowCoordinator(), homePage: .netflixHome)
 //            Demo()
+//            ThreadingDemoView()
         }
     }
 }

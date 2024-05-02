@@ -54,6 +54,9 @@
 		7FC49B332BD54B380021A956 /* ScrollViewWithOffsetTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC49B322BD54B380021A956 /* ScrollViewWithOffsetTracking.swift */; };
 		7FC49B352BD9B0F40021A956 /* Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC49B342BD9B0F40021A956 /* Demo.swift */; };
 		7FC49B372BDE70380021A956 /* CollapsibleMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC49B362BDE70380021A956 /* CollapsibleMenu.swift */; };
+		7FC49B392BE253A80021A956 /* ThreadSafeWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC49B382BE253A80021A956 /* ThreadSafeWrapper.swift */; };
+		7FC49B3C2BE25BA60021A956 /* ThreadingDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC49B3B2BE25BA60021A956 /* ThreadingDemoView.swift */; };
+		7FC49B3E2BE3951F0021A956 /* ThreadSafeActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC49B3D2BE3951F0021A956 /* ThreadSafeActor.swift */; };
 		D1B38EA52891EA2A001FA9F7 /* MyLibraryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B38EA42891EA2A001FA9F7 /* MyLibraryApp.swift */; };
 		D1B38EA92891EA2E001FA9F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1B38EA82891EA2E001FA9F7 /* Assets.xcassets */; };
 		D1B38EAC2891EA2E001FA9F7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1B38EAB2891EA2E001FA9F7 /* Preview Assets.xcassets */; };
@@ -114,6 +117,9 @@
 		7FC49B322BD54B380021A956 /* ScrollViewWithOffsetTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewWithOffsetTracking.swift; sourceTree = "<group>"; };
 		7FC49B342BD9B0F40021A956 /* Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo.swift; sourceTree = "<group>"; };
 		7FC49B362BDE70380021A956 /* CollapsibleMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsibleMenu.swift; sourceTree = "<group>"; };
+		7FC49B382BE253A80021A956 /* ThreadSafeWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadSafeWrapper.swift; sourceTree = "<group>"; };
+		7FC49B3B2BE25BA60021A956 /* ThreadingDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadingDemoView.swift; sourceTree = "<group>"; };
+		7FC49B3D2BE3951F0021A956 /* ThreadSafeActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadSafeActor.swift; sourceTree = "<group>"; };
 		D1B38EA12891EA2A001FA9F7 /* MyLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1B38EA42891EA2A001FA9F7 /* MyLibraryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLibraryApp.swift; sourceTree = "<group>"; };
 		D1B38EA82891EA2E001FA9F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -163,6 +169,7 @@
 				7F01E4142B70458200E192FD /* TaskGroupExample.swift */,
 				7F01E4222B7055A600E192FD /* AsyncPublisherExample.swift */,
 				7F01E4132B70458200E192FD /* ConcurrencyTheory.swift */,
+				7FC49B3A2BE25AD10021A956 /* SafeThreading */,
 			);
 			path = Concurrency;
 			sourceTree = "<group>";
@@ -321,6 +328,16 @@
 				7FBFE237295CDE790028FFA1 /* Container.swift */,
 			);
 			path = DI;
+			sourceTree = "<group>";
+		};
+		7FC49B3A2BE25AD10021A956 /* SafeThreading */ = {
+			isa = PBXGroup;
+			children = (
+				7FC49B382BE253A80021A956 /* ThreadSafeWrapper.swift */,
+				7FC49B3B2BE25BA60021A956 /* ThreadingDemoView.swift */,
+				7FC49B3D2BE3951F0021A956 /* ThreadSafeActor.swift */,
+			);
+			path = SafeThreading;
 			sourceTree = "<group>";
 		};
 		D1B38E982891EA2A001FA9F7 = {
@@ -522,6 +539,7 @@
 				D1B38EC82891EC17001FA9F7 /* BookView.swift in Sources */,
 				7FC49B352BD9B0F40021A956 /* Demo.swift in Sources */,
 				7F01E4232B7055A600E192FD /* AsyncPublisherExample.swift in Sources */,
+				7FC49B3E2BE3951F0021A956 /* ThreadSafeActor.swift in Sources */,
 				7FB6CC7A2BCFF00E002D658D /* BaseUseCase.swift in Sources */,
 				7FB6CC682BCEB0AE002D658D /* NetflixFilterBar.swift in Sources */,
 				7FB7AC8F2B7A846100AC8857 /* AdapterPattern.swift in Sources */,
@@ -547,6 +565,8 @@
 				7FB6CC772BCFEEFE002D658D /* NetflixUsecases.swift in Sources */,
 				7F01E41B2B70458200E192FD /* AsyncStreamExample.swift in Sources */,
 				7F01E4202B70458300E192FD /* FlexibleGrid.swift in Sources */,
+				7FC49B392BE253A80021A956 /* ThreadSafeWrapper.swift in Sources */,
+				7FC49B3C2BE25BA60021A956 /* ThreadingDemoView.swift in Sources */,
 				7FB6CC662BCE95D9002D658D /* NetflixFilterCell.swift in Sources */,
 				7F01E41F2B70458300E192FD /* ContactCard.swift in Sources */,
 				7FBFE238295CDE790028FFA1 /* Container.swift in Sources */,
