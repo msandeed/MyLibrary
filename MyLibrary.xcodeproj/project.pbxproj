@@ -22,6 +22,8 @@
 		7F01E4232B7055A600E192FD /* AsyncPublisherExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E4222B7055A600E192FD /* AsyncPublisherExample.swift */; };
 		7F01E4262B71924D00E192FD /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E4252B71924D00E192FD /* Coordinator.swift */; };
 		7F01E4282B7197E800E192FD /* DummyViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E4272B7197E800E192FD /* DummyViews.swift */; };
+		7F9017E62BFBB292005CF002 /* FormalGroupBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9017E52BFBB292005CF002 /* FormalGroupBox.swift */; };
+		7F9017E92BFBE6CC005CF002 /* ThemedGroupBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9017E82BFBE6CC005CF002 /* ThemedGroupBox.swift */; };
 		7F9B3CFB2BD0035A0093D8B5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7F9B3CFA2BD0035A0093D8B5 /* Kingfisher */; };
 		7F9B3CFD2BD009450093D8B5 /* NetflixCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B3CFC2BD009450093D8B5 /* NetflixCell.swift */; };
 		7F9B3CFF2BD1673E0093D8B5 /* NetflixProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B3CFE2BD1673E0093D8B5 /* NetflixProductView.swift */; };
@@ -86,6 +88,8 @@
 		7F01E4222B7055A600E192FD /* AsyncPublisherExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncPublisherExample.swift; sourceTree = "<group>"; };
 		7F01E4252B71924D00E192FD /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		7F01E4272B7197E800E192FD /* DummyViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViews.swift; sourceTree = "<group>"; };
+		7F9017E52BFBB292005CF002 /* FormalGroupBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormalGroupBox.swift; sourceTree = "<group>"; };
+		7F9017E82BFBE6CC005CF002 /* ThemedGroupBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedGroupBox.swift; sourceTree = "<group>"; };
 		7F9B3CFC2BD009450093D8B5 /* NetflixCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixCell.swift; sourceTree = "<group>"; };
 		7F9B3CFE2BD1673E0093D8B5 /* NetflixProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixProductView.swift; sourceTree = "<group>"; };
 		7FB6CC632BCE8F52002D658D /* NetflixHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixHomeView.swift; sourceTree = "<group>"; };
@@ -177,6 +181,7 @@
 		7F01E4152B70458200E192FD /* UI Elements */ = {
 			isa = PBXGroup;
 			children = (
+				7F9017E72BFBE698005CF002 /* Modifiers */,
 				7F01E4162B70458200E192FD /* UIConstants.swift */,
 				7F01E4172B70458200E192FD /* ContactCard.swift */,
 				7F01E4182B70458200E192FD /* FlexibleGrid.swift */,
@@ -184,6 +189,7 @@
 				7FC49B322BD54B380021A956 /* ScrollViewWithOffsetTracking.swift */,
 				7FC49B342BD9B0F40021A956 /* Demo.swift */,
 				7FC49B362BDE70380021A956 /* CollapsibleMenu.swift */,
+				7F9017E52BFBB292005CF002 /* FormalGroupBox.swift */,
 			);
 			path = "UI Elements";
 			sourceTree = "<group>";
@@ -196,6 +202,14 @@
 				7FB7AC842B72ABB000AC8857 /* PagesAndSheets.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		7F9017E72BFBE698005CF002 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				7F9017E82BFBE6CC005CF002 /* ThemedGroupBox.swift */,
+			);
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 		7F9B3CF92BD0035A0093D8B5 /* Frameworks */ = {
@@ -551,6 +565,7 @@
 				7FB7AC882B72F19C00AC8857 /* ExampleCoordinator.swift in Sources */,
 				D1B38EC62891EBA0001FA9F7 /* BooksView.swift in Sources */,
 				7FB6CC702BCFEB23002D658D /* NetflixProduct.swift in Sources */,
+				7F9017E62BFBB292005CF002 /* FormalGroupBox.swift in Sources */,
 				7F01E41A2B70458200E192FD /* WithContinuationExample.swift in Sources */,
 				7F9B3CFD2BD009450093D8B5 /* NetflixCell.swift in Sources */,
 				7FBFE23C295E525A0028FFA1 /* Mocks.swift in Sources */,
@@ -568,6 +583,7 @@
 				7FC49B392BE253A80021A956 /* ThreadSafeWrapper.swift in Sources */,
 				7FC49B3C2BE25BA60021A956 /* ThreadingDemoView.swift in Sources */,
 				7FB6CC662BCE95D9002D658D /* NetflixFilterCell.swift in Sources */,
+				7F9017E92BFBE6CC005CF002 /* ThemedGroupBox.swift in Sources */,
 				7F01E41F2B70458300E192FD /* ContactCard.swift in Sources */,
 				7FBFE238295CDE790028FFA1 /* Container.swift in Sources */,
 				7FB7AC8D2B79807C00AC8857 /* FacadePattern.swift in Sources */,
