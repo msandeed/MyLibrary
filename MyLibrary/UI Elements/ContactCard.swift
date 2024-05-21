@@ -16,11 +16,6 @@ struct ContactCard: View {
     var title: String
     var subtitle: String?
     @Binding var isSelected: Bool
-    @State var selected: Bool = false {
-        didSet {
-            isSelected = selected
-        }
-    }
     
     var body: some View {
         HStack {
@@ -31,10 +26,13 @@ struct ContactCard: View {
                     Text(title)
                         .font(.headline)
                         .foregroundColor(.black)
+                        .lineLimit(1)
                     if let subtitleText = subtitle {
                         Text(subtitleText)
                             .font(.footnote)
                             .foregroundColor(Color.netflixDarkGray)
+                            .multilineTextAlignment(.leading)
+                            .lineLimit(2)
                     }
                 }
             }
@@ -55,32 +53,33 @@ struct ContactCard: View {
     @ViewBuilder func checkmarkCircle() -> some View {
         ZStack {
             HStack(alignment: .center, spacing: 0) {
-                Button {
-                    selected.toggle()
-                } label: {
-                    Image(systemName: "checkmark")
-                        .renderingMode(.template)
-                        .resizable()
-                        .frame(width: 20, height: 16)
-                        .foregroundColor(.white)
-                        .padding(Padding.micro)
-                }
+                Image(systemName: "checkmark")
+                    .renderingMode(.template)
+                    .resizable()
+                    .frame(width: 20, height: 16)
+                    .foregroundColor(.white)
+                    .padding(Padding.micro)
             }
             .frame(width: 36, height: 36, alignment: .center)
-            .background(selected ? Color.blue : .white)
+            .background(isSelected ? Color.blue : .white)
             .cornerRadius(18)
             .overlay(
                 Circle()
-                    .stroke(selected ? Color.clear : Color(hex: "#8D8D92"), lineWidth: 1)
+                    .stroke(isSelected ? Color.clear : Color(hex: "#8D8D92"), lineWidth: 1)
                     .frame(width: 36, height: 36)
             )
+            .onTapGesture {
+                isSelected.toggle()
+                print(isSelected)
+            }
         }
     }
 }
 
 struct ContactCard_Previews: PreviewProvider {
     static var previews: some View {
-        ContactCard(style: .selectable, title: "John Applessed", subtitle: "+1123123123", isSelected: .constant(false))
+        @State var isSelected: Bool = false
+        ContactCard(style: .selectable, title: "John Applessed", subtitle: "+1123123123", isSelected: $isSelected)
     }
 }
 

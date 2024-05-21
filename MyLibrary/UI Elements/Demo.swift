@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct Demo: View {
+    @State var isCardOneSelected = false
+    @State var isCardTwoSelected = false
+    
     var body: some View {
         List {
             Section("Flexible Grid") {
@@ -51,8 +54,9 @@ struct Demo: View {
             
             Section("Contact Cards") {
                 VStack(alignment: .leading, spacing: 0) {
+                    ContactCard(style: .selectable, title: "Someone", subtitle: "subtitle", isSelected: $isCardOneSelected)
                     ContactCard(style: .compressed, title: "Someone", subtitle: "subtitle", isSelected: .constant(false))
-                    ContactCard(style: .selectable, title: "Someone", subtitle: "subtitle", isSelected: .constant(false))
+                    ContactCard(style: .selectable, title: "Another Person", subtitle: "A relatively long subtitle for some reason", isSelected: $isCardTwoSelected)
                     ContactCard(style: .compressed, title: "Someone", isSelected: .constant(false))
                 }
             }
