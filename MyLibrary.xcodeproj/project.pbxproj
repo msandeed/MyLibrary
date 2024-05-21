@@ -24,6 +24,7 @@
 		7F01E4282B7197E800E192FD /* DummyViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E4272B7197E800E192FD /* DummyViews.swift */; };
 		7F9017E62BFBB292005CF002 /* FormalGroupBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9017E52BFBB292005CF002 /* FormalGroupBox.swift */; };
 		7F9017E92BFBE6CC005CF002 /* ThemedGroupBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9017E82BFBE6CC005CF002 /* ThemedGroupBox.swift */; };
+		7F9017EB2BFBEC14005CF002 /* ReminderGroupBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9017EA2BFBEC14005CF002 /* ReminderGroupBox.swift */; };
 		7F9B3CFB2BD0035A0093D8B5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7F9B3CFA2BD0035A0093D8B5 /* Kingfisher */; };
 		7F9B3CFD2BD009450093D8B5 /* NetflixCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B3CFC2BD009450093D8B5 /* NetflixCell.swift */; };
 		7F9B3CFF2BD1673E0093D8B5 /* NetflixProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B3CFE2BD1673E0093D8B5 /* NetflixProductView.swift */; };
@@ -90,6 +91,7 @@
 		7F01E4272B7197E800E192FD /* DummyViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViews.swift; sourceTree = "<group>"; };
 		7F9017E52BFBB292005CF002 /* FormalGroupBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormalGroupBox.swift; sourceTree = "<group>"; };
 		7F9017E82BFBE6CC005CF002 /* ThemedGroupBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedGroupBox.swift; sourceTree = "<group>"; };
+		7F9017EA2BFBEC14005CF002 /* ReminderGroupBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderGroupBox.swift; sourceTree = "<group>"; };
 		7F9B3CFC2BD009450093D8B5 /* NetflixCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixCell.swift; sourceTree = "<group>"; };
 		7F9B3CFE2BD1673E0093D8B5 /* NetflixProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixProductView.swift; sourceTree = "<group>"; };
 		7FB6CC632BCE8F52002D658D /* NetflixHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixHomeView.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				7FC49B342BD9B0F40021A956 /* Demo.swift */,
 				7FC49B362BDE70380021A956 /* CollapsibleMenu.swift */,
 				7F9017E52BFBB292005CF002 /* FormalGroupBox.swift */,
+				7F9017EA2BFBEC14005CF002 /* ReminderGroupBox.swift */,
 			);
 			path = "UI Elements";
 			sourceTree = "<group>";
@@ -594,6 +597,7 @@
 				D1B38EA52891EA2A001FA9F7 /* MyLibraryApp.swift in Sources */,
 				7FB6CC642BCE8F52002D658D /* NetflixHomeView.swift in Sources */,
 				7FBFE22B29546F710028FFA1 /* ViewModelType.swift in Sources */,
+				7F9017EB2BFBEC14005CF002 /* ReminderGroupBox.swift in Sources */,
 				7FB7AC832B729E5400AC8857 /* BooksFlowCoordinator.swift in Sources */,
 				7F01E41C2B70458300E192FD /* ConcurrencyTheory.swift in Sources */,
 				7F01E40E2B70457400E192FD /* ObserverPattern.swift in Sources */,
