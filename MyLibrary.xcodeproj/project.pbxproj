@@ -61,6 +61,11 @@
 		7FC49B3C2BE25BA60021A956 /* ThreadingDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC49B3B2BE25BA60021A956 /* ThreadingDemoView.swift */; };
 		7FC49B3E2BE3951F0021A956 /* ThreadSafeActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC49B3D2BE3951F0021A956 /* ThreadSafeActor.swift */; };
 		7FDA5D4A2C19D60100BA20F7 /* ActorsAndSendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDA5D492C19D60100BA20F7 /* ActorsAndSendable.swift */; };
+		7FEDA7562C7DBECD00B3840D /* AnalyticsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDA7552C7DBECD00B3840D /* AnalyticsProtocol.swift */; };
+		7FEDA7582C7DBF3500B3840D /* AnalyticsKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDA7572C7DBF3500B3840D /* AnalyticsKit.swift */; };
+		7FEDA75A2C7DBF8500B3840D /* AnalyticEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDA7592C7DBF8500B3840D /* AnalyticEvent.swift */; };
+		7FEDA75D2C7DD3EB00B3840D /* SomeAnalyticsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDA75C2C7DD3EB00B3840D /* SomeAnalyticsProvider.swift */; };
+		7FEDA75F2C7DD96A00B3840D /* DummyFlowAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDA75E2C7DD96A00B3840D /* DummyFlowAnalytics.swift */; };
 		D1B38EA52891EA2A001FA9F7 /* MyLibraryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B38EA42891EA2A001FA9F7 /* MyLibraryApp.swift */; };
 		D1B38EA92891EA2E001FA9F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1B38EA82891EA2E001FA9F7 /* Assets.xcassets */; };
 		D1B38EAC2891EA2E001FA9F7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1B38EAB2891EA2E001FA9F7 /* Preview Assets.xcassets */; };
@@ -128,6 +133,11 @@
 		7FC49B3B2BE25BA60021A956 /* ThreadingDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadingDemoView.swift; sourceTree = "<group>"; };
 		7FC49B3D2BE3951F0021A956 /* ThreadSafeActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadSafeActor.swift; sourceTree = "<group>"; };
 		7FDA5D492C19D60100BA20F7 /* ActorsAndSendable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorsAndSendable.swift; sourceTree = "<group>"; };
+		7FEDA7552C7DBECD00B3840D /* AnalyticsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsProtocol.swift; sourceTree = "<group>"; };
+		7FEDA7572C7DBF3500B3840D /* AnalyticsKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsKit.swift; sourceTree = "<group>"; };
+		7FEDA7592C7DBF8500B3840D /* AnalyticEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticEvent.swift; sourceTree = "<group>"; };
+		7FEDA75C2C7DD3EB00B3840D /* SomeAnalyticsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeAnalyticsProvider.swift; sourceTree = "<group>"; };
+		7FEDA75E2C7DD96A00B3840D /* DummyFlowAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyFlowAnalytics.swift; sourceTree = "<group>"; };
 		D1B38EA12891EA2A001FA9F7 /* MyLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1B38EA42891EA2A001FA9F7 /* MyLibraryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLibraryApp.swift; sourceTree = "<group>"; };
 		D1B38EA82891EA2E001FA9F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -311,6 +321,7 @@
 			children = (
 				7F01E4272B7197E800E192FD /* DummyViews.swift */,
 				7FB7AC872B72F19C00AC8857 /* ExampleCoordinator.swift */,
+				7FEDA75E2C7DD96A00B3840D /* DummyFlowAnalytics.swift */,
 			);
 			path = DummyFlow;
 			sourceTree = "<group>";
@@ -358,6 +369,25 @@
 				7FC49B3D2BE3951F0021A956 /* ThreadSafeActor.swift */,
 			);
 			path = SafeThreading;
+			sourceTree = "<group>";
+		};
+		7FEDA7542C7DBEB400B3840D /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				7FEDA75B2C7DD3BD00B3840D /* Providers */,
+				7FEDA7552C7DBECD00B3840D /* AnalyticsProtocol.swift */,
+				7FEDA7572C7DBF3500B3840D /* AnalyticsKit.swift */,
+				7FEDA7592C7DBF8500B3840D /* AnalyticEvent.swift */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
+		7FEDA75B2C7DD3BD00B3840D /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				7FEDA75C2C7DD3EB00B3840D /* SomeAnalyticsProvider.swift */,
+			);
+			path = Providers;
 			sourceTree = "<group>";
 		};
 		D1B38E982891EA2A001FA9F7 = {
@@ -466,6 +496,7 @@
 		D1B38EB82891EB46001FA9F7 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				7FEDA7542C7DBEB400B3840D /* Analytics */,
 				7F01E4242B71922E00E192FD /* Coordinator */,
 				7FBFE236295CDE580028FFA1 /* DI */,
 				D1B38EB22891EA7B001FA9F7 /* NetworkManager */,
@@ -558,6 +589,7 @@
 				7F01E40F2B70457400E192FD /* FactoryPattern.swift in Sources */,
 				D1B38EC82891EC17001FA9F7 /* BookView.swift in Sources */,
 				7FC49B352BD9B0F40021A956 /* Demo.swift in Sources */,
+				7FEDA75F2C7DD96A00B3840D /* DummyFlowAnalytics.swift in Sources */,
 				7FDA5D4A2C19D60100BA20F7 /* ActorsAndSendable.swift in Sources */,
 				7F01E4232B7055A600E192FD /* AsyncPublisherExample.swift in Sources */,
 				7FC49B3E2BE3951F0021A956 /* ThreadSafeActor.swift in Sources */,
@@ -567,6 +599,7 @@
 				D1B38EC02891EB62001FA9F7 /* NetworkService.swift in Sources */,
 				7F01E40C2B70457400E192FD /* DependencyInjection.swift in Sources */,
 				7F01E41D2B70458300E192FD /* TaskGroupExample.swift in Sources */,
+				7FEDA75A2C7DBF8500B3840D /* AnalyticEvent.swift in Sources */,
 				7FB6CC7C2BCFF1C8002D658D /* NetflixFlowCoordinator.swift in Sources */,
 				7F01E40D2B70457400E192FD /* DecoratorPattern.swift in Sources */,
 				7FB7AC882B72F19C00AC8857 /* ExampleCoordinator.swift in Sources */,
@@ -610,7 +643,10 @@
 				7FC49B332BD54B380021A956 /* ScrollViewWithOffsetTracking.swift in Sources */,
 				7FC49B372BDE70380021A956 /* CollapsibleMenu.swift in Sources */,
 				7F01E4282B7197E800E192FD /* DummyViews.swift in Sources */,
+				7FEDA7582C7DBF3500B3840D /* AnalyticsKit.swift in Sources */,
+				7FEDA75D2C7DD3EB00B3840D /* SomeAnalyticsProvider.swift in Sources */,
 				D1B38EBE2891EB62001FA9F7 /* Constants.swift in Sources */,
+				7FEDA7562C7DBECD00B3840D /* AnalyticsProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

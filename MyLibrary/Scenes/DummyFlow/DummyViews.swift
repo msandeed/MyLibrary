@@ -21,29 +21,36 @@ struct AlienView<CoordinatorType: Navigator>: BaseViewProtocol {
             List {
                 Section("Internal Views") {
                     Button("🐄 Page") {
+                        DummyFlowAnalytics.tappedCowButton.track()
                         coordinator.push(.cow)
                     }
                     Button("🚙 Page") {
+                        DummyFlowAnalytics.tappedCarButton.track()
                         coordinator.push(.car)
                     }
                     Button("❤️ Sheet") {
+                        DummyFlowAnalytics.tappedSheetButton.track()
                         coordinator.present(.heart)
                     }
                     Button("🚀 Full Screen Cover") {
+                        DummyFlowAnalytics.tappedFullScreenCoverButton.track()
                         coordinator.present(.rocket)
                     }
                 }
                 
                 Section("To Another Flow") {
                     Button("📚 Present Books Flow") {
+                        DummyFlowAnalytics.tappedBooksFlowButton.track()
                         coordinator.present(Flow.books)
                     }
                     
                     Button("🎬 Present Netflix Flow") {
+                        DummyFlowAnalytics.tappedNetflixFlowButton.track()
                         coordinator.present(Flow.netflix)
                     }
                     
                     Button("🎨 Present UI Gallery") {
+                        DummyFlowAnalytics.tappedUIGalleryFlowButton.track()
                         coordinator.present(Flow.gallery)
                     }
                 }

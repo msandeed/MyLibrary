@@ -13,7 +13,10 @@ struct ResourceMetaData {
     let body: Encodable?
     let isSecured: Bool
     
-    internal init(path: String, parameters: [String: String?] = [:], body: Encodable? = nil, isSecured: Bool = false) {
+    internal init(path: String, 
+                  parameters: [String: String?] = [:],
+                  body: Encodable? = nil,
+                  isSecured: Bool = false) {
         self.path = path
         self.parameters = parameters.map { URLQueryItem(name: $0.key, value: $0.value) }
         self.body = body

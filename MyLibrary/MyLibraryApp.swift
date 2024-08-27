@@ -9,6 +9,11 @@ import SwiftUI
 
 @main
 struct MyLibraryApp: App {
+    
+    init() {
+        setupAnalyticsKit()
+    }
+    
     var body: some Scene {
         WindowGroup {
             CoordinatorView(coordinator: ExampleCoordinator(), homePage: .alien)
@@ -18,5 +23,21 @@ struct MyLibraryApp: App {
 //            Demo()
 //            ThreadingDemoView()
         }
+    }
+}
+
+extension MyLibraryApp {
+    // Here we do the initial setup for Analytics. Any new Provider should be added here.
+    func setupAnalyticsKit() {
+        print("📊 Setting up AnalyticsKit")
+        AnalyticsKit.main.configure(providers: [
+            SomeAnalyticsProvider()
+        ])
+        
+        AnalyticsKit.main.identifyUser(id: nil)     // Somewhere in a real app, the user would login. At that point we will set the id to the user's unique id
+
+        AnalyticsKit.allProviders = [
+            SomeAnalyticsProvider.self
+        ]
     }
 }
