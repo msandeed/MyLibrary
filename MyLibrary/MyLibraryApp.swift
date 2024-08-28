@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import FirebaseCore
 
 @main
 struct MyLibraryApp: App {
     
     init() {
-        setupAnalyticsKit()
+        setupAndTestRemoteConfig()
+        setupAnalyticsKit() // Analytics should be setup at app start or any appropriate point in the app's flow depending on the need.
     }
     
     var body: some Scene {
@@ -39,5 +41,15 @@ extension MyLibraryApp {
         AnalyticsKit.allProviders = [
             SomeAnalyticsProvider.self
         ]
+    }
+    
+    func setupAndTestRemoteConfig() {
+        FirebaseApp.configure()
+        
+        let remoteConfigManager = RemoteConfigManager()
+        remoteConfigManager.fetchConfig {
+            let message = remoteConfigManager.getWelcomeMessage()
+            print("📝 \(message)")
+        }
     }
 }
