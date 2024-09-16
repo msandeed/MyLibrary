@@ -28,6 +28,10 @@ struct AlienView<CoordinatorType: Navigator>: BaseViewProtocol {
                         DummyFlowAnalytics.tappedCarButton.track()
                         coordinator.push(.car)
                     }
+                    Button("📷 Screen Recorder") {
+                        DummyFlowAnalytics.tappedCarButton.track()
+                        coordinator.push(.car)
+                    }
                     Button("❤️ Sheet") {
                         DummyFlowAnalytics.tappedSheetButton.track()
                         coordinator.present(.heart)

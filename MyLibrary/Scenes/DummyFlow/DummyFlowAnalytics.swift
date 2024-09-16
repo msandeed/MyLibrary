@@ -10,6 +10,7 @@ import Foundation
 enum DummyFlowAnalytics: AnalyticEvent {
     case tappedCowButton
     case tappedCarButton
+    case tappedScreenRecorderButton
     case tappedSheetButton
     case tappedFullScreenCoverButton
     case tappedBooksFlowButton
@@ -27,6 +28,8 @@ enum DummyFlowAnalytics: AnalyticEvent {
             return "tapped_Cow_Button"
         case .tappedCarButton:
             return "tapped_Car_Button"
+        case .tappedScreenRecorderButton:
+            return "tapped_ScreenRecorder_Button"
         case .tappedSheetButton:
             return "tapped_Sheet_Button"
         case .tappedFullScreenCoverButton:

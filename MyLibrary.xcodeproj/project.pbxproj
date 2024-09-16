@@ -60,6 +60,8 @@
 		7FC49B392BE253A80021A956 /* ThreadSafeWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC49B382BE253A80021A956 /* ThreadSafeWrapper.swift */; };
 		7FC49B3C2BE25BA60021A956 /* ThreadingDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC49B3B2BE25BA60021A956 /* ThreadingDemoView.swift */; };
 		7FC49B3E2BE3951F0021A956 /* ThreadSafeActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC49B3D2BE3951F0021A956 /* ThreadSafeActor.swift */; };
+		7FC54E262C98E4D3008CD8E7 /* ScreenRecorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC54E242C98E4D3008CD8E7 /* ScreenRecorderView.swift */; };
+		7FC54E272C98E4D3008CD8E7 /* ScreenRecorderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC54E252C98E4D3008CD8E7 /* ScreenRecorderViewModel.swift */; };
 		7FDA5D4A2C19D60100BA20F7 /* ActorsAndSendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDA5D492C19D60100BA20F7 /* ActorsAndSendable.swift */; };
 		7FEDA7562C7DBECD00B3840D /* AnalyticsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDA7552C7DBECD00B3840D /* AnalyticsProtocol.swift */; };
 		7FEDA7582C7DBF3500B3840D /* AnalyticsKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDA7572C7DBF3500B3840D /* AnalyticsKit.swift */; };
@@ -157,6 +159,8 @@
 		7FC49B382BE253A80021A956 /* ThreadSafeWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadSafeWrapper.swift; sourceTree = "<group>"; };
 		7FC49B3B2BE25BA60021A956 /* ThreadingDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadingDemoView.swift; sourceTree = "<group>"; };
 		7FC49B3D2BE3951F0021A956 /* ThreadSafeActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadSafeActor.swift; sourceTree = "<group>"; };
+		7FC54E242C98E4D3008CD8E7 /* ScreenRecorderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenRecorderView.swift; sourceTree = "<group>"; };
+		7FC54E252C98E4D3008CD8E7 /* ScreenRecorderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenRecorderViewModel.swift; sourceTree = "<group>"; };
 		7FDA5D492C19D60100BA20F7 /* ActorsAndSendable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorsAndSendable.swift; sourceTree = "<group>"; };
 		7FEDA7552C7DBECD00B3840D /* AnalyticsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsProtocol.swift; sourceTree = "<group>"; };
 		7FEDA7572C7DBF3500B3840D /* AnalyticsKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsKit.swift; sourceTree = "<group>"; };
@@ -421,6 +425,15 @@
 			path = SafeThreading;
 			sourceTree = "<group>";
 		};
+		7FC54E232C98E4D3008CD8E7 /* ScreenRecorder */ = {
+			isa = PBXGroup;
+			children = (
+				7FC54E242C98E4D3008CD8E7 /* ScreenRecorderView.swift */,
+				7FC54E252C98E4D3008CD8E7 /* ScreenRecorderViewModel.swift */,
+			);
+			path = ScreenRecorder;
+			sourceTree = "<group>";
+		};
 		7FEDA7542C7DBEB400B3840D /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
@@ -507,6 +520,7 @@
 		D1B38EB32891EA89001FA9F7 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				7FC54E232C98E4D3008CD8E7 /* ScreenRecorder */,
 				7FB6CC782BCFEFFE002D658D /* Domain */,
 				7FB6CC602BCE8F1A002D658D /* Netflix */,
 				7FBFE22929546F600028FFA1 /* Base */,
@@ -687,6 +701,7 @@
 				7FEDA75A2C7DBF8500B3840D /* AnalyticEvent.swift in Sources */,
 				7FB6CC7C2BCFF1C8002D658D /* NetflixFlowCoordinator.swift in Sources */,
 				7F01E40D2B70457400E192FD /* DecoratorPattern.swift in Sources */,
+				7FC54E262C98E4D3008CD8E7 /* ScreenRecorderView.swift in Sources */,
 				7FB7AC882B72F19C00AC8857 /* ExampleCoordinator.swift in Sources */,
 				D1B38EC62891EBA0001FA9F7 /* BooksView.swift in Sources */,
 				7FB6CC702BCFEB23002D658D /* NetflixProduct.swift in Sources */,
@@ -700,6 +715,7 @@
 				7FB7AC812B71A4E500AC8857 /* CoordinatorView.swift in Sources */,
 				7FBFE2312959084C0028FFA1 /* BooksUsecases.swift in Sources */,
 				D1B38EBF2891EB62001FA9F7 /* Extensions.swift in Sources */,
+				7FC54E272C98E4D3008CD8E7 /* ScreenRecorderViewModel.swift in Sources */,
 				7FB6CC6A2BCEDBC6002D658D /* NetflixMainCell.swift in Sources */,
 				7FBFE235295CDE530028FFA1 /* Factory.swift in Sources */,
 				7FB6CC772BCFEEFE002D658D /* NetflixUsecases.swift in Sources */,
