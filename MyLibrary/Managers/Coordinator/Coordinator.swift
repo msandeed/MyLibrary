@@ -101,8 +101,6 @@ extension Navigator {
             return CarView(coordinator: self).asAnyView
         case .cow:
             return CowView(coordinator: self).asAnyView
-        case .screenRecorder:
-            return ScreenRecorderView(coordinator: self).asAnyView
         case .books:
             return BooksView(coordinator: self).asAnyView
         case .singleBook(let book):
