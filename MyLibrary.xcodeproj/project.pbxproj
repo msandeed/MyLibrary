@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -179,6 +179,10 @@
 		D1B38EC72891EC17001FA9F7 /* BookView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		7F951E9B2F6F6CB5004799D5 /* MSDynamicForm */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = MSDynamicForm; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		D1B38E9E2891EA2A001FA9F7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -246,6 +250,7 @@
 		7F01E4152B70458200E192FD /* UI Elements */ = {
 			isa = PBXGroup;
 			children = (
+				7F951E9B2F6F6CB5004799D5 /* MSDynamicForm */,
 				7F9017E72BFBE698005CF002 /* Modifiers */,
 				7F01E4162B70458200E192FD /* UIConstants.swift */,
 				7F01E4172B70458200E192FD /* ContactCard.swift */,
@@ -578,6 +583,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				7F951E9B2F6F6CB5004799D5 /* MSDynamicForm */,
 			);
 			name = MyLibrary;
 			packageProductDependencies = (

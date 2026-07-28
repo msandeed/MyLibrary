@@ -37,6 +37,7 @@ extension URLSession {
         for endpoint: Endpoint<R>,
         decoder: JSONDecoder = .init()
     ) -> AnyPublisher<R, NetworkError> {
+        
         guard let request = endpoint.makeRequest() else {
             return Fail(
                 error: NetworkError.requestError
