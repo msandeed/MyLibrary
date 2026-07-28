@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class WithContinuationExampleDataProvider {
+struct WithContinuationExampleDataProvider {
     func downloadImage(using urlString: String) async throws -> UIImage {
         guard let url = URL(string: urlString) else {
             throw URLError(.badURL)
@@ -27,6 +27,7 @@ class WithContinuationExampleDataProvider {
     }
 }
 
+@MainActor
 class WithContinuationExampleViewModel: ObservableObject {
     @Published var image: UIImage?
     let dataProvider = WithContinuationExampleDataProvider()

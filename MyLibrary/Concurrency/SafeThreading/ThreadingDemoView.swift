@@ -22,6 +22,7 @@ struct ThreadingDemoView: View {
     }
 }
 
+@MainActor
 class ThreadingDemoViewModel: ObservableObject {
     let property = ThreadSafeWrapper(value: "Initial")  // Old approach
     let property2 = ThreadSafeActor(value: "Initial")   // New approach

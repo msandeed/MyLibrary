@@ -6,9 +6,13 @@
 //
 
 import SwiftUI
-import Combine
+// @preconcurrency: Combine predates Swift Concurrency and isn't Sendable-audited (e.g. Published<Value>.Publisher).
+// Its subject/storage already does its own internal locking, and the only payload crossing the actor
+// boundary below is [Int] (Sendable), so trusting it here is safe — but it silences Sendable checking
+// for ALL Combine APIs used in this file, not just $data.
+@preconcurrency import Combine
 
-class AsyncPublisherDataProvider {
+actor AsyncPublisherDataProvider {
     @Published var data: [Int] = []
     
     func startPublishing() async {
@@ -38,7 +42,7 @@ class AsyncPublisherViewModel: ObservableObject {
     
     func subscribeToInputs() {
         Task {
-            for await values in dataProvider.$data.values {
+            for await values in await dataProvider.$data.values {
                 dataArray = values
             }
         }

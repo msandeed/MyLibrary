@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class TaskGroupExampleDataProvider {
+struct TaskGroupExampleDataProvider {
     // Not as scalable as TaskGroup
     func downloadImagesWithAsyncLet() async throws -> [UIImage] {
         do {
@@ -59,6 +59,7 @@ class TaskGroupExampleDataProvider {
     }
 }
 
+@MainActor
 class TaskGroupExampleViewModel: ObservableObject {
     @Published var images: [UIImage] = []
     let dataProvider = TaskGroupExampleDataProvider()

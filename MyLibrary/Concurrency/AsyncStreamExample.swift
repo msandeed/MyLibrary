@@ -19,8 +19,8 @@ class AsyncStreamDataProvider {
         }
     }
     
-    func getNumber(newValue: @escaping (Int) -> Void,
-                   onFinish: @escaping (Error?) -> Void) {
+    func getNumber(newValue: @escaping @Sendable (Int) -> Void,
+                   onFinish: @escaping @Sendable (Error?) -> Void) {
         let items = [1,2,3,4,5,6,7,8,9,10]
         
         for item in items {
