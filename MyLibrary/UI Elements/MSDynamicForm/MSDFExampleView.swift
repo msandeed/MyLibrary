@@ -41,9 +41,7 @@ class MSDFExampleViewModel: MSDynamicFormViewModel {
         let genderField = publisher(for: "gender")
         
         genderField
-            .sink { [weak self] field in
-                guard let self else { return }
-                
+            .sink { field in
                 print("Gender changed:", field.selectedOption?.title ?? "")
                 
                 if field.selectedOption?.title == "Male" {
