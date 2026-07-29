@@ -13,8 +13,9 @@ get its own example file in `MyLibrary/Concurrency`, following the folder's exis
 - [x] **`sending` parameters/results** (SE-0430, region-based isolation) — explicit `sending` parameter that
       transfers ownership of a non-`Sendable` value across an isolation boundary, vs. requiring `Sendable`.
       → `MyLibrary/Concurrency/SendingParameters.swift`
-- [ ] **Typed throws** (SE-0413) — `func fetch() async throws(NetworkError) -> Data`. Rewrite one of the
+- [x] **Typed throws** (SE-0413) — `func fetch() async throws(NetworkError) -> Data`. Rewrite one of the
       existing untyped-`throws` examples to compare.
+      → `MyLibrary/Concurrency/TypedThrows.swift`
 - [ ] **Discarding task groups** — `withDiscardingTaskGroup` / `withThrowingDiscardingTaskGroup` for
       fire-and-forget children, contrasted with the result-collecting `withThrowingTaskGroup` already in
       `TaskGroupExample.swift`.

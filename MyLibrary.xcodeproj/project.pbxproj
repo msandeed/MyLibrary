@@ -28,7 +28,7 @@
 		7F9B3CFD2BD009450093D8B5 /* NetflixCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B3CFC2BD009450093D8B5 /* NetflixCell.swift */; };
 		7F9B3CFF2BD1673E0093D8B5 /* NetflixProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B3CFE2BD1673E0093D8B5 /* NetflixProductView.swift */; };
 		7FACBBEF301A06370014A798 /* TaskCancellation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FACBBEE301A06370014A798 /* TaskCancellation.swift */; };
-		DFCA51A419F7CE32E6BBC685 /* SendingParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEF2650E12DDCA9DC6D6CCA /* SendingParameters.swift */; };
+		7FACBC39301AAAF70014A798 /* TypedThrows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FACBC38301AAAF70014A798 /* TypedThrows.swift */; };
 		7FB6CC642BCE8F52002D658D /* NetflixHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB6CC632BCE8F52002D658D /* NetflixHomeView.swift */; };
 		7FB6CC662BCE95D9002D658D /* NetflixFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB6CC652BCE95D9002D658D /* NetflixFilterCell.swift */; };
 		7FB6CC682BCEB0AE002D658D /* NetflixFilterBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB6CC672BCEB0AE002D658D /* NetflixFilterBar.swift */; };
@@ -103,6 +103,7 @@
 		D1B38EC42891EB7E001FA9F7 /* BooksListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B38EC32891EB7E001FA9F7 /* BooksListViewModel.swift */; };
 		D1B38EC62891EBA0001FA9F7 /* BooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B38EC52891EBA0001FA9F7 /* BooksView.swift */; };
 		D1B38EC82891EC17001FA9F7 /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B38EC72891EC17001FA9F7 /* BookView.swift */; };
+		DFCA51A419F7CE32E6BBC685 /* SendingParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEF2650E12DDCA9DC6D6CCA /* SendingParameters.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,7 +127,7 @@
 		7F9B3CFC2BD009450093D8B5 /* NetflixCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixCell.swift; sourceTree = "<group>"; };
 		7F9B3CFE2BD1673E0093D8B5 /* NetflixProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixProductView.swift; sourceTree = "<group>"; };
 		7FACBBEE301A06370014A798 /* TaskCancellation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCancellation.swift; sourceTree = "<group>"; };
-		CEEF2650E12DDCA9DC6D6CCA /* SendingParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendingParameters.swift; sourceTree = "<group>"; };
+		7FACBC38301AAAF70014A798 /* TypedThrows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypedThrows.swift; sourceTree = "<group>"; };
 		7FB6CC632BCE8F52002D658D /* NetflixHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixHomeView.swift; sourceTree = "<group>"; };
 		7FB6CC652BCE95D9002D658D /* NetflixFilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixFilterCell.swift; sourceTree = "<group>"; };
 		7FB6CC672BCEB0AE002D658D /* NetflixFilterBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixFilterBar.swift; sourceTree = "<group>"; };
@@ -167,6 +168,7 @@
 		7FEDA75E2C7DD96A00B3840D /* DummyFlowAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyFlowAnalytics.swift; sourceTree = "<group>"; };
 		7FEDA7602C7F393B00B3840D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7FEDA7922C7F3B7E00B3840D /* RemoteConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigManager.swift; sourceTree = "<group>"; };
+		CEEF2650E12DDCA9DC6D6CCA /* SendingParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendingParameters.swift; sourceTree = "<group>"; };
 		D1B38EA12891EA2A001FA9F7 /* MyLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1B38EA42891EA2A001FA9F7 /* MyLibraryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLibraryApp.swift; sourceTree = "<group>"; };
 		D1B38EA82891EA2E001FA9F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 		7F01E4102B70458200E192FD /* Concurrency */ = {
 			isa = PBXGroup;
 			children = (
+				7FACBC38301AAAF70014A798 /* TypedThrows.swift */,
 				7F01E4112B70458200E192FD /* WithContinuation.swift */,
 				7FACBBEE301A06370014A798 /* TaskCancellation.swift */,
 				CEEF2650E12DDCA9DC6D6CCA /* SendingParameters.swift */,
@@ -703,6 +706,7 @@
 				7FB7AC882B72F19C00AC8857 /* ExampleCoordinator.swift in Sources */,
 				D1B38EC62891EBA0001FA9F7 /* BooksView.swift in Sources */,
 				7FB6CC702BCFEB23002D658D /* NetflixProduct.swift in Sources */,
+				7FACBC39301AAAF70014A798 /* TypedThrows.swift in Sources */,
 				7F9017E62BFBB292005CF002 /* FormalGroupBox.swift in Sources */,
 				7F01E41A2B70458200E192FD /* WithContinuation.swift in Sources */,
 				7F9B3CFD2BD009450093D8B5 /* NetflixCell.swift in Sources */,
