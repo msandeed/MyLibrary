@@ -30,22 +30,34 @@ get its own example file in `MyLibrary/Concurrency`, following the folder's exis
 - [ ] **New single-resume `Continuation<Success, Failure>`** (Swift 6.3) — successor to
       `withCheckedThrowingContinuation` (used in `WithContinuationExample.swift`); double-resume becomes a
       compile-time error instead of a runtime trap. Add as an explicit comparison alongside the existing file.
-- [ ] **Swift 6.4 diagnostics** — warning when a `Task {}` silently drops a thrown error nobody checks; the
-      lifted restriction on calling `async` functions from `defer` blocks (async cleanup).
+- [ ] **Async `defer` statements** (SE-0493, Swift 6.4) — the restriction on calling `async` functions from
+      `defer` blocks is lifted; a `defer` body can now implicitly `await` async cleanup, guaranteeing it runs on
+      every exit path.
+- [ ] **Warnings for ignored throwing tasks + typed throws on task initializers** (SE-0520, Swift 6.4) —
+      compiler warning when an unstructured `Task { throws }` is created without handling/storing its result,
+      catching silently-dropped errors; task initializers also gain `throws(Failure)` typed-throws support.
+- [ ] **Task cancellation shields** (SE-0504, Swift 6.4) — `withTaskCancellationShield` temporarily hides task
+      cancellation from a block of code so critical cleanup can still run after the surrounding task was
+      cancelled. Natural companion to the existing `TaskCancellation.swift` example.
+- [ ] **`Result.catching` for async throwing work** (SE-0530, Swift 6.4) — new `catching` initializer on
+      `Result` that wraps an `async throws` operation's outcome, cutting the do/catch boilerplate currently
+      needed to convert an async call into a `Result`.
 - [ ] **`Mutex<T>` / `Synchronization` framework** (iOS 18+) — modern lock/atomics alternative to a
       `DispatchQueue`-barrier lock. Add `ThreadSafeMutex.swift` next to `ThreadSafeWrapper.swift` /
       `ThreadSafeActor.swift` as a third comparison point in `SafeThreading/`.
-- [ ] **`weak let` / `~Sendable`** (Swift 6.4) — `weak let` lets a class with a weak reference qualify for real
-      `Sendable` checking instead of `@unchecked`; `~Sendable` explicitly opts a type out of ever being
-      `Sendable`. Improves on the `MutableUser`/`@unchecked Sendable` pattern in `ActorsAndSendable.swift`.
+- [ ] **`weak let`** (SE-0481, Swift 6.3) — lets a class with a weak reference qualify for real `Sendable`
+      checking instead of `@unchecked`. Improves on the `MutableUser`/`@unchecked Sendable` pattern in
+      `ActorsAndSendable.swift`.
+- [ ] **`~Sendable`** (SE-0518, Swift 6.4) — explicitly opts a type out of ever being `Sendable`, communicating
+      design intent instead of relying on automatic non-conformance inference.
 
 ## Already discussed — needs a code example
 
 - [ ] **`nonisolated(nonsending)` / `@concurrent`** (SE-0461) — discussed at length during the
       `AsyncPublisherExample.swift` warning fix; no standalone example yet.
-- [ ] **Default actor isolation build setting** (`SWIFT_DEFAULT_ACTOR_ISOLATION`, SE-0466) — discussed as a
-      project-level concept; no code artifact (this one may just need a note/comment rather than a file, since
-      it's a build setting, not a code pattern).
+- [x] **Default actor isolation build setting** (`SWIFT_DEFAULT_ACTOR_ISOLATION`, SE-0466) — discussed as a
+      project-level concept; no code artifact needed since it's a build setting, not a code pattern.
+      → `MyLibrary/Concurrency/ConcurrencyTheory.md`
 - [ ] **Actor reentrancy** — flagged as a caveat when discussing actors; no example actually demonstrating
       interleaved re-entry causing a subtle bug.
 
