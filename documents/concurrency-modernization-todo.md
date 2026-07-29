@@ -6,9 +6,10 @@ get its own example file in `MyLibrary/Concurrency`, following the folder's exis
 
 ## New topics
 
-- [ ] **Task cancellation** — cooperative cancellation model: `Task.isCancelled`, `Task.checkCancellation()`,
+- [x] **Task cancellation** — cooperative cancellation model: `Task.isCancelled`, `Task.checkCancellation()`,
       `withTaskCancellationHandler(operation:onCancel:)`. Demonstrate wrapping a non-cooperative API (e.g. a
       `URLSessionTask`) so cancelling the Swift `Task` actually cancels the underlying work.
+      → `MyLibrary/Concurrency/TaskCancellation.swift`
 - [ ] **`sending` parameters/results** (SE-0430, region-based isolation) — explicit `sending` parameter that
       transfers ownership of a non-`Sendable` value across an isolation boundary, vs. requiring `Sendable`.
 - [ ] **Typed throws** (SE-0413) — `func fetch() async throws(NetworkError) -> Data`. Rewrite one of the

@@ -27,6 +27,7 @@
 		7F9B3CFB2BD0035A0093D8B5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7F9B3CFA2BD0035A0093D8B5 /* Kingfisher */; };
 		7F9B3CFD2BD009450093D8B5 /* NetflixCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B3CFC2BD009450093D8B5 /* NetflixCell.swift */; };
 		7F9B3CFF2BD1673E0093D8B5 /* NetflixProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B3CFE2BD1673E0093D8B5 /* NetflixProductView.swift */; };
+		7FACBBEF301A06370014A798 /* TaskCancellation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FACBBEE301A06370014A798 /* TaskCancellation.swift */; };
 		7FB6CC642BCE8F52002D658D /* NetflixHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB6CC632BCE8F52002D658D /* NetflixHomeView.swift */; };
 		7FB6CC662BCE95D9002D658D /* NetflixFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB6CC652BCE95D9002D658D /* NetflixFilterCell.swift */; };
 		7FB6CC682BCEB0AE002D658D /* NetflixFilterBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB6CC672BCEB0AE002D658D /* NetflixFilterBar.swift */; };
@@ -123,6 +124,7 @@
 		7F9017EA2BFBEC14005CF002 /* ReminderGroupBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderGroupBox.swift; sourceTree = "<group>"; };
 		7F9B3CFC2BD009450093D8B5 /* NetflixCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixCell.swift; sourceTree = "<group>"; };
 		7F9B3CFE2BD1673E0093D8B5 /* NetflixProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixProductView.swift; sourceTree = "<group>"; };
+		7FACBBEE301A06370014A798 /* TaskCancellation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCancellation.swift; sourceTree = "<group>"; };
 		7FB6CC632BCE8F52002D658D /* NetflixHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixHomeView.swift; sourceTree = "<group>"; };
 		7FB6CC652BCE95D9002D658D /* NetflixFilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixFilterCell.swift; sourceTree = "<group>"; };
 		7FB6CC672BCEB0AE002D658D /* NetflixFilterBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixFilterBar.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				7F01E4112B70458200E192FD /* WithContinuation.swift */,
+				7FACBBEE301A06370014A798 /* TaskCancellation.swift */,
 				7F01E4122B70458200E192FD /* AsyncStream.swift */,
 				7F01E4142B70458200E192FD /* TaskGroup.swift */,
 				7F01E4222B7055A600E192FD /* AsyncPublisher.swift */,
@@ -683,6 +686,7 @@
 				7FDA5D4A2C19D60100BA20F7 /* ActorsAndSendable.swift in Sources */,
 				7F01E4232B7055A600E192FD /* AsyncPublisher.swift in Sources */,
 				7FC49B3E2BE3951F0021A956 /* ThreadSafeActor.swift in Sources */,
+				7FACBBEF301A06370014A798 /* TaskCancellation.swift in Sources */,
 				7FB6CC7A2BCFF00E002D658D /* BaseUseCase.swift in Sources */,
 				7FB6CC682BCEB0AE002D658D /* NetflixFilterBar.swift in Sources */,
 				7FB7AC8F2B7A846100AC8857 /* AdapterPattern.swift in Sources */,
