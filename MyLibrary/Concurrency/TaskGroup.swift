@@ -8,21 +8,26 @@
 import SwiftUI
 
 struct TaskGroupExampleDataProvider {
-    // Not as scalable as TaskGroup
+    // async let starts each download concurrently, but the number of child tasks must be known
+    // and written out at compile time — not as scalable as TaskGroup for a dynamic count.
     func downloadImagesWithAsyncLet() async throws -> [UIImage] {
         do {
             async let fetchImage1 = downloadImage(using: "https://picsum.photos/300")
             async let fetchImage2 = downloadImage(using: "https://picsum.photos/300")
             async let fetchImage3 = downloadImage(using: "https://picsum.photos/300")
             async let fetchImage4 = downloadImage(using: "https://picsum.photos/300")
-            
+
+            // Awaiting the tuple suspends until all four finish; if any throws, the others are
+            // implicitly cancelled and this rethrows.
             let (image1, image2, image3, image4) = try await (fetchImage1, fetchImage2, fetchImage3, fetchImage4)
             return [image1, image2, image3, image4]
         } catch {
             throw error
         }
     }
-    
+
+    // TaskGroup scales to a dynamic number of children (here, a loop) and lets each one fail
+    // independently — try? below drops failed downloads instead of cancelling the whole group.
     func downloadImagesWithTaskGroup() async throws -> [UIImage] {
         var images: [UIImage] = []
         return try await withThrowingTaskGroup(of: UIImage?.self) { group in
@@ -31,13 +36,14 @@ struct TaskGroupExampleDataProvider {
                     try? await self.downloadImage(using: "https://picsum.photos/300")
                 }
             }
-            
+
+            // Iterating the group awaits each child task as it completes, not in the order added.
             for try await image in group {
                 if let image = image {
                     images.append(image)
                 }
             }
-            
+
             return images
         }
     }

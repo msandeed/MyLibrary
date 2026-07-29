@@ -8,6 +8,13 @@
 import SwiftUI
 
 struct WithContinuationExampleDataProvider {
+    // Wraps the old completion-handler-based dataTask API in async/await.
+    // withCheckedThrowingContinuation suspends the calling task until resume(returning:/throwing:)
+    
+    // Called exactly once — the "checked" variant fatally traps if resume is called a second
+    // time, and logs a runtime warning if the continuation is deallocated without ever resuming
+    // (a hang),
+    // Why this matters: the alternative, withUnsafeThrowingContinuation, does none of this bookkeeping — get the resume-once contract wrong there and you get a silent hang or undefined behavior with zero diagnostics.
     func downloadImage(using urlString: String) async throws -> UIImage {
         guard let url = URL(string: urlString) else {
             throw URLError(.badURL)

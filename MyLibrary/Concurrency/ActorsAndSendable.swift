@@ -5,7 +5,7 @@
 //  Created by Mostafa Sandeed on 12/06/2024.
 //
 
-// A public API is safe to use across concurrency domains when there are no public mutators, an internal locking system is in place, or mutators implement copy-on write like with value types.
+// A public API that is safe to use across concurrency domains when there are no public mutators, an internal locking system is in place, or mutators implement copy-on write like with value types.
 
 import Foundation
 
@@ -43,7 +43,8 @@ actor FruitBasket {
 
 class activeSession {
     let fruitBasket: FruitBasket = .init(basketName: "Example", store: "The Store")
-    
+
+    // Crossing into the actor requires await; the call suspends until the actor is free to run it.
     func addToBasket(_ selected: [Fruit]) async {
         await fruitBasket.addToBasket(selected)
     }
@@ -52,6 +53,8 @@ class activeSession {
         fruitBasket.basketFullName  // No need to await as we're accessing a nonisolated property of the actor
     }
     
+    // The closure passed here is @Sendable (per checkFruit's signature), so it must not capture
+    // non-Sendable mutable state — it may end up running on the actor's isolated context.
     func isFruitInBasket(_ fruit: Fruit) async {
         await fruitBasket.checkFruit { fruit in
             return true
@@ -66,7 +69,7 @@ struct User {
     var name: String
 }
 
-// Article is final and immutable and therefore it is thread-safe. However, we would have to manually indicate conformance ot Sendable
+// Article is final and immutable and therefore it is thread-safe. However, we would have to manually indicate conformance to Sendable
 final class Article: Sendable {
     let name: String = ""
 }

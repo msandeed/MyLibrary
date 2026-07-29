@@ -13,8 +13,11 @@ import SwiftUI
 @preconcurrency import Combine
 
 actor AsyncPublisherDataProvider {
+    // @Published works inside an actor just like a class; the actor isolates writes to `data`,
+    // and $data.values below bridges the Combine publisher into an AsyncSequence.
     @Published var data: [Int] = []
-    
+
+    // Simulates a slow data source, appending one value every 2 seconds.
     func startPublishing() async {
         data.append(0)
         try? await Task.sleep(nanoseconds: 2_000_000_000)
@@ -42,6 +45,8 @@ class AsyncPublisherViewModel: ObservableObject {
     
     func subscribeToInputs() {
         Task {
+            // await is needed to reach $data since the provider is an actor; the for-await loop
+            // then suspends here until the actor publishes a new value, without blocking the thread.
             for await values in await dataProvider.$data.values {
                 dataArray = values
             }
