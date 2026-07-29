@@ -102,3 +102,17 @@ But that value isn't retroactively forced onto existing projects:
     → closure → strong `self`) that only breaks once the task finishes.
   - it loops over a long-lived/never-ending `AsyncStream`/`AsyncSequence` — `self` stays alive for as
     long as iteration continues, potentially forever, unless cancelled externally.
+
+## Implicit vs. explicit `Sendable` conformance
+
+- Structs and enums get **implicit** `Sendable` conformance synthesized by the compiler when every
+  stored property's type is itself `Sendable` — no `: Sendable` annotation required.
+- Classes never get this treatment, no matter how safe they actually are. Even a `final` class whose
+  only stored properties are immutable `let`s of `Sendable` types must still declare `: Sendable`
+  explicitly. Verified by compiling: dropping the annotation on such a class produces "does not
+  conform to the 'Sendable' protocol," even though nothing about the type's actual thread-safety
+  changed.
+- Reasoning: "would this class's shape satisfy `Sendable`'s requirements" (final + all-`let` +
+  `Sendable`-conforming members) and "does this class conform to `Sendable`" are two separate
+  questions in the language. Satisfying the first never implies the second for reference types —
+  only value types get inferred conformance; classes always require the explicit opt-in.

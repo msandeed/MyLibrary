@@ -37,8 +37,13 @@ actor FruitBasket {
         basketName + " - " + store
     }
     
-    // When passing a function into an actor-isolated context, we have to declare that it's thread-safe using @Sendable attribute
-    func checkFruit(_ action: @Sendable (Fruit) -> Bool) { }
+    // The closure is created by a non-isolated caller but executed here, on the actor's
+    // isolated executor, when passed to `contains(where:)`. That crossing is why the
+    // parameter must be @Sendable: it lets the compiler verify whatever the closure
+    // captures is safe to hand over, rather than just trusting the caller.
+    func checkFruit(_ action: @Sendable (Fruit) -> Bool) -> Bool {
+        fruits.contains(where: action)
+    }
 }
 
 class activeSession {
@@ -53,11 +58,13 @@ class activeSession {
         fruitBasket.basketFullName  // No need to await as we're accessing a nonisolated property of the actor
     }
     
-    // The closure passed here is @Sendable (per checkFruit's signature), so it must not capture
-    // non-Sendable mutable state — it may end up running on the actor's isolated context.
-    func isFruitInBasket(_ fruit: Fruit) async {
-        await fruitBasket.checkFruit { fruit in
-            return true
+    // `fruit` is captured by the closure below and carried into the actor. That capture
+    // only compiles because `Fruit` is an implicitly Sendable value type; capturing a
+    // non-Sendable reference type, or a mutable local var, here would be a compile error —
+    // exactly the check @Sendable exists to run.
+    func isFruitInBasket(_ fruit: Fruit) async -> Bool {
+        await fruitBasket.checkFruit { candidate in
+            candidate == fruit
         }
     }
 }
