@@ -53,8 +53,9 @@ get its own example file in `MyLibrary/Concurrency`, following the folder's exis
 
 ## Already discussed — needs a code example
 
-- [ ] **`nonisolated(nonsending)` / `@concurrent`** (SE-0461) — discussed at length during the
+- [x] **`nonisolated(nonsending)` / `@concurrent`** (SE-0461) — discussed at length during the
       `AsyncPublisherExample.swift` warning fix; no standalone example yet.
+      → `MyLibrary/Concurrency/ExecutorIsolationExample.swift`
 - [x] **Default actor isolation build setting** (`SWIFT_DEFAULT_ACTOR_ISOLATION`, SE-0466) — discussed as a
       project-level concept; no code artifact needed since it's a build setting, not a code pattern.
       → `MyLibrary/Concurrency/ConcurrencyTheory.md`
