@@ -61,6 +61,25 @@ keyword, but they're not variations on the same idea:
 So: `unsafe` = "stop verifying this, I promise." `nonsending` = "run this on the caller's actor
 instead of hopping off" — a scheduling choice, not a safety bypass.
 
+## `sending` parameters/results — not a substitute for `Sendable`
+
+- `sending` (SE-0430, Swift 6.0) attaches to a parameter or return type, not to a whole type. It
+  transfers exclusive ownership of one specific value across an isolation boundary for a single
+  call, instead of requiring the value's *type* to be `Sendable`. Region-based isolation checking
+  proves the caller can no longer touch the value after handing it off — reusing it afterward is a
+  compile-time error ("used after being passed as a sending parameter"), not a runtime trap.
+- Use case: single-owner hand-off ("hot potato") — a non-`Sendable` value created in one isolation
+  domain, passed into another (e.g. an actor), and never touched again by the original owner. See
+  `PhotoEditSession` / `PhotoProcessor` in `SendingParameters.swift`: the class stays non-`Sendable`,
+  but ownership moves cleanly into the actor and back out.
+- **Not** a substitute for `Sendable` when a value needs to be held or accessed by more than one
+  isolation domain *at the same time* — a stored property read from multiple places, something
+  captured and reused across calls, etc. That's genuine sharing, not a one-time transfer; `sending`
+  won't type-check it away. You still need real `Sendable` there (locks, an actor, immutability) —
+  same as `MutableUser`'s `@unchecked Sendable` in `ActorsAndSendable.swift`.
+- Rule of thumb: `Sendable` = "safe to be touched from multiple places at once." `sending` = "safe to
+  hand off once, because only one place touches it at any given time."
+
 ## `SWIFT_DEFAULT_ACTOR_ISOLATION` (build setting)
 
 `SWIFT_DEFAULT_ACTOR_ISOLATION` (SE-0466) is a real build setting, and **this changed as of Swift

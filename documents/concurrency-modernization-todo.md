@@ -10,8 +10,9 @@ get its own example file in `MyLibrary/Concurrency`, following the folder's exis
       `withTaskCancellationHandler(operation:onCancel:)`. Demonstrate wrapping a non-cooperative API (e.g. a
       `URLSessionTask`) so cancelling the Swift `Task` actually cancels the underlying work.
       → `MyLibrary/Concurrency/TaskCancellation.swift`
-- [ ] **`sending` parameters/results** (SE-0430, region-based isolation) — explicit `sending` parameter that
+- [x] **`sending` parameters/results** (SE-0430, region-based isolation) — explicit `sending` parameter that
       transfers ownership of a non-`Sendable` value across an isolation boundary, vs. requiring `Sendable`.
+      → `MyLibrary/Concurrency/SendingParameters.swift`
 - [ ] **Typed throws** (SE-0413) — `func fetch() async throws(NetworkError) -> Data`. Rewrite one of the
       existing untyped-`throws` examples to compare.
 - [ ] **Discarding task groups** — `withDiscardingTaskGroup` / `withThrowingDiscardingTaskGroup` for
