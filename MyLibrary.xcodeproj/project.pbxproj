@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		063C9A98BD5D28C5E1E251E8 /* ExecutorIsolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBA38E5C128E9916106C463 /* ExecutorIsolation.swift */; };
 		7F01E40C2B70457400E192FD /* DependencyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E4082B70457400E192FD /* DependencyInjection.swift */; };
 		7F01E40D2B70457400E192FD /* DecoratorPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E4092B70457400E192FD /* DecoratorPattern.swift */; };
 		7F01E40E2B70457400E192FD /* ObserverPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E40A2B70457400E192FD /* ObserverPattern.swift */; };
@@ -29,7 +30,6 @@
 		7F9B3CFF2BD1673E0093D8B5 /* NetflixProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B3CFE2BD1673E0093D8B5 /* NetflixProductView.swift */; };
 		7FACBBEF301A06370014A798 /* TaskCancellation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FACBBEE301A06370014A798 /* TaskCancellation.swift */; };
 		7FACBC39301AAAF70014A798 /* TypedThrows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FACBC38301AAAF70014A798 /* TypedThrows.swift */; };
-		063C9A98BD5D28C5E1E251E8 /* ExecutorIsolationExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBA38E5C128E9916106C463 /* ExecutorIsolationExample.swift */; };
 		7FB6CC642BCE8F52002D658D /* NetflixHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB6CC632BCE8F52002D658D /* NetflixHomeView.swift */; };
 		7FB6CC662BCE95D9002D658D /* NetflixFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB6CC652BCE95D9002D658D /* NetflixFilterCell.swift */; };
 		7FB6CC682BCEB0AE002D658D /* NetflixFilterBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB6CC672BCEB0AE002D658D /* NetflixFilterBar.swift */; };
@@ -129,7 +129,6 @@
 		7F9B3CFE2BD1673E0093D8B5 /* NetflixProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixProductView.swift; sourceTree = "<group>"; };
 		7FACBBEE301A06370014A798 /* TaskCancellation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCancellation.swift; sourceTree = "<group>"; };
 		7FACBC38301AAAF70014A798 /* TypedThrows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypedThrows.swift; sourceTree = "<group>"; };
-		EEBA38E5C128E9916106C463 /* ExecutorIsolationExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutorIsolationExample.swift; sourceTree = "<group>"; };
 		7FB6CC632BCE8F52002D658D /* NetflixHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixHomeView.swift; sourceTree = "<group>"; };
 		7FB6CC652BCE95D9002D658D /* NetflixFilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixFilterCell.swift; sourceTree = "<group>"; };
 		7FB6CC672BCEB0AE002D658D /* NetflixFilterBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixFilterBar.swift; sourceTree = "<group>"; };
@@ -183,6 +182,7 @@
 		D1B38EC32891EB7E001FA9F7 /* BooksListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksListViewModel.swift; sourceTree = "<group>"; };
 		D1B38EC52891EBA0001FA9F7 /* BooksView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksView.swift; sourceTree = "<group>"; };
 		D1B38EC72891EC17001FA9F7 /* BookView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookView.swift; sourceTree = "<group>"; };
+		EEBA38E5C128E9916106C463 /* ExecutorIsolation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutorIsolation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -249,7 +249,7 @@
 				7F01E4122B70458200E192FD /* AsyncStream.swift */,
 				7F01E4142B70458200E192FD /* TaskGroup.swift */,
 				7F01E4222B7055A600E192FD /* AsyncPublisher.swift */,
-				EEBA38E5C128E9916106C463 /* ExecutorIsolationExample.swift */,
+				EEBA38E5C128E9916106C463 /* ExecutorIsolation.swift */,
 				7FC49B3A2BE25AD10021A956 /* SafeThreading */,
 				7FDA5D492C19D60100BA20F7 /* ActorsAndSendable.swift */,
 			);
@@ -710,7 +710,7 @@
 				D1B38EC62891EBA0001FA9F7 /* BooksView.swift in Sources */,
 				7FB6CC702BCFEB23002D658D /* NetflixProduct.swift in Sources */,
 				7FACBC39301AAAF70014A798 /* TypedThrows.swift in Sources */,
-				063C9A98BD5D28C5E1E251E8 /* ExecutorIsolationExample.swift in Sources */,
+				063C9A98BD5D28C5E1E251E8 /* ExecutorIsolation.swift in Sources */,
 				7F9017E62BFBB292005CF002 /* FormalGroupBox.swift in Sources */,
 				7F01E41A2B70458200E192FD /* WithContinuation.swift in Sources */,
 				7F9B3CFD2BD009450093D8B5 /* NetflixCell.swift in Sources */,
