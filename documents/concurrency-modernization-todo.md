@@ -16,9 +16,10 @@ get its own example file in `MyLibrary/Concurrency`, following the folder's exis
 - [x] **Typed throws** (SE-0413) — `func fetch() async throws(NetworkError) -> Data`. Rewrite one of the
       existing untyped-`throws` examples to compare.
       → `MyLibrary/Concurrency/TypedThrows.swift`
-- [ ] **Discarding task groups** — `withDiscardingTaskGroup` / `withThrowingDiscardingTaskGroup` for
+- [x] **Discarding task groups** — `withDiscardingTaskGroup` / `withThrowingDiscardingTaskGroup` for
       fire-and-forget children, contrasted with the result-collecting `withThrowingTaskGroup` already in
       `TaskGroupExample.swift`.
+      → `MyLibrary/Concurrency/DiscardingTaskGroup.swift`
 - [ ] **Typed `AsyncSequence` + custom conformance** (SE-0421) — `some AsyncSequence<Element, Failure>` in a
       function signature, and a hand-written `AsyncSequence`/`AsyncIteratorProtocol` conformance (everything
       today leans on pre-built `AsyncThrowingStream`/Combine `.values`).
