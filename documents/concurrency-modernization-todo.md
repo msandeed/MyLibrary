@@ -59,8 +59,9 @@ get its own example file in `MyLibrary/Concurrency`, following the folder's exis
 - [x] **Default actor isolation build setting** (`SWIFT_DEFAULT_ACTOR_ISOLATION`, SE-0466) — discussed as a
       project-level concept; no code artifact needed since it's a build setting, not a code pattern.
       → `MyLibrary/Concurrency/ConcurrencyTheory.md`
-- [ ] **Actor reentrancy** — flagged as a caveat when discussing actors; no example actually demonstrating
+- [x] **Actor reentrancy** — flagged as a caveat when discussing actors; no example actually demonstrating
       interleaved re-entry causing a subtle bug.
+      → `MyLibrary/Concurrency/ActorReentrancy.swift`
 
 ## Context
 
