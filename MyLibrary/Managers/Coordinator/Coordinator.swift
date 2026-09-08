@@ -91,41 +91,14 @@ extension Navigator {
     }
 }
 
-// MARK: - Building SwiftUI Views
+// MARK: - Shared chrome for nested flows
 extension Navigator {
-    func build(page: Page) -> AnyView {
-        switch page {
-        case .alien:
-            return AlienView(coordinator: self).asAnyView
-        case .car:
-            return CarView(coordinator: self).asAnyView
-        case .cow:
-            return CowView(coordinator: self).asAnyView
-        case .books:
-            return BooksView(coordinator: self).asAnyView
-        case .singleBook(let book):
-            return BookView(book: book, coordinator: self).asAnyView
-        case .netflixHome:
-            return NetflixHomeView(coordinator: self).asAnyView
-        case .gallery:
-            return Demo().asAnyView
-        }
-    }
-    
-    func build(flow: Flow) -> AnyView {
-        let coordinatedFlow: AnyView = switch flow {
-        case .books:
-            CoordinatorView(coordinator: BooksFlowCoordinator(), homePage: .books).asAnyView
-        case .dummy:
-            CoordinatorView(coordinator: ExampleCoordinator(), homePage: .alien).asAnyView
-        case .netflix:
-            CoordinatorView(coordinator: NetflixFlowCoordinator(), homePage: .netflixHome).asAnyView
-        case .gallery:
-            CoordinatorView(coordinator: ExampleCoordinator(), homePage: .gallery).asAnyView
-        }
-        
-        return ZStack(alignment: .bottom) {
-            coordinatedFlow
+    /// Wraps a nested flow's root view with a floating dismiss affordance.
+    /// Every concrete coordinator's `build(flow:)` that presents another flow can reuse this
+    /// instead of re-implementing the overlay; it's presentation chrome, not routing logic.
+    func wrapFlow(_ content: AnyView) -> AnyView {
+        ZStack(alignment: .bottom) {
+            content
             HStack {
                 Spacer()
                 Image(systemName: "arrow.down.circle.fill")
@@ -139,26 +112,6 @@ extension Navigator {
             .padding()
         }
         .asAnyView
-    }
-    
-    func build(sheet: Sheet) -> AnyView {
-        switch sheet {
-        case .heart:
-            return HeartView(coordinator: self).asAnyView
-        case .monkey:
-            return MonkeyView(coordinator: self).asAnyView
-        case .books:
-            return CoordinatorView(coordinator: BooksFlowCoordinator(), homePage: .books).asAnyView
-        case .netflixProduct(product: let product):
-            return NetflixProductView(product: product).asAnyView
-        }
-    }
-    
-    func build(fullScreenCover: FullScreenCover) -> AnyView {
-        switch fullScreenCover {
-        case .rocket:
-            return RocketView(viewModel: .init(), coordinator: self).asAnyView
-        }
     }
 }
 
