@@ -61,12 +61,20 @@ extension Navigator {
     }
     
     func pop() {
+        guard !path.isEmpty else {
+            print("🧭 Pop ignored: path is already empty")
+            return
+        }
         print("🧭 Popping")
         path.removeLast()
         objectWillChange.send()
     }
-    
+
     func popToRoot() {
+        guard !path.isEmpty else {
+            print("🧭 PopToRoot ignored: path is already empty")
+            return
+        }
         print("🧭 Popping To Root")
         path.removeLast(path.count)
         objectWillChange.send()
