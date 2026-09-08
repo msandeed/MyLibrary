@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BooksView<CoordinatorType: Navigator>: BaseViewProtocol {
+struct BooksView<CoordinatorType: Coordinator>: BaseViewProtocol {
     @StateObject var viewModel: BooksListViewModel = .init()
     var coordinator: CoordinatorType
     

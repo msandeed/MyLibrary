@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 
 // MARK: - Dummy Views
-struct AlienView<CoordinatorType: Navigator>: BaseViewProtocol {
+struct AlienView<CoordinatorType: Coordinator>: BaseViewProtocol {
     var viewModel: DummyViewModel = .init()
     var coordinator: CoordinatorType
     
@@ -63,7 +63,7 @@ struct AlienView<CoordinatorType: Navigator>: BaseViewProtocol {
     }
 }
 
-struct CowView<CoordinatorType: Navigator>: BaseViewProtocol {
+struct CowView<CoordinatorType: Coordinator>: BaseViewProtocol {
     var viewModel: DummyViewModel = .init()
     var coordinator: CoordinatorType
     
@@ -84,7 +84,7 @@ struct CowView<CoordinatorType: Navigator>: BaseViewProtocol {
     }
 }
 
-struct CarView<CoordinatorType: Navigator>: BaseViewProtocol {
+struct CarView<CoordinatorType: Coordinator>: BaseViewProtocol {
     var viewModel: DummyViewModel = .init()
     var coordinator: CoordinatorType
     
@@ -105,7 +105,7 @@ struct CarView<CoordinatorType: Navigator>: BaseViewProtocol {
     }
 }
 
-struct HeartView<CoordinatorType: Navigator>: BaseViewProtocol {
+struct HeartView<CoordinatorType: Coordinator>: BaseViewProtocol {
     var viewModel: DummyViewModel = .init()
     var coordinator: CoordinatorType
     
@@ -124,7 +124,7 @@ struct HeartView<CoordinatorType: Navigator>: BaseViewProtocol {
     }
 }
 
-struct MonkeyView<CoordinatorType: Navigator>: BaseViewProtocol {
+struct MonkeyView<CoordinatorType: Coordinator>: BaseViewProtocol {
     var viewModel: DummyViewModel = .init()
     var coordinator: CoordinatorType
     
@@ -142,7 +142,7 @@ struct MonkeyView<CoordinatorType: Navigator>: BaseViewProtocol {
     }
 }
 
-struct RocketView<CoordinatorType: Navigator>: BaseViewProtocol {
+struct RocketView<CoordinatorType: Coordinator>: BaseViewProtocol {
     var viewModel: DummyViewModel = .init()
     var coordinator: CoordinatorType
     

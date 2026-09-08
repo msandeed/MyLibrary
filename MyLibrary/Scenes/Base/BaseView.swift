@@ -9,7 +9,7 @@ import SwiftUI
 
 protocol BaseViewProtocol: View {
     associatedtype VM: ViewModelType
-    associatedtype C: Navigator
+    associatedtype C: Coordinator
     
     var viewModel: VM { get }
     var coordinator: C { get }
