@@ -39,27 +39,23 @@ extension Navigator {
     func push(_ page: Page) {
         print("🧭 Appending page: \(page) to stack")
         path.append(page)
-        objectWillChange.send()
     }
-    
+
     func present(_ sheet: Sheet) {
         print("🧭 Presenting Sheet \(sheet)")
         self.sheet = sheet
-        objectWillChange.send()
     }
-    
+
     func present(_ fullscreenCover: FullScreenCover) {
         print("🧭 Presenting FullScreenCover \(fullscreenCover)")
         self.fullScreenCover = fullscreenCover
-        objectWillChange.send()
     }
-    
+
     func present(_ flow: Flow) {
         print("🧭 Presenting flow: \(flow)")
         self.flow = flow
-        objectWillChange.send()
     }
-    
+
     func pop() {
         guard !path.isEmpty else {
             print("🧭 Pop ignored: path is already empty")
@@ -67,7 +63,6 @@ extension Navigator {
         }
         print("🧭 Popping")
         path.removeLast()
-        objectWillChange.send()
     }
 
     func popToRoot() {
@@ -77,25 +72,21 @@ extension Navigator {
         }
         print("🧭 Popping To Root")
         path.removeLast(path.count)
-        objectWillChange.send()
     }
-    
+
     func dismissSheet() {
         print("🧭 Dismissing Sheet")
         sheet = nil
-        objectWillChange.send()
     }
-    
+
     func dismissFlow() {
         print("🧭 Dismissing Flow")
         flow = nil
-        objectWillChange.send()
     }
-    
+
     func dismissFullScreenCover() {
         print("🧭 Dismissing FullScreenCover")
         fullScreenCover = nil
-        objectWillChange.send()
     }
 }
 
