@@ -4,3 +4,6 @@
 #OSX Noise
 *.xcuserstate
 *.xcbkptlist
+
+# Xcode per-user data
+xcuserdata/
