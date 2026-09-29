@@ -21,16 +21,16 @@ struct MSDynamicForm: View {
                 ForEach($vm.fields) { $field in
                     Section(header: Text(field.title)) {
                         FieldRenderer(field: $field)
-                            .onChange(of: field.textValue) { _ in
+                            .onChange(of: field.textValue) {
                                 vm.buildPayload()
                             }
-                            .onChange(of: field.selectedOption) { _ in
+                            .onChange(of: field.selectedOption) {
                                 vm.buildPayload()
                             }
-                            .onChange(of: field.selectedOptions) { _ in
+                            .onChange(of: field.selectedOptions) {
                                 vm.buildPayload()
                             }
-                            .onChange(of: field.dateValue) { _ in
+                            .onChange(of: field.dateValue) {
                                 vm.buildPayload()
                             }
                     }

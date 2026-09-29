@@ -47,7 +47,8 @@ extension MyLibraryApp {
         FirebaseApp.configure()
         
         let remoteConfigManager = RemoteConfigManager()
-        remoteConfigManager.fetchConfig {
+        Task {
+            await remoteConfigManager.fetchConfig()
             let message = remoteConfigManager.getWelcomeMessage()
             print("📝 \(message)")
         }

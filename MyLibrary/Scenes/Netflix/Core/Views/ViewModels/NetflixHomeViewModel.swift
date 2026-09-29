@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+@preconcurrency import Factory
 
 class NetflixHomeViewModel: ViewModelType {
 // MARK: - Inputs and Outputs

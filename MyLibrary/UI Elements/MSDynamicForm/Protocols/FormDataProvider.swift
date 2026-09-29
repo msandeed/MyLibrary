@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol FormDataProvider {
+protocol FormDataProvider: Sendable {
     func fetchOptions(for fieldID: String) async throws -> [FormOption]
 }
 

@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+@preconcurrency import Factory
 
 // MARK: - Books
 protocol NetflixProductsUseCase: BaseUseCase {

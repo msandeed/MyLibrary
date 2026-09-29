@@ -6,6 +6,7 @@
 //
 
 import Foundation
+@preconcurrency import Factory
 // MARK: - Usecases
 class UsecasesContainer: SharedContainer {
     static let booksUsecase = Factory<BooksUseCase> { DefaultBooksUseCase() }

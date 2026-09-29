@@ -7,8 +7,8 @@
 
 import Foundation
 
-var previewBooks: [Book.BookDTO] = load("FakeBooks.json")
-var previewProducts: [NetflixProduct.NetflixProductDTO] = load("FakeNetflixProducts.json")
+let previewBooks: [Book.BookDTO] = load("FakeBooks.json")
+let previewProducts: [NetflixProduct.NetflixProductDTO] = load("FakeNetflixProducts.json")
 
 // Function that loads JSON data into a T type and returns the decoded data
 func load<T: Decodable>(_ filename: String) -> T {

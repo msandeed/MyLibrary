@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NetflixHomeView<CoordinatorType: Coordinator>: BaseViewProtocol {
+struct NetflixHomeView<CoordinatorType: Coordinator>: @MainActor BaseViewProtocol {
     @StateObject var viewModel: NetflixHomeViewModel = .init()
     var coordinator: CoordinatorType
     

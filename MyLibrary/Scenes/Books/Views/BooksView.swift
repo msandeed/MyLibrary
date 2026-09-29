@@ -6,8 +6,9 @@
 //
 
 import SwiftUI
+@preconcurrency import Factory
 
-struct BooksView<CoordinatorType: Coordinator>: BaseViewProtocol {
+struct BooksView<CoordinatorType: Coordinator>: @MainActor BaseViewProtocol {
     @StateObject var viewModel: BooksListViewModel = .init()
     var coordinator: CoordinatorType
     

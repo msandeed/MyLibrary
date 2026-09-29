@@ -95,7 +95,7 @@ extension Navigator {
     /// Wraps a nested flow's root view with a floating dismiss affordance.
     /// Every concrete coordinator's `build(flow:)` that presents another flow can reuse this
     /// instead of re-implementing the overlay; it's presentation chrome, not routing logic.
-    func wrapFlow(_ content: AnyView) -> AnyView {
+    @MainActor func wrapFlow(_ content: AnyView) -> AnyView {
         ZStack(alignment: .bottom) {
             content
             HStack {

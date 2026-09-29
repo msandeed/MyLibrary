@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+@preconcurrency import Factory
 
 enum ViewState {    // Currently not used but comes in handy for more complex scenarios
     case idle

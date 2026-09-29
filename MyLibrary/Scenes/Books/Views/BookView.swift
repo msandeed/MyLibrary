@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BookView<CoordinatorType: Coordinator>: BaseViewProtocol {
+struct BookView<CoordinatorType: Coordinator>: @MainActor BaseViewProtocol {
     var book: Book.BookItemViewModel
     @StateObject var viewModel: DummyViewModel = .init()    // Currently a viewModel is not needed
     var coordinator: CoordinatorType

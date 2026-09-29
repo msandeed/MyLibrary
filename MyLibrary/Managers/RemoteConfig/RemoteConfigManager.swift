@@ -27,17 +27,19 @@ class RemoteConfigManager {
     }
 
     // Call this function to fetch latest configurations and apply them
-    func fetchConfig(completion: @escaping () -> Void) {
-        remoteConfig.fetch { (status, error) in
-            if status == .success {
-                print("📝 Config fetched!")
-                self.remoteConfig.activate { (changed, error) in
-                    completion()
-                }
-            } else {
+    // `nonisolated(nonsending)` runs on the caller's actor, so `self` never crosses an isolation boundary.
+    nonisolated(nonsending) func fetchConfig() async {
+        do {
+            let status = try await remoteConfig.fetch()
+            guard status == .success else {
                 print("📝 Config not fetched")
-                print("📝 Error: \(error?.localizedDescription ?? "No error available.")")
+                return
             }
+            print("📝 Config fetched!")
+            _ = try await remoteConfig.activate()
+        } catch {
+            print("📝 Config not fetched")
+            print("📝 Error: \(error.localizedDescription)")
         }
     }
 

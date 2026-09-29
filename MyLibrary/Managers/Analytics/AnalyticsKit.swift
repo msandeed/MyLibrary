@@ -8,7 +8,14 @@
 import Foundation
 
 public class AnalyticsKit: AnalyticsKitProtocol {
-    public private(set) static var main: AnalyticsKitProtocol = AnalyticsKit()
+    /// Guards `_main`, which can be swapped by `mock(with:)` while `track()` reads it from any thread.
+    private static let mainLock = NSLock()
+    nonisolated(unsafe) private static var _main: AnalyticsKitProtocol = AnalyticsKit()
+
+    public static var main: AnalyticsKitProtocol {
+        mainLock.withLock { _main }
+    }
+
     private var providers: [AnalyticsProvider] = []
     
     public func configure(providers: [AnalyticsProvider]) {
@@ -19,7 +26,7 @@ public class AnalyticsKit: AnalyticsKitProtocol {
 extension AnalyticsKit {
     public static func mock(with mockedKit: AnalyticsKitProtocol) {
         guard NSClassFromString("XCTest") != nil else { return }
-        main = mockedKit
+        mainLock.withLock { _main = mockedKit }
     }
 }
 
@@ -66,5 +73,12 @@ public extension AnalyticsKit {
 }
 
 extension AnalyticsKit {
-    public static var allProviders: [AnalyticsProvider.Type] = []
+    /// Guards `_allProviders`, which is set at app launch and read by events from any thread.
+    private static let allProvidersLock = NSLock()
+    nonisolated(unsafe) private static var _allProviders: [AnalyticsProvider.Type] = []
+
+    public static var allProviders: [AnalyticsProvider.Type] {
+        get { allProvidersLock.withLock { _allProviders } }
+        set { allProvidersLock.withLock { _allProviders = newValue } }
+    }
 }

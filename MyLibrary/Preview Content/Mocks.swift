@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+@preconcurrency import Factory
 
 class MockedBooksUseCase: BooksUseCase {
     @Injected(ServicesContainer.networkService) internal var networkService
