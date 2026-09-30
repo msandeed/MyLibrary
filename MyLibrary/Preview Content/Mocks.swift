@@ -24,3 +24,11 @@ class MockedNetflixProductsUseCase: NetflixProductsUseCase {
         return CurrentValueSubject(previewProducts.shuffled()).map { $0.toDomain }.eraseToAnyPublisher()  // TODO: Is CurrentValueSubject the best option here?
     }
 }
+
+class MockedMusicLibraryUseCase: MusicLibraryUseCase {
+    @Injected(ServicesContainer.networkService) internal var networkService
+    
+    func fetchPlaylists() -> AnyPublisher<[MusicLibrary.PlaylistDomain], NetworkError> {
+        return CurrentValueSubject(previewMusicPlaylists).map { $0.toDomain }.eraseToAnyPublisher()
+    }
+}

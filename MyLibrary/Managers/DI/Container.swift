@@ -11,6 +11,7 @@ import Foundation
 class UsecasesContainer: SharedContainer {
     static let booksUsecase = Factory<BooksUseCase> { DefaultBooksUseCase() }
     static let netflixProductsUsecase = Factory<NetflixProductsUseCase> { MockedNetflixProductsUseCase() }
+    static let musicLibraryUsecase = Factory<MusicLibraryUseCase> { MockedMusicLibraryUseCase() }
 }
 
 // MARK: - Repos

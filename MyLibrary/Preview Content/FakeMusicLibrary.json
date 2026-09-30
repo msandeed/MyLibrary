@@ -1,0 +1,73 @@
+[
+    {
+        "title": "Morning Coffee",
+        "symbol": "cup.and.saucer.fill",
+        "hue": 0.08,
+        "tracks": [
+            { "title": "Sunrise Avenue", "artist": "The Daybreaks", "durationInSeconds": 214 },
+            { "title": "Warm Hands", "artist": "Lena Moor", "durationInSeconds": 189 },
+            { "title": "Slow Pour", "artist": "Barista Club", "durationInSeconds": 241 },
+            { "title": "First Light", "artist": "Northern Coast", "durationInSeconds": 202 },
+            { "title": "Honey & Oat", "artist": "Lena Moor", "durationInSeconds": 176 }
+        ]
+    },
+    {
+        "title": "Deep Focus",
+        "symbol": "brain.head.profile",
+        "hue": 0.62,
+        "tracks": [
+            { "title": "Signal", "artist": "Quiet Circuits", "durationInSeconds": 312 },
+            { "title": "Parallel Lines", "artist": "Axiom", "durationInSeconds": 287 },
+            { "title": "Compile Time", "artist": "Quiet Circuits", "durationInSeconds": 334 },
+            { "title": "Low Tide", "artist": "Mira Sol", "durationInSeconds": 265 },
+            { "title": "Flow State", "artist": "Axiom", "durationInSeconds": 298 },
+            { "title": "Night Build", "artist": "Terminal Blue", "durationInSeconds": 301 }
+        ]
+    },
+    {
+        "title": "Workout Mix",
+        "symbol": "figure.run",
+        "hue": 0.98,
+        "tracks": [
+            { "title": "Redline", "artist": "Voltage", "durationInSeconds": 198 },
+            { "title": "Push It Further", "artist": "Kinetic", "durationInSeconds": 205 },
+            { "title": "Heartbeat 180", "artist": "Voltage", "durationInSeconds": 187 },
+            { "title": "Sprint", "artist": "Nova Rush", "durationInSeconds": 173 },
+            { "title": "Last Rep", "artist": "Kinetic", "durationInSeconds": 221 }
+        ]
+    },
+    {
+        "title": "Road Trip",
+        "symbol": "car.fill",
+        "hue": 0.33,
+        "tracks": [
+            { "title": "Open Highway", "artist": "Desert Kings", "durationInSeconds": 246 },
+            { "title": "Mile Marker 62", "artist": "The Wanderers", "durationInSeconds": 233 },
+            { "title": "Gas Station Sunset", "artist": "Desert Kings", "durationInSeconds": 259 },
+            { "title": "Windows Down", "artist": "June Avenue", "durationInSeconds": 194 },
+            { "title": "Almost There", "artist": "The Wanderers", "durationInSeconds": 218 }
+        ]
+    },
+    {
+        "title": "Late Night Jazz",
+        "symbol": "moon.stars.fill",
+        "hue": 0.75,
+        "tracks": [
+            { "title": "Blue Smoke", "artist": "Oscar Vale Trio", "durationInSeconds": 367 },
+            { "title": "After Hours", "artist": "Nina Reed", "durationInSeconds": 322 },
+            { "title": "Velvet Room", "artist": "Oscar Vale Trio", "durationInSeconds": 389 },
+            { "title": "Midnight Train", "artist": "Sam Archer", "durationInSeconds": 296 }
+        ]
+    },
+    {
+        "title": "Chill Vibes",
+        "symbol": "leaf.fill",
+        "hue": 0.45,
+        "tracks": [
+            { "title": "Hammock", "artist": "Palm Theory", "durationInSeconds": 228 },
+            { "title": "Soft Focus", "artist": "Cloudwalker", "durationInSeconds": 251 },
+            { "title": "Lazy Sunday", "artist": "Palm Theory", "durationInSeconds": 207 },
+            { "title": "Breeze", "artist": "Mira Sol", "durationInSeconds": 239 }
+        ]
+    }
+]

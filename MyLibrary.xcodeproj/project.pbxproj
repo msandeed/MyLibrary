@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7FA1C0012E9F000100ABCDEF /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 7FA1C0022E9F000100ABCDEF /* Factory */; };
 		063C9A98BD5D28C5E1E251E8 /* ExecutorIsolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBA38E5C128E9916106C463 /* ExecutorIsolation.swift */; };
 		558BABACD905E1C812852E34 /* DiscardingTaskGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFBA087C9365673CC51FC8C /* DiscardingTaskGroup.swift */; };
 		7F01E40C2B70457400E192FD /* DependencyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E4082B70457400E192FD /* DependencyInjection.swift */; };
@@ -30,6 +29,18 @@
 		7F9B3CFB2BD0035A0093D8B5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7F9B3CFA2BD0035A0093D8B5 /* Kingfisher */; };
 		7F9B3CFD2BD009450093D8B5 /* NetflixCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B3CFC2BD009450093D8B5 /* NetflixCell.swift */; };
 		7F9B3CFF2BD1673E0093D8B5 /* NetflixProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B3CFE2BD1673E0093D8B5 /* NetflixProductView.swift */; };
+		7F9FA0BF306C7CD90048C66C /* FakeMusicLibrary.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F9FA0BE306C7CD90048C66C /* FakeMusicLibrary.json */; };
+		7F9FA0C9306C7CF70048C66C /* MusicLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9FA0C8306C7CF70048C66C /* MusicLibrary.swift */; };
+		7F9FA0CB306C7CF90048C66C /* MusicUsecases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9FA0CA306C7CF90048C66C /* MusicUsecases.swift */; };
+		7F9FA0CD306C7CFE0048C66C /* ReorderDifference+Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9FA0CC306C7CFE0048C66C /* ReorderDifference+Apply.swift */; };
+		7F9FA0CF306C7D030048C66C /* MusicPlaylistTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9FA0CE306C7D030048C66C /* MusicPlaylistTile.swift */; };
+		7F9FA0D1306C7D060048C66C /* MusicTrackRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9FA0D0306C7D060048C66C /* MusicTrackRow.swift */; };
+		7F9FA0D3306C7D160048C66C /* MusicLibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9FA0D2306C7D160048C66C /* MusicLibraryViewModel.swift */; };
+		7F9FA0D5306C7D1C0048C66C /* MusicLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9FA0D4306C7D1C0048C66C /* MusicLibraryView.swift */; };
+		7F9FA0D7306C7D230048C66C /* MusicPlaylistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9FA0D6306C7D230048C66C /* MusicPlaylistView.swift */; };
+		7F9FA0D9306C7D290048C66C /* MusicQueueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9FA0D8306C7D290048C66C /* MusicQueueView.swift */; };
+		7F9FA0DB306C7D2F0048C66C /* MusicFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9FA0DA306C7D2F0048C66C /* MusicFlowCoordinator.swift */; };
+		7FA1C0012E9F000100ABCDEF /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 7FA1C0022E9F000100ABCDEF /* Factory */; };
 		7FACBBEF301A06370014A798 /* TaskCancellation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FACBBEE301A06370014A798 /* TaskCancellation.swift */; };
 		7FACBC39301AAAF70014A798 /* TypedThrows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FACBC38301AAAF70014A798 /* TypedThrows.swift */; };
 		7FACBCB9302528D90014A798 /* ActorReentrancy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FACBCB8302528D90014A798 /* ActorReentrancy.swift */; };
@@ -130,6 +141,17 @@
 		7F9017EA2BFBEC14005CF002 /* ReminderGroupBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderGroupBox.swift; sourceTree = "<group>"; };
 		7F9B3CFC2BD009450093D8B5 /* NetflixCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixCell.swift; sourceTree = "<group>"; };
 		7F9B3CFE2BD1673E0093D8B5 /* NetflixProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixProductView.swift; sourceTree = "<group>"; };
+		7F9FA0BE306C7CD90048C66C /* FakeMusicLibrary.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FakeMusicLibrary.json; sourceTree = "<group>"; };
+		7F9FA0C8306C7CF70048C66C /* MusicLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicLibrary.swift; sourceTree = "<group>"; };
+		7F9FA0CA306C7CF90048C66C /* MusicUsecases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicUsecases.swift; sourceTree = "<group>"; };
+		7F9FA0CC306C7CFE0048C66C /* ReorderDifference+Apply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReorderDifference+Apply.swift"; sourceTree = "<group>"; };
+		7F9FA0CE306C7D030048C66C /* MusicPlaylistTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlaylistTile.swift; sourceTree = "<group>"; };
+		7F9FA0D0306C7D060048C66C /* MusicTrackRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTrackRow.swift; sourceTree = "<group>"; };
+		7F9FA0D2306C7D160048C66C /* MusicLibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicLibraryViewModel.swift; sourceTree = "<group>"; };
+		7F9FA0D4306C7D1C0048C66C /* MusicLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicLibraryView.swift; sourceTree = "<group>"; };
+		7F9FA0D6306C7D230048C66C /* MusicPlaylistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlaylistView.swift; sourceTree = "<group>"; };
+		7F9FA0D8306C7D290048C66C /* MusicQueueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicQueueView.swift; sourceTree = "<group>"; };
+		7F9FA0DA306C7D2F0048C66C /* MusicFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicFlowCoordinator.swift; sourceTree = "<group>"; };
 		7FACBBEE301A06370014A798 /* TaskCancellation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCancellation.swift; sourceTree = "<group>"; };
 		7FACBC38301AAAF70014A798 /* TypedThrows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypedThrows.swift; sourceTree = "<group>"; };
 		7FACBCB8302528D90014A798 /* ActorReentrancy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorReentrancy.swift; sourceTree = "<group>"; };
@@ -303,6 +325,79 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7F9FA0C0306C7CE70048C66C /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				7F9FA0C1306C7CEA0048C66C /* Domain */,
+				7F9FA0C2306C7CEA0048C66C /* Components */,
+				7F9FA0C3306C7CEB0048C66C /* Core */,
+				7F9FA0DA306C7D2F0048C66C /* MusicFlowCoordinator.swift */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
+		7F9FA0C1306C7CEA0048C66C /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				7F9FA0C4306C7CED0048C66C /* Models */,
+				7F9FA0C5306C7CEE0048C66C /* Usecases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		7F9FA0C2306C7CEA0048C66C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				7F9FA0CE306C7D030048C66C /* MusicPlaylistTile.swift */,
+				7F9FA0D0306C7D060048C66C /* MusicTrackRow.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		7F9FA0C3306C7CEB0048C66C /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				7F9FA0C6306C7CEE0048C66C /* Views */,
+				7F9FA0CC306C7CFE0048C66C /* ReorderDifference+Apply.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		7F9FA0C4306C7CED0048C66C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7F9FA0C8306C7CF70048C66C /* MusicLibrary.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7F9FA0C5306C7CEE0048C66C /* Usecases */ = {
+			isa = PBXGroup;
+			children = (
+				7F9FA0CA306C7CF90048C66C /* MusicUsecases.swift */,
+			);
+			path = Usecases;
+			sourceTree = "<group>";
+		};
+		7F9FA0C6306C7CEE0048C66C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7F9FA0C7306C7CF10048C66C /* ViewModels */,
+				7F9FA0D4306C7D1C0048C66C /* MusicLibraryView.swift */,
+				7F9FA0D6306C7D230048C66C /* MusicPlaylistView.swift */,
+				7F9FA0D8306C7D290048C66C /* MusicQueueView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7F9FA0C7306C7CF10048C66C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				7F9FA0D2306C7D160048C66C /* MusicLibraryViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		7FB6CC602BCE8F1A002D658D /* Netflix */ = {
@@ -508,6 +603,7 @@
 				7FB6CC6B2BCFDF16002D658D /* FakeNetflixProducts.json */,
 				7FBFE23B295E525A0028FFA1 /* Mocks.swift */,
 				7FBFE23D295E52FA0028FFA1 /* PreviewHandler.swift */,
+				7F9FA0BE306C7CD90048C66C /* FakeMusicLibrary.json */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -531,6 +627,7 @@
 				7FBFE22929546F600028FFA1 /* Base */,
 				7FB7AC862B72F15500AC8857 /* DummyFlow */,
 				D1B38EB42891EAB8001FA9F7 /* Books */,
+				7F9FA0C0306C7CE70048C66C /* Music */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -678,6 +775,7 @@
 			files = (
 				D1B38EAC2891EA2E001FA9F7 /* Preview Assets.xcassets in Resources */,
 				7FB6CC6C2BCFDF16002D658D /* FakeNetflixProducts.json in Resources */,
+				7F9FA0BF306C7CD90048C66C /* FakeMusicLibrary.json in Resources */,
 				7FEDA7612C7F393C00B3840D /* GoogleService-Info.plist in Resources */,
 				7FBFE23A295E51360028FFA1 /* FakeBooks.json in Resources */,
 				D1B38EA92891EA2E001FA9F7 /* Assets.xcassets in Resources */,
@@ -701,7 +799,11 @@
 				7FEDA75F2C7DD96A00B3840D /* DummyFlowAnalytics.swift in Sources */,
 				7FDA5D4A2C19D60100BA20F7 /* ActorsAndSendable.swift in Sources */,
 				7F01E4232B7055A600E192FD /* AsyncPublisher.swift in Sources */,
+				7F9FA0DB306C7D2F0048C66C /* MusicFlowCoordinator.swift in Sources */,
 				7FC49B3E2BE3951F0021A956 /* ThreadSafeActor.swift in Sources */,
+				7F9FA0C9306C7CF70048C66C /* MusicLibrary.swift in Sources */,
+				7F9FA0D9306C7D290048C66C /* MusicQueueView.swift in Sources */,
+				7F9FA0D7306C7D230048C66C /* MusicPlaylistView.swift in Sources */,
 				7FACBBEF301A06370014A798 /* TaskCancellation.swift in Sources */,
 				DFCA51A419F7CE32E6BBC685 /* SendingParameters.swift in Sources */,
 				7FB6CC7A2BCFF00E002D658D /* BaseUseCase.swift in Sources */,
@@ -709,6 +811,8 @@
 				7FB7AC8F2B7A846100AC8857 /* AdapterPattern.swift in Sources */,
 				D1B38EC02891EB62001FA9F7 /* NetworkService.swift in Sources */,
 				7F01E40C2B70457400E192FD /* DependencyInjection.swift in Sources */,
+				7F9FA0D1306C7D060048C66C /* MusicTrackRow.swift in Sources */,
+				7F9FA0CB306C7CF90048C66C /* MusicUsecases.swift in Sources */,
 				7F01E41D2B70458300E192FD /* TaskGroup.swift in Sources */,
 				7FEDA75A2C7DBF8500B3840D /* AnalyticEvent.swift in Sources */,
 				7FB6CC7C2BCFF1C8002D658D /* NetflixFlowCoordinator.swift in Sources */,
@@ -731,6 +835,7 @@
 				7FB6CC6A2BCEDBC6002D658D /* NetflixMainCell.swift in Sources */,
 				7FB6CC772BCFEEFE002D658D /* NetflixUsecases.swift in Sources */,
 				7F01E41B2B70458200E192FD /* AsyncStream.swift in Sources */,
+				7F9FA0D5306C7D1C0048C66C /* MusicLibraryView.swift in Sources */,
 				7F01E4202B70458300E192FD /* FlexibleGrid.swift in Sources */,
 				7FC49B392BE253A80021A956 /* ThreadSafeWrapper.swift in Sources */,
 				7FC49B3C2BE25BA60021A956 /* ThreadingDemoView.swift in Sources */,
@@ -748,6 +853,8 @@
 				7FBFE22B29546F710028FFA1 /* ViewModelType.swift in Sources */,
 				7F9017EB2BFBEC14005CF002 /* ReminderGroupBox.swift in Sources */,
 				7FB7AC832B729E5400AC8857 /* BooksFlowCoordinator.swift in Sources */,
+				7F9FA0CF306C7D030048C66C /* MusicPlaylistTile.swift in Sources */,
+				7F9FA0CD306C7CFE0048C66C /* ReorderDifference+Apply.swift in Sources */,
 				7F01E40E2B70457400E192FD /* ObserverPattern.swift in Sources */,
 				7FB7AC932B7A85DA00AC8857 /* Theory.swift in Sources */,
 				7FBFE22D29546F970028FFA1 /* BaseView.swift in Sources */,
@@ -758,6 +865,7 @@
 				7FEDA75D2C7DD3EB00B3840D /* SomeAnalyticsProvider.swift in Sources */,
 				7FACBCB9302528D90014A798 /* ActorReentrancy.swift in Sources */,
 				558BABACD905E1C812852E34 /* DiscardingTaskGroup.swift in Sources */,
+				7F9FA0D3306C7D160048C66C /* MusicLibraryViewModel.swift in Sources */,
 				D1B38EBE2891EB62001FA9F7 /* Constants.swift in Sources */,
 				7FEDA7562C7DBECD00B3840D /* AnalyticsProtocol.swift in Sources */,
 				7FEDA7932C7F3B7E00B3840D /* RemoteConfigManager.swift in Sources */,
@@ -999,14 +1107,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7FA1C0022E9F000100ABCDEF /* Factory */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Factory;
-		};
 		7F9B3CFA2BD0035A0093D8B5 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7FB6CC7D2BCFF7C9002D658D /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		7FA1C0022E9F000100ABCDEF /* Factory */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Factory;
 		};
 		7FEDA7632C7F3A2800B3840D /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;

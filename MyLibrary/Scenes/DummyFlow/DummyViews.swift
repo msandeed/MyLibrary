@@ -53,6 +53,13 @@ struct AlienView<CoordinatorType: Coordinator>: @MainActor BaseViewProtocol {
                         coordinator.present(Flow.netflix)
                     }
                     
+                    if #available(iOS 27, *) {
+                        Button("🎧 Present Music Flow (iOS 27 only!)") {
+                            DummyFlowAnalytics.tappedMusicFlowButton.track()
+                            coordinator.present(Flow.music)
+                        }
+                    }
+                    
                     Button("🎨 Present UI Gallery") {
                         DummyFlowAnalytics.tappedUIGalleryFlowButton.track()
                         coordinator.present(Flow.gallery)

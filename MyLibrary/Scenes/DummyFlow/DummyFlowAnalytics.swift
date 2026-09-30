@@ -15,6 +15,7 @@ enum DummyFlowAnalytics: AnalyticEvent {
     case tappedBooksFlowButton
     case tappedNetflixFlowButton
     case tappedUIGalleryFlowButton
+    case tappedMusicFlowButton
     // Add others...
     
     var providers: [AnalyticsProvider.Type] {
@@ -37,6 +38,8 @@ enum DummyFlowAnalytics: AnalyticEvent {
             return "tapped_NetflixFlow_Button"
         case .tappedUIGalleryFlowButton:
             return "tapped_UIGalleryFlow_Button"
+        case .tappedMusicFlowButton:
+            return "tapped_MusicFlow_Button"
         }
     }
     

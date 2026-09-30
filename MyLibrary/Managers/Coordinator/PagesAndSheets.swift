@@ -8,7 +8,7 @@
 import Foundation
 
 enum Page: Hashable {
-    case alien, cow, car, books, singleBook(book: Book.BookItemViewModel), netflixHome, gallery
+    case alien, cow, car, books, singleBook(book: Book.BookItemViewModel), netflixHome, gallery, musicLibrary, musicPlaylist(id: UUID)
     
     func hash(into hasher: inout Hasher) {
         switch self {
@@ -27,12 +27,17 @@ enum Page: Hashable {
             hasher.combine(5)
         case .gallery:
             hasher.combine(6)
+        case .musicLibrary:
+            hasher.combine(7)
+        case .musicPlaylist(let id):
+            hasher.combine(8)
+            hasher.combine(id)
         }
     }
 }
 
 enum Flow: String, Identifiable {
-    case dummy, books, netflix, gallery
+    case dummy, books, netflix, gallery, music
     
     var id: String {
         self.rawValue
@@ -40,7 +45,7 @@ enum Flow: String, Identifiable {
 }
 
 enum Sheet: Identifiable {
-    case monkey, heart, books, netflixProduct(product: NetflixProduct.NetflixProductViewModel)
+    case monkey, heart, books, netflixProduct(product: NetflixProduct.NetflixProductViewModel), musicQueue
     
     var id: String {
         switch self {
@@ -52,6 +57,8 @@ enum Sheet: Identifiable {
             return "books"
         case .netflixProduct:
             return "netflixProduct"
+        case .musicQueue:
+            return "musicQueue"
         }
     }
 }

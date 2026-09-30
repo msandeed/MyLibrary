@@ -73,6 +73,12 @@ extension ExampleCoordinator {
             return wrapFlow(CoordinatorView(coordinator: BooksFlowCoordinator(), homePage: .books).asAnyView)
         case .netflix:
             return wrapFlow(CoordinatorView(coordinator: NetflixFlowCoordinator(), homePage: .netflixHome).asAnyView)
+        case .music:
+            // The entry point is only shown on iOS 27+, so this branch is unreachable below that.
+            guard #available(iOS 27, *) else {
+                fatalError("Music flow requires iOS 27")
+            }
+            return wrapFlow(CoordinatorView(coordinator: MusicFlowCoordinator(), homePage: .musicLibrary).asAnyView)
         }
     }
 }
