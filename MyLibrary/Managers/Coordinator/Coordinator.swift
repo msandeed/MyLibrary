@@ -100,17 +100,30 @@ extension Navigator {
             content
             HStack {
                 Spacer()
-                Image(systemName: "arrow.down.circle.fill")
-                    .resizable()
-                    .frame(width: 40, height: 40)
-                    .foregroundStyle(.ultraThickMaterial)
-                    .onTapGesture {
-                        self.dismissFlow()
-                    }
+                FlowDismissButton {
+                    self.dismissFlow()
+                }
             }
             .padding()
         }
         .asAnyView
+    }
+}
+
+/// Floating button that dismisses the whole nested flow.
+/// Uses Liquid Glass where available, falling back to a bordered style on older systems.
+private struct FlowDismissButton: View {
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            Image(systemName: "arrow.down")
+                .font(.title3.weight(.semibold))
+                .frame(width: 40, height: 40)
+        }
+        .glassButtonStyleIfAvailable()
+        .buttonBorderShape(.circle)
+        .accessibilityLabel("Dismiss")
     }
 }
 
