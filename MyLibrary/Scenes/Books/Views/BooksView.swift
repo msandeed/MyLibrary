@@ -30,6 +30,27 @@ struct BooksView<CoordinatorType: Coordinator>: @MainActor BaseViewProtocol {
                     coordinator.push(.singleBook(book: book))
                 }
             }
+            .overlay {
+                // Only when there's nothing to show yet; with existing rows, pull-to-refresh has its own indicator.
+                if viewModel.output.books.isEmpty {
+                    switch viewModel.output.viewState {
+                    case .loading:
+                        ProgressView()
+                    case .error:
+                        ContentUnavailableView {
+                            Label("Couldn't Load Books", systemImage: "wifi.exclamationmark")
+                        } description: {
+                            Text("Check your connection and try again.")
+                        } actions: {
+                            Button("Retry") {
+                                viewModel.input.fetchTrigger.send(())
+                            }
+                        }
+                    default:
+                        EmptyView()
+                    }
+                }
+            }
         }
         .refreshable {
             viewModel.input.fetchTrigger.send(())

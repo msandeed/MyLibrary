@@ -9,7 +9,7 @@ import Foundation
 import Combine
 @preconcurrency import Factory
 
-enum ViewState {    // Currently not used but comes in handy for more complex scenarios
+enum ViewState {
     case idle
     case loading
     case loaded
@@ -23,7 +23,7 @@ class BooksListViewModel: ViewModelType {
     }
     
     class Output: ObservableObject {
-        @Published fileprivate(set) var viewState: ViewState?   // Currently not used but comes in handy for more complex scenarios
+        @Published fileprivate(set) var viewState: ViewState?
         @Published fileprivate(set) var books: [Book.BookItemViewModel] = []
     }
     
@@ -60,12 +60,15 @@ class BooksListViewModel: ViewModelType {
     
 // MARK: - Functions
     private func fetchBooks() {
+        output.viewState = .loading
         booksUseCase.fetchBooks()
-            .sink { (completion) in
+            .sink { [weak self] (completion) in
                 switch completion {
                 case .finished:
+                    self?.output.viewState = .loaded
                     print("✅ Books Retrieved Successfully")
                 case .failure(let error):
+                    self?.output.viewState = .error
                     // Some of those could be handled in lower layers.. UseCase or NetworkService. For now, we're bubbling them all up to ViewModel
                     switch error {
                     case .requestError:

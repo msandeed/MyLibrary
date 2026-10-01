@@ -17,6 +17,11 @@ struct NetflixMainCell: View {
     var body: some View {
         ZStack(alignment: .bottom) {
             KFImage(URL(string: content.image))
+                // Read and decode cached images off the main thread; the synchronous default blocked presenting the Netflix flow.
+                .loadDiskFileSynchronously(false)
+                // Fade in cached images too (Kingfisher only fades network loads by default) to soften the async pop-in.
+                .fade(duration: 0.2)
+                .forceTransition()
                 .resizable()
                 .aspectRatio(0.8, contentMode: .fill)
                 .onTapGesture {
