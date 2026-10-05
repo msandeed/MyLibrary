@@ -17,7 +17,10 @@ struct BooksView<CoordinatorType: Coordinator>: @MainActor BaseViewProtocol {
     }
     
     var body: some View {
-        VStack {
+        VStack(spacing: 12) {
+            Text("My Books")
+                .font(.largeTitle)
+                .bold()
             List(viewModel.output.books) { book in
                 VStack(alignment: .leading) {
                     Text("\(book.title)")
@@ -30,6 +33,7 @@ struct BooksView<CoordinatorType: Coordinator>: @MainActor BaseViewProtocol {
                     coordinator.push(.singleBook(book: book))
                 }
             }
+            .listStyle(.plain)
             .overlay {
                 // Only when there's nothing to show yet; with existing rows, pull-to-refresh has its own indicator.
                 if viewModel.output.books.isEmpty {
@@ -52,6 +56,7 @@ struct BooksView<CoordinatorType: Coordinator>: @MainActor BaseViewProtocol {
                 }
             }
         }
+        .padding(.top)
         .refreshable {
             viewModel.input.fetchTrigger.send(())
         }

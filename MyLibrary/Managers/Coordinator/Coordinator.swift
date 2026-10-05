@@ -103,6 +103,7 @@ extension Navigator {
                 FlowDismissButton {
                     self.dismissFlow()
                 }
+                Spacer()
             }
             .padding()
         }
