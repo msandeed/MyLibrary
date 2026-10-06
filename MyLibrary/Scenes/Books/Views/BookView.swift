@@ -18,19 +18,22 @@ struct BookView<CoordinatorType: Coordinator>: @MainActor BaseViewProtocol {
     }
     
     var body: some View {
-        VStack(alignment: .center, spacing: 20) {
-            Text(book.title)
-                .multilineTextAlignment(.center)
-                .font(.title)
-                .bold()
-            Text(book.subtitle)
-                .multilineTextAlignment(.center)
-                .font(.headline)
-            Button("Return") {
-                coordinator.pop()
+        VStack(alignment: .center, spacing: 16) {
+            Text("📖")
+                .font(.system(size: 300))
+                .minimumScaleFactor(0.1)
+                .lineLimit(1)
+            VStack(alignment: .center, spacing: 8) {
+                Text(book.title)
+                    .multilineTextAlignment(.center)
+                    .font(.title)
+                    .bold()
+                Text(book.subtitle)
+                    .multilineTextAlignment(.center)
+                    .font(.headline)
             }
+            .standardGlassButtonStyle()
         }
-        .padding()
     }
 }
 

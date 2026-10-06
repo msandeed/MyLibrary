@@ -17,10 +17,13 @@ struct BooksView<CoordinatorType: Coordinator>: @MainActor BaseViewProtocol {
     }
     
     var body: some View {
+        EmojiMenuLayout(emoji: "📚") {
+            menu
+        }
+    }
+    
+    @ViewBuilder var menu: some View {
         VStack(spacing: 12) {
-            Text("My Books")
-                .font(.largeTitle)
-                .bold()
             List(viewModel.output.books) { book in
                 VStack(alignment: .leading) {
                     Text("\(book.title)")
