@@ -8,10 +8,12 @@
 import SwiftUI
 import Combine
 
-// MARK: - Dummy Views
-struct AlienView<CoordinatorType: Coordinator>: @MainActor BaseViewProtocol {
-    var viewModel: DummyViewModel = .init()
-    var coordinator: CoordinatorType
+// MARK: - Shared Layout
+/// Lays out a dummy view's menu alongside its emoji icon.
+/// The menu is always visible; the icon appears beside it only in landscape.
+struct EmojiMenuLayout<Menu: View>: View {
+    let emoji: String
+    @ViewBuilder var menu: Menu
 
     @Environment(\.verticalSizeClass) private var verticalSizeClass
 
@@ -39,15 +41,74 @@ struct AlienView<CoordinatorType: Coordinator>: @MainActor BaseViewProtocol {
         }
     }
 
-    var icon: some View {
-        Text("👽")
+    private var icon: some View {
+        Text(emoji)
             .font(.system(size: 400))
             .minimumScaleFactor(0.1)
             .lineLimit(1)
             .padding()
             .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
-    
+}
+
+/// Shows a dummy view's emoji with a row of buttons below it.
+struct EmojiButtonsLayout<Buttons: View>: View {
+    let emoji: String
+    @ViewBuilder var buttons: Buttons
+
+    var body: some View {
+        if #available(iOS 27.1, *) {
+            // Per Apple's "Preparing your app for iPhone Duo", the overlay arrangement layers the
+            // primary view (buttons) over the secondary view (emoji) when there's no active fold,
+            // and when the device is partially open it places the primary in the bottom/trailing
+            // part of the display and the secondary in the top/leading part. The positioning is
+            // done by ArrangementView itself; this code only picks the style and the roles.
+            ArrangementView {
+                buttonRow
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+            } secondary: {
+                icon
+            }
+            .arrangementViewStyle(.overlay)
+        } else {
+            VStack(spacing: 0) {
+                icon
+                buttonRow
+            }
+        }
+    }
+
+    /// Fills whatever region it's given and scales the emoji to fit.
+    private var icon: some View {
+        Text(emoji)
+            .font(.system(size: 400))
+            .minimumScaleFactor(0.1)
+            .lineLimit(1)
+            .padding()
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+
+    private var buttonRow: some View {
+        HStack(spacing: 12) {
+            buttons
+        }
+        .glassButtonStyleIfAvailable()
+        .controlSize(.large)
+        .padding()
+    }
+}
+
+// MARK: - Dummy Views
+struct AlienView<CoordinatorType: Coordinator>: @MainActor BaseViewProtocol {
+    var viewModel: DummyViewModel = .init()
+    var coordinator: CoordinatorType
+
+    var body: some View {
+        EmojiMenuLayout(emoji: "👽") {
+            menu
+        }
+    }
+
     @ViewBuilder var menu: some View {
         List {
             Section("Internal Views") {
@@ -102,10 +163,7 @@ struct CowView<CoordinatorType: Coordinator>: @MainActor BaseViewProtocol {
     var coordinator: CoordinatorType
     
     var body: some View {
-        VStack(spacing: 12) {
-            Text("🐄")
-                .font(.system(size: 100))
-                .frame(maxHeight: Constants.height / 8)
+        EmojiMenuLayout(emoji: "🐄") {
             List {
                 Button("🚙 Page") {
                     coordinator.push(.car)
@@ -116,7 +174,6 @@ struct CowView<CoordinatorType: Coordinator>: @MainActor BaseViewProtocol {
             }
             .listStyle(.plain)
         }
-        .padding(.top)
     }
 }
 
@@ -125,21 +182,14 @@ struct CarView<CoordinatorType: Coordinator>: @MainActor BaseViewProtocol {
     var coordinator: CoordinatorType
     
     var body: some View {
-        VStack(spacing: 12) {
-            Text("🚙")
-                .font(.system(size: 100))
-                .frame(maxHeight: Constants.height / 8)
-            List {
-                Button("Pop") {
-                    coordinator.pop()
-                }
-                Button("PopToRoot") {
-                    coordinator.popToRoot()
-                }
+        EmojiButtonsLayout(emoji: "🚙") {
+            Button("Pop") {
+                coordinator.pop()
             }
-            .listStyle(.plain)
+            Button("PopToRoot") {
+                coordinator.popToRoot()
+            }
         }
-        .padding(.top)
     }
 }
 
@@ -148,38 +198,11 @@ struct HeartView<CoordinatorType: Coordinator>: @MainActor BaseViewProtocol {
     var coordinator: CoordinatorType
     
     var body: some View {
-        VStack(spacing: 12) {
-            Text("❤️")
-                .font(.system(size: 100))
-                .frame(maxHeight: Constants.height / 8)
-            List {
-                Button("Dismiss") {
-                    coordinator.dismissSheet()
-                }
+        EmojiButtonsLayout(emoji: "❤️") {
+            Button("Dismiss") {
+                coordinator.dismissSheet()
             }
-            .listStyle(.plain)
         }
-        .padding(.top)
-    }
-}
-
-struct MonkeyView<CoordinatorType: Coordinator>: @MainActor BaseViewProtocol {
-    var viewModel: DummyViewModel = .init()
-    var coordinator: CoordinatorType
-    
-    var body: some View {
-        VStack(spacing: 12) {
-            Text("🙈")
-                .font(.system(size: 100))
-                .frame(maxHeight: Constants.height / 8)
-            List {
-                Button("Dismiss") {
-                    coordinator.dismissSheet()
-                }
-            }
-            .listStyle(.plain)
-        }
-        .padding(.top)
     }
 }
 
@@ -188,18 +211,11 @@ struct RocketView<CoordinatorType: Coordinator>: @MainActor BaseViewProtocol {
     var coordinator: CoordinatorType
     
     var body: some View {
-        VStack(spacing: 12) {
-            Text("🚀")
-                .font(.system(size: 100))
-                .frame(maxHeight: Constants.height / 8)
-            List {
-                Button("Dismiss") {
-                    coordinator.dismissFullScreenCover()
-                }
+        EmojiButtonsLayout(emoji: "🚀") {
+            Button("Dismiss") {
+                coordinator.dismissFullScreenCover()
             }
-            .listStyle(.plain)
         }
-        .padding(.top)
     }
 }
 

@@ -47,8 +47,6 @@ extension ExampleCoordinator {
         switch sheet {
         case .heart:
             return HeartView(coordinator: self).asAnyView
-        case .monkey:
-            return MonkeyView(coordinator: self).asAnyView
         default:
             fatalError("ExampleCoordinator cannot build sheet: \(sheet)")
         }

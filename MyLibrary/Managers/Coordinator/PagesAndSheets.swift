@@ -45,12 +45,10 @@ enum Flow: String, Identifiable {
 }
 
 enum Sheet: Identifiable {
-    case monkey, heart, books, netflixProduct(product: NetflixProduct.NetflixProductViewModel), musicQueue
+    case heart, books, netflixProduct(product: NetflixProduct.NetflixProductViewModel), musicQueue
     
     var id: String {
         switch self {
-        case .monkey:
-            return "monkey"
         case .heart:
             return "heart"
         case .books:
