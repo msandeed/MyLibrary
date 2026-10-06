@@ -92,7 +92,7 @@ struct EmojiButtonsLayout<Buttons: View>: View {
         HStack(spacing: 12) {
             buttons
         }
-        .glassButtonStyleIfAvailable()
+        .standardGlassButtonStyle()
         .controlSize(.large)
         .padding()
     }

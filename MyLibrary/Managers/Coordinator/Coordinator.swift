@@ -122,7 +122,7 @@ private struct FlowDismissButton: View {
                 .font(.title3.weight(.semibold))
                 .frame(width: 40, height: 40)
         }
-        .glassButtonStyleIfAvailable()
+        .standardGlassButtonStyle()
         .buttonBorderShape(.circle)
         .accessibilityLabel("Dismiss")
     }

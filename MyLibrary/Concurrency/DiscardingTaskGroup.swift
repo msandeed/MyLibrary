@@ -17,13 +17,8 @@ import SwiftUI
 // group over a plain one isn't "I don't want the values," it's "I have too many children for a
 // plain group to hold their bookkeeping efficiently."
 
-// withDiscardingTaskGroup / withThrowingDiscardingTaskGroup are iOS 17+ (their non-discarding
-// counterparts go back to iOS 13/15), so every type below that touches them needs the annotation —
-// the deployment target for this project is 15.2/16.0.
-
 // Child tasks are Void, so progress has to be observed from outside the group via an actor rather
 // than by collecting return values.
-@available(iOS 17.0, *)
 private actor ProgressTracker {
     private(set) var completedCount = 0
 
@@ -32,7 +27,6 @@ private actor ProgressTracker {
     }
 }
 
-@available(iOS 17.0, *)
 struct DiscardingTaskGroupExampleDataProvider {
     struct JobFailure: Error {
         let jobID: Int
@@ -80,7 +74,6 @@ struct DiscardingTaskGroupExampleDataProvider {
     }
 }
 
-@available(iOS 17.0, *)
 @MainActor
 class DiscardingTaskGroupExampleViewModel: ObservableObject {
     @Published private(set) var fireAndForgetStatus = "Not run yet"
@@ -121,7 +114,6 @@ class DiscardingTaskGroupExampleViewModel: ObservableObject {
     }
 }
 
-@available(iOS 17.0, *)
 struct DiscardingTaskGroupExample: View {
     @StateObject private var viewModel = DiscardingTaskGroupExampleViewModel()
 
@@ -145,7 +137,6 @@ struct DiscardingTaskGroupExample: View {
     }
 }
 
-@available(iOS 17.0, *)
 #Preview {
     DiscardingTaskGroupExample()
 }
