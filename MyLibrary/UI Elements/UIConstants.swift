@@ -8,16 +8,6 @@
 import Foundation
 import SwiftUI
 
-@MainActor
-struct Constants {
-    //Screen dimensions (UIScreen is main actor-isolated)
-    static let height = UIScreen.main.bounds.height
-    static let width = UIScreen.main.bounds.width
-    static var isSmallScreen: Bool {
-        width <= 375
-    }
-}
-
 struct Padding {
     static let micro = 4.0
     static let mini = 6.0

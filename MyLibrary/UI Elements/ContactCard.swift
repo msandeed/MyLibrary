@@ -45,11 +45,11 @@ struct ContactCard: View {
         }
         .padding(.horizontal, 16)
         .frame(height: 80)
-        .frame(maxWidth: style == .selectable ? .infinity : Constants.width * 0.65)
+        .cardWidth(for: style)
         .background(RoundedShadowView(cornerRadius: style == .selectable ? 16 : 24))
         .padding(16)
     }
-    
+
     @ViewBuilder func checkmarkCircle() -> some View {
         ZStack {
             HStack(alignment: .center, spacing: 0) {
@@ -72,6 +72,19 @@ struct ContactCard: View {
                 isSelected.toggle()
                 print(isSelected)
             }
+        }
+    }
+}
+
+private extension View {
+    /// Selectable cards fill the available width; compressed cards take 65% of
+    /// the nearest container (scroll view or window), so they adapt as the window resizes.
+    @ViewBuilder func cardWidth(for style: ContactCardStyle) -> some View {
+        switch style {
+        case .selectable:
+            frame(maxWidth: .infinity)
+        case .compressed:
+            containerRelativeFrame(.horizontal) { length, _ in length * 0.65 }
         }
     }
 }
