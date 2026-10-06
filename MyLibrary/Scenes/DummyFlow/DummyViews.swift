@@ -161,6 +161,8 @@ struct AlienView<CoordinatorType: Coordinator>: @MainActor BaseViewProtocol {
 struct CowView<CoordinatorType: Coordinator>: @MainActor BaseViewProtocol {
     var viewModel: DummyViewModel = .init()
     var coordinator: CoordinatorType
+    @State var showAlert: Bool = false
+    @State var alertTitle: String = ""
     
     var body: some View {
         EmojiButtonsLayout(emoji: "🐄") {
@@ -170,6 +172,73 @@ struct CowView<CoordinatorType: Coordinator>: @MainActor BaseViewProtocol {
             Button("Pop") {
                 coordinator.pop()
             }
+        }
+        .toolbar {
+            // Priorities only take effect on iOS 27+: when space runs out, items move into
+            // the overflow menu from lowest priority up. Older versions show every item.
+            ToolbarItem(placement: .topBarLeading) {
+                Button {
+                    alertTitle = "Search to be added"
+                    showAlert = true
+                } label: {
+                    Label("Search", systemImage: "magnifyingglass")
+                }
+            }
+            .visibilityPriorityIfAvailable(.high)
+
+            ToolbarItem(placement: .topBarLeading) {
+                toolbarButton("Filter", systemImage: "line.3.horizontal.decrease")
+            }
+            .visibilityPriorityIfAvailable(.automatic)
+
+            ToolbarItem(placement: .topBarLeading) {
+                toolbarButton("Sort", systemImage: "arrow.up.arrow.down")
+            }
+            .visibilityPriorityIfAvailable(.low)
+
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    alertTitle = "Info to be added"
+                    showAlert = true
+                } label: {
+                    Label("Info", systemImage: "person")
+                }
+            }
+            .visibilityPriorityIfAvailable(.high)
+
+            ToolbarItem(placement: .topBarTrailing) {
+                toolbarButton("Favorite", systemImage: "heart")
+            }
+            .visibilityPriorityIfAvailable(.aboveAutomatic)
+
+            ToolbarItem(placement: .topBarTrailing) {
+                toolbarButton("Share", systemImage: "square.and.arrow.up")
+            }
+            .visibilityPriorityIfAvailable(.automatic)
+
+            ToolbarItem(placement: .topBarTrailing) {
+                toolbarButton("Edit", systemImage: "pencil")
+            }
+            .visibilityPriorityIfAvailable(.belowAutomatic)
+
+            ToolbarItem(placement: .topBarTrailing) {
+                toolbarButton("Settings", systemImage: "gear")
+            }
+            .visibilityPriorityIfAvailable(.low)
+        }
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text(alertTitle), dismissButton: .default(Text("OK")))
+        }
+    }
+
+    /// A toolbar button with both a title and an icon, so the system can show the icon
+    /// in the bar and the title in the overflow menu.
+    private func toolbarButton(_ title: String, systemImage: String) -> some View {
+        Button {
+            alertTitle = "\(title) to be added"
+            showAlert = true
+        } label: {
+            Label(title, systemImage: systemImage)
         }
     }
 }

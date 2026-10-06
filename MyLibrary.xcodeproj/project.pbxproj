@@ -23,6 +23,7 @@
 		7F01E4232B7055A600E192FD /* AsyncPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E4222B7055A600E192FD /* AsyncPublisher.swift */; };
 		7F01E4262B71924D00E192FD /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E4252B71924D00E192FD /* Coordinator.swift */; };
 		7F01E4282B7197E800E192FD /* DummyViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01E4272B7197E800E192FD /* DummyViews.swift */; };
+		7F248B6E3075244D00555489 /* ToolbarVisibilityPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F248B6D3075244D00555489 /* ToolbarVisibilityPriority.swift */; };
 		7F9017E62BFBB292005CF002 /* FormalGroupBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9017E52BFBB292005CF002 /* FormalGroupBox.swift */; };
 		7F9017E92BFBE6CC005CF002 /* ThemedGroupBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9017E82BFBE6CC005CF002 /* ThemedGroupBox.swift */; };
 		7F9017EB2BFBEC14005CF002 /* ReminderGroupBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9017EA2BFBEC14005CF002 /* ReminderGroupBox.swift */; };
@@ -137,6 +138,7 @@
 		7F01E4222B7055A600E192FD /* AsyncPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncPublisher.swift; sourceTree = "<group>"; };
 		7F01E4252B71924D00E192FD /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		7F01E4272B7197E800E192FD /* DummyViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViews.swift; sourceTree = "<group>"; };
+		7F248B6D3075244D00555489 /* ToolbarVisibilityPriority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarVisibilityPriority.swift; sourceTree = "<group>"; };
 		7F9017E52BFBB292005CF002 /* FormalGroupBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormalGroupBox.swift; sourceTree = "<group>"; };
 		7F9017E82BFBE6CC005CF002 /* ThemedGroupBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedGroupBox.swift; sourceTree = "<group>"; };
 		7F9017EA2BFBEC14005CF002 /* ReminderGroupBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderGroupBox.swift; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 			children = (
 				7F9017E82BFBE6CC005CF002 /* ThemedGroupBox.swift */,
 				7F9FA0DC306D06E90048C66C /* LiquidGlass.swift */,
+				7F248B6D3075244D00555489 /* ToolbarVisibilityPriority.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -853,6 +856,7 @@
 				D1B38EBD2891EB62001FA9F7 /* Utilities.swift in Sources */,
 				D1B38EA52891EA2A001FA9F7 /* MyLibraryApp.swift in Sources */,
 				7FB6CC642BCE8F52002D658D /* NetflixHomeView.swift in Sources */,
+				7F248B6E3075244D00555489 /* ToolbarVisibilityPriority.swift in Sources */,
 				7FBFE22B29546F710028FFA1 /* ViewModelType.swift in Sources */,
 				7F9017EB2BFBEC14005CF002 /* ReminderGroupBox.swift in Sources */,
 				7FB7AC832B729E5400AC8857 /* BooksFlowCoordinator.swift in Sources */,
