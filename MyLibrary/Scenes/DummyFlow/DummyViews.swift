@@ -163,16 +163,13 @@ struct CowView<CoordinatorType: Coordinator>: @MainActor BaseViewProtocol {
     var coordinator: CoordinatorType
     
     var body: some View {
-        EmojiMenuLayout(emoji: "🐄") {
-            List {
-                Button("🚙 Page") {
-                    coordinator.push(.car)
-                }
-                Button("Pop") {
-                    coordinator.pop()
-                }
+        EmojiButtonsLayout(emoji: "🐄") {
+            Button("🚙 Page") {
+                coordinator.push(.car)
             }
-            .listStyle(.plain)
+            Button("Pop") {
+                coordinator.pop()
+            }
         }
     }
 }
