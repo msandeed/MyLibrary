@@ -92,40 +92,22 @@ extension Navigator {
 
 // MARK: - Shared chrome for nested flows
 extension Navigator {
-    /// Wraps a nested flow's root view with a floating dismiss affordance.
+    /// Wraps a nested flow's root view with a dismiss toolbar button.
     /// Every concrete coordinator's `build(flow:)` that presents another flow can reuse this
     /// instead of re-implementing the overlay; it's presentation chrome, not routing logic.
     @MainActor func wrapFlow(_ content: AnyView) -> AnyView {
-        ZStack(alignment: .bottom) {
-            content
-            HStack {
-                Spacer()
-                FlowDismissButton {
-                    self.dismissFlow()
-                }
-                Spacer()
-            }
-            .padding()
-        }
-        .asAnyView
+        // The toolbar can't be attached here: `content` is a `CoordinatorView`, and toolbar items
+        // only reach the navigation bar when applied *inside* its `NavigationStack`. Instead, hand
+        // the action down so `CoordinatorView` can place the button on its root page.
+        content
+            .environment(\.dismissFlowAction, { self.dismissFlow() })
+            .asAnyView
     }
 }
 
-/// Floating button that dismisses the whole nested flow.
-/// Uses Liquid Glass where available, falling back to a bordered style on older systems.
-private struct FlowDismissButton: View {
-    let action: () -> Void
-
-    var body: some View {
-        Button(action: action) {
-            Image(systemName: "arrow.down")
-                .font(.title3.weight(.semibold))
-                .frame(width: 40, height: 40)
-        }
-        .standardGlassButtonStyle()
-        .buttonBorderShape(.circle)
-        .accessibilityLabel("Dismiss")
-    }
+extension EnvironmentValues {
+    /// Dismisses the enclosing nested flow. Set by `Navigator.wrapFlow(_:)`; `nil` outside a nested flow.
+    @Entry var dismissFlowAction: (() -> Void)?
 }
 
 extension View {
