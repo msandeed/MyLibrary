@@ -9,7 +9,8 @@ import SwiftUI
 
 struct CoordinatorView<CoordinatorType: Navigator>: View where CoordinatorType: ObservableObject {
     @ObservedObject private var coordinator: CoordinatorType
-    @Environment(\.dismissFlowAction) private var dismissFlowAction
+    @Environment(\.showsFlowDismissButton) private var showsFlowDismissButton
+    @Environment(\.dismiss) private var dismiss
     private var homePage: Page
     
     init(coordinator: CoordinatorType, homePage: Page) {
@@ -23,9 +24,11 @@ struct CoordinatorView<CoordinatorType: Navigator>: View where CoordinatorType: 
             NavigationStack(path: $coordinator.path) {
                 coordinator.build(page: homePage)
                     .toolbar {
-                        if let dismissFlowAction {
+                        if showsFlowDismissButton {
                             ToolbarItem(placement: .topBarTrailing) {
-                                Button(action: dismissFlowAction) {
+                                Button {
+                                    dismiss()
+                                } label: {
                                     Label("Dismiss Flow", systemImage: "arrow.down")
                                 }
                             }
@@ -45,8 +48,8 @@ struct CoordinatorView<CoordinatorType: Navigator>: View where CoordinatorType: 
                         coordinator.build(flow: flow)
                     }
             }
-            // Consumed above; don't leak this flow's dismiss action into its pages or presentations.
-            .environment(\.dismissFlowAction, nil)
+            // Consumed above; don't leak this flow's dismiss button into its pages or presentations.
+            .environment(\.showsFlowDismissButton, false)
         }
     }
 }

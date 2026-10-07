@@ -98,16 +98,16 @@ extension Navigator {
     @MainActor func wrapFlow(_ content: AnyView) -> AnyView {
         // The toolbar can't be attached here: `content` is a `CoordinatorView`, and toolbar items
         // only reach the navigation bar when applied *inside* its `NavigationStack`. Instead, hand
-        // the action down so `CoordinatorView` can place the button on its root page.
+        // a flag down so `CoordinatorView` can place the button on its root page.
         content
-            .environment(\.dismissFlowAction, { self.dismissFlow() })
+            .environment(\.showsFlowDismissButton, true)
             .asAnyView
     }
 }
 
 extension EnvironmentValues {
-    /// Dismisses the enclosing nested flow. Set by `Navigator.wrapFlow(_:)`; `nil` outside a nested flow.
-    @Entry var dismissFlowAction: (() -> Void)?
+    /// Whether `CoordinatorView` shows a dismiss button for its enclosing nested flow. Set by `Navigator.wrapFlow(_:)`.
+    @Entry var showsFlowDismissButton = false
 }
 
 extension View {
